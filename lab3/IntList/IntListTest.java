@@ -4,12 +4,39 @@ import org.junit.Test;
 
 public class IntListTest {
 
+    /** Performs a few tests to see if the reverse method is correct */
+    @Test
+    public void testReverse() {
+        IntList L1 = IntList.of();
+        IntList exp1 = IntList.of();
+        assertEquals(exp1, IntList.reverse(L1));
+
+        IntList L = IntList.of(1, 2, 3, 4);
+        IntList L2 = IntList.of(1, 2, 3, 4);
+        IntList exp = IntList.of(4, 3, 2, 1);
+        assertEquals(exp, IntList.reverse(L));
+        assertNotEquals(L2, L);
+    }
+
+    /** Performs a few tests to see if the reverseIter method is correct */
+    @Test
+    public void testReverseIter() {
+        IntList L1 = IntList.of();
+        IntList exp1 = IntList.of();
+        assertEquals(exp1, IntList.reverseIter(L1));
+
+        IntList L = IntList.of(1, 2, 3, 4);
+        IntList L2 = IntList.of(1, 2, 3, 4);
+        IntList exp = IntList.of(4, 3, 2, 1);
+        assertEquals(exp, IntList.reverseIter(L));
+        assertNotEquals(L2, L);
+    }
+
     /**
      * Example test that verifies correctness of the IntList.of static
      * method. The main point of this is to convince you that
      * assertEquals knows how to handle IntLists just fine.
      */
-
     @Test
     public void testList() {
         IntList one = new IntList(1, null);
