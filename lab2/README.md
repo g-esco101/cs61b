@@ -1,6 +1,6 @@
-# Lab 2: Unit Testing with JUnit and IntLists
+# [Lab 2: Unit Testing with JUnit and IntLists](https://sp19.datastructur.es/materials/lab/lab2/lab2)
 
-Covered destructive vs. non-destructive methods and IntLists.
+Concerns debugging, destructive methods, non-destructive methods, IntLists, and pointers, as well as writing IntList methods destructively, non-destructively, recursively, and iteratively.
 
 ## Run
 Open in intellij IDEA & run the TestIntList.java file.
