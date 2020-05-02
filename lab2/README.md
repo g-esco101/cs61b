@@ -13,4 +13,4 @@ Implemented the following methods in [IntList.java](Intlist/IntList.java):
 - catenate
 - catenateIterative
 
-Made several updates to methods in DebugPractice.
+Found and fixed bugs in the DebugPractice directory, including re-writing the max method in [DebugExercise2.java](DebugPractice/DebugExercise2.java)
