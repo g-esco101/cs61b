@@ -6,37 +6,6 @@ The skeleton files supplied for the course prohibited the use of dependency inje
 
 Test Driven Development was used to complete this assignment. 
 
-## Run
-Open in Intellij (I used Intellij IDEA 2020.1). 
-
-To run the [PalindromeFinder](src/PalindromeFinder.java), select it in the src package, right-click, and then select run. 
-
-To run a single test file, select the test file in the tests package, right click, and then select Run.
-
-To run all tests: 
-- Select Run | Edit Configuration from the main menu.
-- In the Run/Debug Configurations dialog, click the Add New Configuration button on the toolbar or press Alt+Insert.
-- Select JUnit from the list.
-- A new configuration page opens. Name this configuration.
-- From the Test kind list, select "All in package".
-- In the Package field type "tests".
-- Apply the changes and close the dialog.
-
-## Class Diagram
-
-All Classes:
-
-![alt text](class-diagrams/src.png "class diagrams")
-
-[LinkedListDeque.java](src/LinkedListDeque.java) and [Deque.java](src/Deque.java) with all members and constructors visible:
-
-![alt text](class-diagrams/LinkedListDeque.jpg "deque diagrams")
-
-Evertying except for the deques with all members and constructors visible:
-
-![alt text](class-diagrams/palindrome.png "palindrome diagrams")
-
-
 ## Tasks
 - Create a [Deque](src/Deque.java) interface that contains all of the methods that appear in both ArrayDeque and - [LinkedListDeque](src/LinkedListDeque.java)
  (I already did this in project 1a).
@@ -62,3 +31,34 @@ in the file library-sp19/data/words.txt for all values of N and the longest pali
 - [TestPalindrome.java](tests/TestPalindrome.java)
 - [TestOffByOne.java](tests/TestOffByOne.java)
 - [TestOffByN.java](tests/TestOffByN.java)
+
+
+## Run
+Open in Intellij (I used Intellij IDEA 2020.1). 
+
+To run the [PalindromeFinder](src/PalindromeFinder.java), select it in the src package, right-click, and then select run. 
+
+To run a single test file, select the test file in the tests package, right click, and then select Run.
+
+To run all tests: 
+- Select Run | Edit Configuration from the main menu.
+- In the Run/Debug Configurations dialog, click the Add New Configuration button on the toolbar or press Alt+Insert.
+- Select JUnit from the list.
+- A new configuration page opens. Name this configuration.
+- From the Test kind list, select "All in package".
+- In the Package field type "tests".
+- Apply the changes and close the dialog.
+
+## Class Diagrams
+
+All Classes:
+
+![alt text](class-diagrams/src.png "class diagrams")
+
+[LinkedListDeque.java](src/LinkedListDeque.java) and [Deque.java](src/Deque.java) with all members and constructors visible:
+
+![alt text](class-diagrams/LinkedListDeque.jpg "deque diagrams")
+
+All classes except for the deques with all members and constructors visible:
+
+![alt text](class-diagrams/palindrome.png "palindrome diagrams")
