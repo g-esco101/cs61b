@@ -13,12 +13,12 @@ Open in intellij IDEA & run the tests.DequeTest.java file.
 - [Deque.java](src/Deque.java)
 - [LinkedListDeque.java](src/LinkedListDeque.java)
 - [ArrayDeque.java](src/ArrayDeque.java)
-- [DequeTest.java](src/DequeTest.java)
-- [ArrayDequeTest.java](src/ArrayDeque.java)
-- [LinkedListDequeTest.java](src/LinkedListDequeTest.java)
-- [TestUtility.java](src/TestUtility.java)
+- [DequeTest.java](test/DequeTest.java)
+- [ArrayDequeTest.java](test/ArrayDeque.java)
+- [LinkedListDequeTest.java](test/LinkedListDequeTest.java)
+- [TestUtility.java](test/TestUtility.java)
 
-Note: The skeleton code came with one file, LinkedListDequeTest.java, which was completely rewritten to contain tests strictly for the [LinkedListDeque](src/LinkedListDeque.java) implementation. 
+Note: The skeleton code came with one file, [LinkedListDequeTest.java](test/LinkedListDequeTest.java), which was completely rewritten to contain tests strictly for the [LinkedListDeque](src/LinkedListDeque.java) implementation. 
 
 # Not included in the instructions, but I added
 ## Method Dependency Injection
@@ -33,4 +33,4 @@ The constructors [ArrayDeque(ArrayDeque<T> other)](src/ArrayDeque.java) and [Lin
 ## Testing
 Wrote tests such that 100% code coverage is achieved. 
 
-The skeleton code supplied by the course came with one file, i.e. tests.LinkedListDequeTest.java, which came with several methods to test the implementations and several utility methods: checkEmpty, checkSize, and printTestStatus.  Almost all methods in it were replaced, except the aforementioned utility functions, which were moved to [TestUtility.java](src/TestUtilit.java).
+The skeleton code supplied by the course came with one file, i.e. tests.LinkedListDequeTest.java, which came with several methods to test the implementations and several utility methods: checkEmpty, checkSize, and printTestStatus.  Almost all methods in it were replaced, except the aforementioned utility functions, which were moved to [TestUtility.java](test/TestUtilit.java).
