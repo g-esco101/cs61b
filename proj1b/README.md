@@ -23,21 +23,18 @@ To run all tests:
 - Apply the changes and close the dialog.
 
 ## Class Diagram
-All Classes
 
-![alt text][classes]
+All Classes:
 
-[classes]: class-diagrams/src.png "class diagrams"
+![alt text](class-diagrams/src.png "class diagrams")
 
-[LinkedListDeque.java](src/LinkedListDeque.java) and [Deque.java](src/Deque.java) with all members and constructors visible.
-![alt text][deques]
+[LinkedListDeque.java](src/LinkedListDeque.java) and [Deque.java](src/Deque.java) with all members and constructors visible:
 
-[deques]: class-diagrams/LinkedListDeque.jpg "class diagrams"
+![alt text](class-diagrams/LinkedListDeque.jpg "deque diagrams")
 
-Evertying except for the deques with all members and constructors visible.
-![alt text][palindromes]
+Evertying except for the deques with all members and constructors visible:
 
-[palindromes]: class-diagrams/palindrome.png "palindrome diagrams"
+![alt text](class-diagrams/palindrome.png "palindrome diagrams")
 
 
 ## Tasks
