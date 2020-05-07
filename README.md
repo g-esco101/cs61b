@@ -13,4 +13,4 @@ The README files in the projects and homeworks contain a list of the files I cre
 - Intellij IDEA
 - [cs61b plugin](https://plugins.jetbrains.com/plugin/9423-cs-61b) (a code style checker)
 - [java visualizer plugin](https://plugins.jetbrains.com/plugin/11512-java-visualizer) (a tool to visualize the call stack and objects on the heap)
-- [library-sp19](https://github.com/Berkeley-CS61B/library-sp19/tree/7fe87114b62fdcf0a6af3ec3d9e96b0ef4f64523) (a library used for this course)
+- [library-sp19](https://github.com/Berkeley-CS61B/library-sp19/tree/7fe87114b62fdcf0a6af3ec3d9e96b0ef4f64523) (a library used for this course) Note: I use Junit5 instead of Junit4, which is provided in this library.
