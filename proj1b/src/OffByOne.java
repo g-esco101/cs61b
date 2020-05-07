@@ -1,3 +1,5 @@
+package src;
+
 /** A class used to determine if the difference between two chars is one */
 public class OffByOne implements CharacterComparator {
 

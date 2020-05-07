@@ -1,4 +1,4 @@
-/** A Doubly Linked List with circular sentinel topology */
+package src; /** A Doubly Linked List with circular sentinel topology */
 import java.util.StringJoiner;
 
 public class LinkedListDeque<T> implements Deque<T> {
@@ -31,7 +31,7 @@ public class LinkedListDeque<T> implements Deque<T> {
 
     /** Creates a deep copy of other, i.e a Doubly Linked List with circular sentinel topology.
      *
-     * @Param other the LinkedListDeque to deep copy.
+     * @Param other the src.LinkedListDeque to deep copy.
      * @exception NullPointerException when other is null.
      */
     public LinkedListDeque(LinkedListDeque<T> other) {
@@ -185,7 +185,7 @@ public class LinkedListDeque<T> implements Deque<T> {
      * If no such item exists, returns null. Must not alter the deque!
      *
      * @param index is the position of the item to retrieve.
-     * @param node a node in the LinkedListDeque.
+     * @param node a node in the src.LinkedListDeque.
      */
     private T getRecursive(Node<T> node, int index) {
         if (index == 0) {
@@ -214,8 +214,8 @@ public class LinkedListDeque<T> implements Deque<T> {
     }
 
     /**
-     * Creates a string that represent this LinkedListDeque
-     * @return a string that represents this LinkedListDeque
+     * Creates a string that represent this src.LinkedListDeque
+     * @return a string that represents this src.LinkedListDeque
      */
     @Override
     public String toString() {

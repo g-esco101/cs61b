@@ -1,10 +1,12 @@
+package src;
+
 /** A class used to determine if the difference between two chars is N */
 public class OffByN implements  CharacterComparator{
 
     /** An int that is equal to the difference between two chars for them to be considered equal */
     private final int N;
 
-    /** Creats an OffByN object.
+    /** Creats an src.OffByN object.
      *
      * @param N is the difference between two chars that determines if they are equal.
      */

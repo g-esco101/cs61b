@@ -1,14 +1,15 @@
-import java.util.HashMap;
+package src;
+
+
+import edu.princeton.cs.algs4.In;
 
 /** This class outputs all palindromes in the words file in the current directory. */
 public class PalindromeFinder {
-    public static void main(String[] args) {
-        String file = "../library-sp19/data/words.txt";
-        int[] mostPals = mostPalindromes(file);
-        Object[] longestPal = longestPalindrome(file);
-        System.out.printf("OffBy%d has the most palindromes: %d.\n", mostPals[0], mostPals[1]);
-        System.out.printf("OffBy%d has the longest palindrome: %s.\n", longestPal[0], longestPal[1]);
-    }
+
+    /** Palindrome used to represent a word as a Deque and check if it is a palindrome */
+    private static final Palindrome palindrome = new Palindrome();
+
+    private static CharacterComparator cc;
 
     /** Determines what off by value (N) has the most palindromes.
      *
@@ -36,16 +37,18 @@ public class PalindromeFinder {
      * @return the number of palindromes in the file for with an off by value of N.
      */
     private static int palindromeCount(int N, String file) {
-        Palindrome palindrome = new Palindrome();
-        OffByN obo = new OffByN(N);
-        In in = new In(file);
+        cc = new OffByN(N);
         int count = 0;
+        // No try catch finally, because "foods.csv"is hardcoded - and it works.
+        // Also, no try with resources, because In implements neither Closeable nor AutoCloseable.
+        In in = new In(file);
         while (!in.isEmpty()) {
             String word = in.readString();
-            if (palindrome.isPalindrome(word, obo)) {
+            if (palindrome.isPalindrome(word, cc)) {
                 count++;
             }
         }
+        in.close();
         return count;
     }
 
@@ -78,18 +81,27 @@ public class PalindromeFinder {
      * and the longest palindrome for that N (result[1]).
      */
     private static String longestOffByNPalindrome(int N, String file) {
-        Palindrome palindrome = new Palindrome();
-        OffByN obo = new OffByN(N);
-        In in = new In(file);
+        cc = new OffByN(N);
         String max = "";
+        // No try catch finally, because "foods.csv"is hardcoded - and it works.
+        // Also, no try with resources, because In implements neither Closeable nor AutoCloseable.
+        In in = new In(file);
         while (!in.isEmpty()) {
             String word = in.readString();
-            if (palindrome.isPalindrome(word, obo)) {
+            if (palindrome.isPalindrome(word, cc)) {
                 if (word.length() > max.length()) {
                     max = word;
                 }
             }
         }
+        in.close();
         return max;
+    }
+    public static void main(String[] args) {
+        String file = "../library-sp19/data/words.txt";
+        int[] mostPals = mostPalindromes(file);
+        Object[] longestPal = longestPalindrome(file);
+        System.out.printf("OffBy%d has the most palindromes: %d.\n", mostPals[0], mostPals[1]);
+        System.out.printf("OffBy%d has the longest palindrome: %s.\n", longestPal[0], longestPal[1]);
     }
 } 
