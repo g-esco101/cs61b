@@ -24,11 +24,17 @@ To run all tests:
 
 ## Class Diagram
 All Classes
-![alt text](class-diagrams/src.png "class diagram")
+![alt text][classes]
+[classes]: class-diagrams/src.png "class diagrams"
+
 [LinkedListDeque.java](src/LinkedListDeque.java) and [Deque.java](src/Deque.java) with all members and constructors visible.
-![alt text](class-diagrams/LinkedListDeque.jpg "deques diagrams")
+![alt text][deques]
+[deques]: class-diagrams/LinkedListDeque.jpg "class diagrams"
+
 Evertying except for the deques with all members and constructors visible.
-![alt text](class-diagrams/palindrome.jpg "palindrome diagrams")
+![alt text][palindromes]
+[palindromes]: class-diagrams/palindrome.png "palindrome diagrams"
+
 
 ## Tasks
 - Create a [Deque](src/Deque.java) interface that contains all of the methods that appear in both ArrayDeque and - [LinkedListDeque](src/LinkedListDeque.java)
@@ -53,5 +59,5 @@ in the file library-sp19/data/words.txt for all values of N and the longest pali
 - [PalindromeFinder.java](src/PalindromeFinder.java)
 
 - [TestPalindrome.java](tests/TestPalindrome.java)
-- [TestOffByOne.java](tests/TestOffByOne.java.java)
-- [TestOffByN.java](tests/TestOffByN.java.java)
+- [TestOffByOne.java](tests/TestOffByOne.java)
+- [TestOffByN.java](tests/TestOffByN.java)
