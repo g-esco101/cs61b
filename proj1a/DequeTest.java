@@ -181,19 +181,11 @@ public class DequeTest {
         passed = TestUtility.checkString("new", deque.get(4)) && passed;
         passed = TestUtility.checkString("skateboarding", deque.get(5)) && passed;
         passed = TestUtility.checkString("false", deque.get(7)) && passed;
-        try {
-			deque.get(-1);
-			passed = false;
-		} catch (IndexOutOfBoundsException e) {
-			passed = TestUtility.checkString("The index is out of bounds.", e.getMessage()) && passed;
-		}
-		try {
-			deque.get(8);
-			passed = false;
-		} catch (IndexOutOfBoundsException e) {
-			passed = TestUtility.checkString("The index is out of bounds.", e.getMessage()) && passed;
-		}
-		TestUtility.printTestStatus(passed);
+        TestUtility.printTestStatus(passed);
+
+        passed = null == deque.get(-1) && passed;
+        passed = null == deque.get(8) && passed;
+        TestUtility.printTestStatus(passed);
 
         passed = TestUtility.checkEmpty(true, deque2.isEmpty()) && passed;
         passed = TestUtility.checkSize(0, deque2.size()) && passed;

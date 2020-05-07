@@ -205,16 +205,6 @@ public class LinkedListDeque<T> implements Deque<T> {
     }
 
     /**
-     * Returns true if deque is empty, false otherwise.
-     *
-     * @return true if it is empty and false if it is not empty.
-     */
-    @Override
-    public boolean isEmpty() {
-        return size == 0;
-    }
-
-    /**
      * Prints the items in the deque from first to last, separated by a space.
      * Once all the items have been printed, print out a new line.
      */

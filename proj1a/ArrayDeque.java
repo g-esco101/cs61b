@@ -1,9 +1,8 @@
-import java.util.NoSuchElementException;
 import java.util.StringJoiner;
 
-/** A circular ArrayDeque data structure. nextFirst points to the index in the items array where an item will be added
- * when addFirst is invoked. nextFirst points to the index in the items array where an item will be added when addLast
- * is invoked.
+/** A circular ArrayDeque data structure. nextFirst points to the index in the items array
+ * where an item will be added when addFirst is invoked. nextFirst points to the index in the
+ *  items array where an item will be added when addLast is invoked.
  * */
 public class ArrayDeque<T> implements Deque<T> {
 
@@ -23,10 +22,12 @@ public class ArrayDeque<T> implements Deque<T> {
     /** The array of items. */
     private T[] items;
 
-    /** A pointer to the empty location that is before the first item in the ArrayDeque. It is always initialized to zero. */
+    /** A pointer to the empty location that is before the first item in the ArrayDeque.
+     * It is always initialized to zero. */
     private int nextFirst;
 
-    /** A pointer to the empty location that is after the last item in the ArrayDeque. It is always initialized ot one.*/
+    /** A pointer to the empty location that is after the last item in the ArrayDeque.
+     * It is always initialized ot one.*/
     private int nextLast;
 
     /** Creates a circular ArrayDeque with a capacity of 8. */
@@ -159,15 +160,11 @@ public class ArrayDeque<T> implements Deque<T> {
      * If no such item exists, returns null. Must not alter the deque!
      *
      * @param index is the position of the item to retrieve.
-     * @exception IndexOutOfBoundsException when index is less than zero or greater than or equal to the size.
      */
     @Override
     public T get(int index) {
-        if (isEmpty()) {
+        if (isEmpty() || index < 0 || index >= size) {
             return null;
-        }
-        if (index < 0 || index >= size) {
-            throw new IndexOutOfBoundsException("The index is out of bounds.");
         }
         int first = increment(nextFirst);
         return items[(first + index) % items.length];
@@ -236,7 +233,8 @@ public class ArrayDeque<T> implements Deque<T> {
         return (augend + 1) % items.length;
     }
 
-    /** subtracts one and if the result is less than zero, returns the position af the end of the array items.
+    /** subtracts one and if the result is less than zero, returns the position af the end of
+     * the array items.
      *
      * @param minuend the integer to decrement.
      * @return minuend minus one or the last position in the array items.

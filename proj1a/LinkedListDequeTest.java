@@ -1,4 +1,4 @@
-/** Performs some basic linked list tests. */
+/** Tests functianality that is specific to LinkedListDeque */
 public class LinkedListDequeTest {
 
 	/** Creates a list and a deep copy of it, removes two elements from one, and then compares them. */
@@ -26,9 +26,9 @@ public class LinkedListDequeTest {
 		passed = TestUtility.checkEmpty(false, lld2.isEmpty()) && passed;
 		passed = TestUtility.checkSize(8, lld2.size()) && passed;
 		passed = TestUtility.checkString(expect, lld2.toString()) && passed;
+		TestUtility.printTestStatus(passed);
 
 		expect = "structures is the new skateboarding true";
-
 		passed = TestUtility.checkEmpty(false, lld1.isEmpty()) && passed;
 		passed = TestUtility.checkSize(6, lld1.size()) && passed;
 		passed = TestUtility.checkString(expect, lld1.toString()) && passed;
@@ -40,13 +40,19 @@ public class LinkedListDequeTest {
 		passed = TestUtility.checkString(expect, lld3.toString()) && passed;
 		TestUtility.printTestStatus(passed);
 
-		String msg = "";
 		try {
 			LinkedListDeque<String> lld0 = new LinkedListDeque<>(null);
 			passed = false;
 		} catch (NullPointerException e) {
 			passed = TestUtility.checkString("other cannot be null.", e.getMessage()) && passed;
 		}
+		TestUtility.printTestStatus(passed);
+
+		expect = "";
+		LinkedListDeque<String> lld5 = new LinkedListDeque<>(new LinkedListDeque<>());
+		passed = TestUtility.checkEmpty(true, lld5.isEmpty()) && passed;
+		passed = TestUtility.checkSize(0, lld5.size()) && passed;
+		passed = expect.equals(lld5.toString()) && passed;
 		TestUtility.printTestStatus(passed);
 	}
 
@@ -71,18 +77,10 @@ public class LinkedListDequeTest {
 		passed = TestUtility.checkString("new", list.getRecursive(4)) && passed;
 		passed = TestUtility.checkString("skateboarding", list.getRecursive(5)) && passed;
 		passed = TestUtility.checkString("false", list.getRecursive(7)) && passed;
-		try {
-			list.getRecursive(-1);
-			passed = false;
-		} catch (IndexOutOfBoundsException e) {
-			passed = TestUtility.checkString("The index is out of bounds.", e.getMessage()) && passed;
-		}
-		try {
-			list.getRecursive(8);
-			passed = false;
-		} catch (IndexOutOfBoundsException e) {
-			passed = TestUtility.checkString("The index is out of bounds.", e.getMessage()) && passed;
-		}
+		TestUtility.printTestStatus(passed);
+
+		passed = null == list.get(-1) && passed;
+		passed = null == list.get(8) && passed;
 		TestUtility.printTestStatus(passed);
 
 		passed = TestUtility.checkEmpty(true, list2.isEmpty()) && passed;
@@ -115,6 +113,12 @@ public class LinkedListDequeTest {
 		passed = TestUtility.checkString("new", list.getRecursive(3)) && passed;
 		passed = TestUtility.checkString("skateboarding", list.getRecursive(4)) && passed;
 		passed = TestUtility.checkString("false", list.getRecursive(6)) && passed;
+		TestUtility.printTestStatus(passed);
+
+		list = new LinkedListDeque<>();
+		passed = TestUtility.checkEmpty(true, list.isEmpty()) && passed;
+		passed = TestUtility.checkSize(0, list.size()) && passed;
+		passed = null == list.getRecursive(0) && passed;
 		TestUtility.printTestStatus(passed);
 	}
 

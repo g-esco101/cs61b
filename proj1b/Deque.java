@@ -40,7 +40,9 @@ public interface Deque<T> {
     /**
      * Returns true if deque is empty, false otherwise.
      */
-    boolean isEmpty();
+    default boolean isEmpty() {
+        return size() == 0;
+    }
 
     /**
      * Prints the items in the deque from first to last, separated by a space.

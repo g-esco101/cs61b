@@ -1,5 +1,7 @@
-/*import org.junit.Test;
-import static org.junit.Assert.*;
+/** Tests the Palindrome class. */
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class TestPalindrome {
     // You must use this palindrome, and not instantiate
@@ -15,4 +17,30 @@ public class TestPalindrome {
         }
         assertEquals("persiflage", actual);
     }
-}     Uncomment this class once you've created your Palindrome class. */
+
+    @Test
+    public void testIsPalindrome() {
+        assertTrue(palindrome.isPalindrome("RACECAR"));
+        assertTrue(palindrome.isPalindrome("racecar"));
+        assertFalse(palindrome.isPalindrome("Racecar"));
+        assertFalse(palindrome.isPalindrome("RACERCAr"));
+        assertTrue(palindrome.isPalindrome("a"));
+        assertTrue(palindrome.isPalindrome(""));
+        assertFalse(palindrome.isPalindrome("RANCOR"));
+    }
+
+    @Test
+    public void testIsPalindromeCharacterComparator() {
+        OffByOne obo = new OffByOne();
+        assertTrue(palindrome.isPalindrome("flake", obo));
+        assertTrue(palindrome.isPalindrome("a", obo));
+        assertTrue(palindrome.isPalindrome("", obo));
+        assertTrue(palindrome.isPalindrome("sbdecar", obo));
+        assertTrue(palindrome.isPalindrome("THUGS", obo));
+        assertTrue(palindrome.isPalindrome("REMINDS", obo));
+
+        assertFalse(palindrome.isPalindrome("Racecar", obo));
+        assertFalse(palindrome.isPalindrome("RACERCAr", obo));
+        assertFalse(palindrome.isPalindrome("RANCOR", obo));
+    }
+} 

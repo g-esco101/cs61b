@@ -1,4 +1,4 @@
-
+/** Utility methods that are used when testing Deque and its implementations. */
 public class TestUtility {
 
     /** Creates a Deque and adds items to it.
