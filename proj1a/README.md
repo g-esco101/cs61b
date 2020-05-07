@@ -14,7 +14,7 @@ Open in intellij IDEA & run the tests.DequeTest.java file.
 - [LinkedListDeque.java](src/LinkedListDeque.java)
 - [ArrayDeque.java](src/ArrayDeque.java)
 - [DequeTest.java](tests/DequeTest.java)
-- [ArrayDequeTest.java](tests/ArrayDeque.java)
+- [ArrayDequeTest.java](tests/ArrayDequeTest.java)
 - [LinkedListDequeTest.java](tests/LinkedListDequeTest.java)
 - [TestUtility.java](tests/TestUtility.java)
 
@@ -33,4 +33,4 @@ The constructors [ArrayDeque(ArrayDeque<T> other)](src/ArrayDeque.java) and [Lin
 ## Testing
 Wrote tests such that 100% code coverage is achieved. 
 
-The skeleton code supplied by the course came with one file, i.e. tests.LinkedListDequeTest.java, which came with several methods to test the implementations and several utility methods: checkEmpty, checkSize, and printTestStatus.  Almost all methods in it were replaced, except the aforementioned utility functions, which were moved to [TestUtility.java](tests/TestUtilit.java).
+The skeleton code supplied by the course came with one file, i.e. tests.LinkedListDequeTest.java, which came with several methods to test the implementations and several utility methods: checkEmpty, checkSize, and printTestStatus.  Almost all methods in it were replaced, except the aforementioned utility functions, which were moved to [TestUtility.java](tests/TestUtility.java).
