@@ -1,4 +1,8 @@
-/** Tests functianality that is specific to ArrayDeque */
+package tests;
+
+import src.ArrayDeque;
+
+/** Tests functianality that is specific to src.ArrayDeque */
 public class ArrayDequeTest {
 
     /** Creates a list and a deep copy of it, removes two elements from one, and then

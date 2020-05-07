@@ -1,6 +1,7 @@
-/** A Doubly Linked List with circular sentinel topology */
+package src;
 import java.util.StringJoiner;
 
+/** A Doubly Linked List with circular sentinel topology */
 public class LinkedListDeque<T> implements Deque<T> {
 
     /** an inner class used to store items */
@@ -31,7 +32,7 @@ public class LinkedListDeque<T> implements Deque<T> {
 
     /** Creates a deep copy of other, i.e a Doubly Linked List with circular sentinel topology.
      *
-     * @Param other the LinkedListDeque to deep copy.
+     * @Param other the src.LinkedListDeque to deep copy.
      * @exception NullPointerException when other is null.
      */
     public LinkedListDeque(LinkedListDeque<T> other) {
@@ -185,7 +186,7 @@ public class LinkedListDeque<T> implements Deque<T> {
      * If no such item exists, returns null. Must not alter the deque!
      *
      * @param index is the position of the item to retrieve.
-     * @param node a node in the LinkedListDeque.
+     * @param node a node in the src.LinkedListDeque.
      */
     private T getRecursive(Node<T> node, int index) {
         if (index == 0) {
@@ -205,16 +206,6 @@ public class LinkedListDeque<T> implements Deque<T> {
     }
 
     /**
-     * Returns true if deque is empty, false otherwise.
-     *
-     * @return true if it is empty and false if it is not empty.
-     */
-    @Override
-    public boolean isEmpty() {
-        return size == 0;
-    }
-
-    /**
      * Prints the items in the deque from first to last, separated by a space.
      * Once all the items have been printed, print out a new line.
      */
@@ -224,8 +215,8 @@ public class LinkedListDeque<T> implements Deque<T> {
     }
 
     /**
-     * Creates a string that represent this LinkedListDeque
-     * @return a string that represents this LinkedListDeque
+     * Creates a string that represent this src.LinkedListDeque
+     * @return a string that represents this src.LinkedListDeque
      */
     @Override
     public String toString() {

@@ -1,12 +1,16 @@
-/** Tests implementations of Deque */
+package tests;
+
+import src.*;
+
+/** Tests implementations of src.Deque */
 public class DequeTest {
 
     /** Tests the addFirst, addLast, removeFirst, and removeLast
      *
-     * @param deque1 an implementation of Deque
-     * @param deque2 an implementation of Deque
-     * @param deque3 an implementation of Deque
-     * @param deque4 an implementation of Deque
+     * @param deque1 an implementation of src.Deque
+     * @param deque2 an implementation of src.Deque
+     * @param deque3 an implementation of src.Deque
+     * @param deque4 an implementation of src.Deque
      */
     private static void addRemoveTest(Deque<String> deque1, Deque<String> deque2, Deque<String> deque3, Deque<String> deque4) {
         System.out.println("***** Running addRemoveTest. *****");
@@ -162,9 +166,9 @@ public class DequeTest {
 
     /** Tests get.
      *
-     * @param deque1 an implementation of Deque
-     * @param deque2 an implementation of Deque
-     * @param deque3 an implementation of Deque
+     * @param deque1 an implementation of src.Deque
+     * @param deque2 an implementation of src.Deque
+     * @param deque3 an implementation of src.Deque
      */
 	private static void getTest(Deque<String> deque1, Deque<String> deque2, Deque<String> deque3) {
 		System.out.println("***** Running getTest *****");
@@ -222,12 +226,12 @@ public class DequeTest {
 
     /** Tests printDeque
      *
-     * @param deque1 an implementation of Deque
-     * @param deque2 an implementation of Deque
-     * @param deque3 an implementation of Deque
-     * @param deque4 an implementation of Deque
+     * @param deque1 an implementation of src.Deque
+     * @param deque2 an implementation of src.Deque
+     * @param deque3 an implementation of src.Deque
+     * @param deque4 an implementation of src.Deque
      */
-	private static void printDequeTest(Deque<String> deque1, Deque<String> deque2, Deque<String> deque3,Deque<String> deque4) {
+	private static void printDequeTest(Deque<String> deque1, Deque<String> deque2, Deque<String> deque3, Deque<String> deque4) {
 		System.out.println("***** Running printDequeTest test. *****");
 
         boolean passed = TestUtility.checkEmpty(true, deque1.isEmpty());
@@ -270,14 +274,14 @@ public class DequeTest {
 	}
 
     public static void main(String[] args) {
-        System.out.println("Running tests on LinkedListDeque.\n");
+        System.out.println("Running tests on src.LinkedListDeque.\n");
         LinkedListDequeTest.linkedListDequeConstructorTest();
 		printDequeTest(new LinkedListDeque<>(), new LinkedListDeque<>(), new LinkedListDeque<>(), new LinkedListDeque<>());
 		getTest(new LinkedListDeque<>(), new LinkedListDeque<>(), new LinkedListDeque<>());
         LinkedListDequeTest.getRecursiveTest(new LinkedListDeque<>(), new LinkedListDeque<>(), new LinkedListDeque<>());
         addRemoveTest(new LinkedListDeque<>(), new LinkedListDeque<>(), new LinkedListDeque<>(), new LinkedListDeque<>());
 
-        System.out.println("Running tests on ArrayDeque.\n");
+        System.out.println("Running tests on src.ArrayDeque.\n");
 		ArrayDequeTest.arrayDequeConstructorTest();
 		printDequeTest(new ArrayDeque<>(), new ArrayDeque<>(), new ArrayDeque<>(), new ArrayDeque<>());
 		getTest(new ArrayDeque<>(), new ArrayDeque<>(), new ArrayDeque<>());

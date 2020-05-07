@@ -1,10 +1,15 @@
-/** Utility methods that are used when testing Deque and its implementations. */
+package tests;
+
+import src.Deque;
+import src.LinkedListDeque;
+
+/** Utility methods that are used when testing src.Deque and its implementations. */
 public class TestUtility {
 
-    /** Creates a Deque and adds items to it.
+    /** Creates a src.Deque and adds items to it.
      *
-     * @param deque an implementation of Deque.
-     * @return a Deque is items added to it.
+     * @param deque an implementation of src.Deque.
+     * @return a src.Deque is items added to it.
      */
     public static Deque<String> dequeFirstThenAllLast(Deque<String> deque) {
         Deque<String> lld4 = deque;
@@ -19,10 +24,10 @@ public class TestUtility {
         return lld4;
     }
 
-    /** Creates a Deque and adds items to it.
+    /** Creates a src.Deque and adds items to it.
      *
-     * @param deque an implementation of Deque.
-     * @return a Deque is items added to it.
+     * @param deque an implementation of src.Deque.
+     * @return a src.Deque is items added to it.
      */
     public static LinkedListDeque<String> dequeFirstThenAllLast(LinkedListDeque<String> deque) {
         LinkedListDeque<String> lld4 = deque;
@@ -37,10 +42,10 @@ public class TestUtility {
         return lld4;
     }
 
-    /** Creates a Deque and adds items to it.
+    /** Creates a src.Deque and adds items to it.
      *
-     * @param deque an implementation of Deque.
-     * @return a Deque is items added to it.
+     * @param deque an implementation of src.Deque.
+     * @return a src.Deque is items added to it.
      */
     public static Deque<String> deque(Deque<String> deque) {
         Deque<String> lld1 = deque;
@@ -52,10 +57,10 @@ public class TestUtility {
         return lld1;
     }
 
-    /** Creates a Deque and adds items to it.
+    /** Creates a src.Deque and adds items to it.
      *
-     * @param deque an implementation of Deque.
-     * @return a Deque is items added to it.
+     * @param deque an implementation of src.Deque.
+     * @return a src.Deque is items added to it.
      */
     public static Deque<String> dequeAddLast(Deque<String> deque) {
         Deque<String> lld1 = deque;
@@ -70,10 +75,10 @@ public class TestUtility {
         return lld1;
     }
 
-    /** Creates a Deque and adds items to it.
+    /** Creates a src.Deque and adds items to it.
      *
-     * @param deque an implementation of Deque.
-     * @return a Deque is items added to it.
+     * @param deque an implementation of src.Deque.
+     * @return a src.Deque is items added to it.
      */
     public static Deque<String> deque2(Deque<String> deque) {
         Deque<String> lld1 = deque;
@@ -88,10 +93,10 @@ public class TestUtility {
         return lld1;
     }
 
-    /** Creates a Deque and adds items to it.
+    /** Creates a src.Deque and adds items to it.
      *
-     * @param deque an implementation of Deque.
-     * @return a Deque is items added to it.
+     * @param deque an implementation of src.Deque.
+     * @return a src.Deque is items added to it.
      */
     public static LinkedListDeque<String> deque2(LinkedListDeque<String> deque) {
         LinkedListDeque<String> lld1 = deque;

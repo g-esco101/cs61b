@@ -1,6 +1,8 @@
-/** The Deque interface. Its purpose is to make testing easier. By using this interface to write
+package src;
+
+/** The src.Deque interface. Its purpose is to make testing easier. By using this interface to write
  * the tests and using dependency injection to inject the implementations into the test class, we
- * can write the same tests for both LinkedListDeque and ArrayDeque.
+ * can write the same tests for both src.LinkedListDeque and src.ArrayDeque.
  *
  * @param <T>
  */
@@ -40,7 +42,9 @@ public interface Deque<T> {
     /**
      * Returns true if deque is empty, false otherwise.
      */
-    boolean isEmpty();
+    default boolean isEmpty() {
+        return size() == 0;
+    }
 
     /**
      * Prints the items in the deque from first to last, separated by a space.

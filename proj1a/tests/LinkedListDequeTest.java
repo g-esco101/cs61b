@@ -1,4 +1,8 @@
-/** Tests functianality that is specific to LinkedListDeque */
+package tests;
+
+import src.LinkedListDeque;
+
+/** Tests functianality that is specific to src.LinkedListDeque */
 public class LinkedListDequeTest {
 
 	/** Creates a list and a deep copy of it, removes two elements from one, and then compares them. */
@@ -58,9 +62,9 @@ public class LinkedListDequeTest {
 
 	/** Tests getRecursive.
 	 *
-	 * @param list1 an empty LinkedListDeque.
-	 * @param list2 an empty LinkedListDeque.
-	 * @param list3 an empty LinkedListDeque.
+	 * @param list1 an empty src.LinkedListDeque.
+	 * @param list2 an empty src.LinkedListDeque.
+	 * @param list3 an empty src.LinkedListDeque.
 	 */
 	public static void getRecursiveTest(LinkedListDeque<String> list1, LinkedListDeque<String> list2, LinkedListDeque<String> list3) {
 		System.out.println("***** Running getRecursiveTest *****");

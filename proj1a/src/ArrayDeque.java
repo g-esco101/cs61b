@@ -1,6 +1,8 @@
+package src;
+
 import java.util.StringJoiner;
 
-/** A circular ArrayDeque data structure. nextFirst points to the index in the items array
+/** A circular src.ArrayDeque data structure. nextFirst points to the index in the items array
  * where an item will be added when addFirst is invoked. nextFirst points to the index in the
  *  items array where an item will be added when addLast is invoked.
  * */
@@ -22,15 +24,15 @@ public class ArrayDeque<T> implements Deque<T> {
     /** The array of items. */
     private T[] items;
 
-    /** A pointer to the empty location that is before the first item in the ArrayDeque.
+    /** A pointer to the empty location that is before the first item in the src.ArrayDeque.
      * It is always initialized to zero. */
     private int nextFirst;
 
-    /** A pointer to the empty location that is after the last item in the ArrayDeque.
+    /** A pointer to the empty location that is after the last item in the src.ArrayDeque.
      * It is always initialized ot one.*/
     private int nextLast;
 
-    /** Creates a circular ArrayDeque with a capacity of 8. */
+    /** Creates a circular src.ArrayDeque with a capacity of 8. */
     public ArrayDeque() {
         items = (T[]) new Object[8];
         size = 0;
@@ -38,9 +40,9 @@ public class ArrayDeque<T> implements Deque<T> {
         nextLast = 1;
     }
 
-    /** Creates a circular ArrayDeque that is a deep copy of other.
+    /** Creates a circular src.ArrayDeque that is a deep copy of other.
      *
-     * @param other is a circular ArrayDeque.
+     * @param other is a circular src.ArrayDeque.
      * @exception NullPointerException when other is null.
      */
     public ArrayDeque(ArrayDeque<T> other) {
@@ -181,18 +183,8 @@ public class ArrayDeque<T> implements Deque<T> {
     }
 
     /**
-     * Returns true if deque is empty, false otherwise.
-     *
-     * @return true if it is empty and false if it is not empty.
-     */
-    @Override
-    public boolean isEmpty() {
-        return size == 0;
-    }
-
-    /**
      * Prints the items in the deque from first to last, separated by a space.
-     * Once all the items have been printed, print out a new line. If ArrayDeque
+     * Once all the items have been printed, print out a new line. If src.ArrayDeque
      * is empty it prints nothing.
      */
     @Override
@@ -208,8 +200,8 @@ public class ArrayDeque<T> implements Deque<T> {
     }
 
     /**
-     * Creates a string that represent this ArrayDeque
-     * @return a string that represents this ArrayDeque
+     * Creates a string that represent this src.ArrayDeque
+     * @return a string that represents this src.ArrayDeque
      */
     @Override
     public String toString() {
