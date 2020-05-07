@@ -10,25 +10,25 @@ Open in intellij IDEA & run the tests.DequeTest.java file.
 ![alt text](class-diagrams/diagram.png "class diagram")
 
 ## Files modified or created
-- [Deque.java](Deque.java)
-- [LinkedListDeque.java](LinkedListDeque.java)
-- [ArrayDeque.java](ArrayDeque.java)
-- [DequeTest.java](DequeTest.java)
-- [ArrayDequeTest.java](ArrayDeque.java)
-- [LinkedListDequeTest.java](LinkedListDequeTest.java)
-- [TestUtility.java](TestUtility.java)
+- [Deque.java](src/Deque.java)
+- [LinkedListDeque.java](src/LinkedListDeque.java)
+- [ArrayDeque.java](src/ArrayDeque.java)
+- [DequeTest.java](src/DequeTest.java)
+- [ArrayDequeTest.java](src/ArrayDeque.java)
+- [LinkedListDequeTest.java](src/LinkedListDequeTest.java)
+- [TestUtility.java](src/TestUtility.java)
 
-Note: The skeleton code came with one file, tests.LinkedListDequeTest.java, which was completely rewritten to contain tests strictly for the [LinkedListDeque](src/LinkedListDeque.java) implementation. 
+Note: The skeleton code came with one file, LinkedListDequeTest.java, which was completely rewritten to contain tests strictly for the [LinkedListDeque](src/LinkedListDeque.java) implementation. 
 
 # Not included in the instructions, but I added
 ## Method Dependency Injection
 Created a [Deque](src/Deque.java) interface that is implemented by [LinkedListDeque](src/LinkedListDeque.java) and [ArrayDeque](src/ArrayDeque.java). In [DequeTest](src/DequeTest.java), wrote methods that are dependent on the interface, rather than the implementations. Instances of the src.Deque implementations, i.e. [LinkedListDeque](src/LinkedListDeque.java) and [ArrayDeque](src/ArrayDeque.java), are injected into these methods via method dependency injection (a form of inversion of control). This made it possible to write one set of tests for both implementations.
 
 ## Performance
-The get method in LinkedList.java determines if it is more efficient to traverse the list beginning from the front or the back by comparing the index to the size. If the index is in the first half of the list, it begins traversing from the front. If the index is in the back half of the list, it begins traversal from the back.
+The get method in [LinkedList.java]((src/LinkedListDeque.java) determines if it is more efficient to traverse the list beginning from the front or the back by comparing the index to the size. If the index is in the first half of the list, it begins traversing from the front. If the index is in the back half of the list, it begins traversal from the back.
 
 ## Exceptions thrown under specific conditions. 
-The constructors [ArrayDeque(ArrayDeque<T> other)](src/LinkedListDeque.java) and [LinkedListDeque(LinkedListDeque<T> other)](src/ArrayDeque.java) throw a NullPointerException if other is null. 
+The constructors [ArrayDeque(ArrayDeque<T> other)](src/ArrayDeque.java) and [LinkedListDeque(LinkedListDeque<T> other)](src/LinkedListDeque.java) throw a NullPointerException if other is null. 
 
 ## Testing
 Wrote tests such that 100% code coverage is achieved. 
