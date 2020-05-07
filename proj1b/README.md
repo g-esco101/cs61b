@@ -24,15 +24,19 @@ To run all tests:
 
 ## Class Diagram
 All Classes
+
 ![alt text][classes]
+
 [classes]: class-diagrams/src.png "class diagrams"
 
 [LinkedListDeque.java](src/LinkedListDeque.java) and [Deque.java](src/Deque.java) with all members and constructors visible.
 ![alt text][deques]
+
 [deques]: class-diagrams/LinkedListDeque.jpg "class diagrams"
 
 Evertying except for the deques with all members and constructors visible.
 ![alt text][palindromes]
+
 [palindromes]: class-diagrams/palindrome.png "palindrome diagrams"
 
 
