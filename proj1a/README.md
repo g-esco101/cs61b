@@ -20,6 +20,9 @@ Note: The skeleton code came with one file, LinkedListDequeTest.java, which was 
 ## Method Dependency Injection
 Created a [Deque](Deque.java) interface that is implemented by [LinkedListDeque](LinkedListDeque.java) and [ArrayDeque](ArrayDeque.java). In [DequeTest](DequeTest.java), wrote methods that are dependent on the interface, rather than the implementations. Instances of the Deque implementations, i.e. [LinkedListDeque](LinkedListDeque.java) and [ArrayDeque](ArrayDeque.java), are injected into these methods via method dependency injection (a form of inversion of control). This made it possible to write one set of tests for both implementations.
 
+## Performance
+The get method in LinkedList.java determines if it is more efficient to traverse the list beginning from the front or the back by comparing the index to the size. If the index is in the first half of the list, it begins traversing from the front. If the index is in the back half of the list, it begins traversal from the back.
+
 ## Exceptions thrown under specific conditions. 
 The constructors [ArrayDeque(ArrayDeque<T> other)](LinkedListDeque.java) and [LinkedListDeque(LinkedListDeque<T> other)](ArrayDeque.java) throw a NullPointerException if other is null. 
 
