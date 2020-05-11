@@ -9,12 +9,13 @@ import java.util.StringJoiner;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /** An autograder that compares a student's implementation of an ArrayDeque to the solution.
- *
+ * 
+ * @source https://junit.org/junit5/docs/current/user-guide/#writing-tests-test-instance-lifecycle
  * The instructions state to implement one test method, but does not cover the importance of this in regard to Junit.
  * Junit instantiates a new test class for each test method, so any instance variables will be reset. This can avoided
  * by using the @Before or the @BeforeEach annotations in junit4 and junit5, respectively. Another option is to change
- * this default setting to instantiate a new test class "per-class" by using ths annotation
- * @TestInstance(Lifecycle.PER_CLASS) at the class level. The purpose of the "per-method" lifecycle is to allow
+ * this default setting to instantiate a new test class "per-class" by using this annotation
+ * at the class level: @TestInstance(Lifecycle.PER_CLASS). The purpose of the "per-method" lifecycle is to allow
  * individual test methods to be executed in isolation and to avoid any unforseen behavior due to mutable test
  * instance state.
  */
