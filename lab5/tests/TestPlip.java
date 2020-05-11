@@ -1,6 +1,5 @@
 package creatures;
-import org.junit.Test;
-import static org.junit.Assert.*;
+
 import java.util.HashMap;
 import java.awt.Color;
 import huglife.Direction;
@@ -8,6 +7,10 @@ import huglife.Action;
 import huglife.Occupant;
 import huglife.Impassible;
 import huglife.Empty;
+
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 /** Tests the plip class
  *  @authr FIXME
@@ -33,9 +36,48 @@ public class TestPlip {
     @Test
     public void testReplicate() {
         // TODO
+        Plip plip = new Plip(2.1);
+        assertEquals(2, plip.energy());
+        assertEquals(new Color(99, 255, 76), plip.color());
+
+        Plip child = plip.replicate();
+        assertEquals(1, plip.energy());
+        assertEquals(new Color(99, 159, 76), plip.color());
+        assertEquals(1, child.energy());
+        assertEquals(new Color(99, 159, 76), child.color());
+        assertTrue(child.getClass().equals(Plip.class));
+        assertFalse(plip == child);
+
+        child = plip.replicate();
+        assertEquals(0.5, plip.energy());
+        assertEquals(new Color(99, 63, 76), plip.color());
+        assertEquals(0.5, child.energy());
+        assertEquals(new Color(99, 63, 76), child.color());
+        assertTrue(child.getClass().equals(Plip.class));
+        assertFalse(plip == child);
+
+        child = plip.replicate();
+        assertEquals(0.25, plip.energy());
+        assertEquals(new Color(99, 63, 76), plip.color());
+        assertEquals(0.25,child.energy());
+        assertEquals(new Color(99, 63, 76), child.color());
+        assertTrue(child.getClass().equals(Plip.class));
+        assertFalse(plip == child);
+
+        plip = new Plip(0);
+        assertEquals(0, plip.energy());
+        assertEquals(new Color(99, 63, 76), plip.color());
+
+        child = plip.replicate();
+        assertEquals(0, plip.energy());
+        assertEquals(new Color(99, 63, 76), plip.color());
+        assertEquals(0, child.energy());
+        assertEquals(new Color(99, 63, 76), child.color());
+        assertTrue(child.getClass().equals(Plip.class));
+        assertFalse(plip == child);
     }
 
-    //@Test
+    @Test
     public void testChoose() {
 
         // No empty adjacent spaces; stay.

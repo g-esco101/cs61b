@@ -1,4 +1,8 @@
-/** If you project is set up properly, this file should execute. 
+package src;
+
+import edu.princeton.cs.algs4.StdRandom;
+
+/** If you project is set up properly, this file should execute.
 * One thing you might consider is to try printing out the sequence of
 * operations */
 public class StudentArrayDequeLauncher {

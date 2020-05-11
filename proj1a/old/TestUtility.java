@@ -1,4 +1,4 @@
-package tests;
+package old;
 
 import src.Deque;
 import src.LinkedListDeque;

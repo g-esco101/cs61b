@@ -1,0 +1,63 @@
+package src;
+
+import org.junit.Test;
+import org.junit.jupiter.api.DisplayName;
+
+import java.util.Random;
+import java.util.StringJoiner;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+/** An autograder that compares a student's implementation of an ArrayDeque
+ * to the solution.
+ */
+public class TestArrayDequeGold {
+
+    ArrayDequeSolution<Integer> solution = new ArrayDequeSolution<>();
+    StudentArrayDeque<Integer> student = new StudentArrayDeque<>();
+    Random random = new Random();
+    StringJoiner queue = new StringJoiner("");
+    private final int iterations = 100;
+
+    @Test
+    @DisplayName("Items are added and removed randomly and the results are compared.")
+    public void compareStudentArrayDequeToSolution() {
+        double number = random.nextDouble();
+        int count = 0;
+        Integer exptected = 0;
+        Integer actual = 0;
+        queue.add("\n"); // Ensures first invocation is on a new line.
+        while (count < iterations) {
+            if (number < 0.25)  {
+                if (!student.isEmpty() && !solution.isEmpty()) {
+                    actual = student.removeLast();
+                    exptected = solution.removeLast();
+                    queue.add("removeLast()\n");
+                    assertEquals(exptected, actual, queue.toString());
+                }
+            } else if (0.26 <= number && number < 0.5) {
+                solution.addFirst(count);
+                student.addFirst(count);
+                queue.add(String.format("addFirst(%d)\n", count));
+                assertEquals(solution.size(), student.size(),queue.toString());
+            } else if (0.5 <= number && number < 0.75) {
+                if ((!student.isEmpty() && !solution.isEmpty())) {
+                    actual = student.removeFirst();
+                    exptected = solution.removeFirst();
+                    queue.add("removeFirst()\n");
+                    assertEquals(exptected, actual, queue.toString());
+                }
+            } else {
+                solution.addLast(count);
+                student.addLast(count);
+                queue.add(String.format("addLast(%d)\n", count));
+                assertEquals(solution.size(), student.size(),queue.toString());
+            }
+            number = random.nextDouble();
+            if (!student.isEmpty() && !solution.isEmpty()) {
+                count++; // increments when methods are invoked.
+            }
+        }
+    }
+}
+

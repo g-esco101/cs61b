@@ -1,3 +1,5 @@
+package src;
+
 public class StudentArrayDeque<T> {
     private T[] a = (T[]) (new Object[8]);
     private int b = 8;
