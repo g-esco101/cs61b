@@ -9,7 +9,7 @@ import java.util.StringJoiner;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /** An autograder that compares a student's implementation of an ArrayDeque to the solution.
- * 
+ *
  * @source https://junit.org/junit5/docs/current/user-guide/#writing-tests-test-instance-lifecycle
  * The instructions state to implement one test method, but does not cover the importance of this in regard to Junit.
  * Junit instantiates a new test class for each test method, so any instance variables will be reset. This can avoided
@@ -29,7 +29,7 @@ public class TestArrayDequeGold {
 
     @Test
     @DisplayName("Items are added and removed randomly and the results are compared.")
-    public void compareStudentArrayDequeToSolution() {
+    public void randomlyCompareStudentArrayDequeToSolution() {
         double number = random.nextDouble();
         int count = 0;
         Integer exptected = 0;
