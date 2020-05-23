@@ -7,6 +7,7 @@ import java.util.LinkedList;
 import java.util.Random;
 import java.util.StringJoiner;
 
+import src.ArrayDeque;
 import src.LinkedListDeque;
 
 @DisplayName("A LinkedListDeque")
@@ -228,24 +229,24 @@ class LinkedListDequeTest {
         @Test
         @DisplayName("Items are added and removed randomly and the results are compared.")
         public void compareLinkedListDequeToJavaUtilLinkedList() {
-            double number = random.nextDouble();
+            double variate = random.nextDouble();
             int count = 0;
             Integer exptected = 0;
             Integer actual = 0;
             while (count < iterations) {
-                if (number < 0.25)  {
+                if (variate < 0.25)  {
                     if (!linkedList.isEmpty() && !linkedListDeque.isEmpty()) {
                         actual = linkedList.removeLast();
                         exptected = linkedListDeque.removeLast();
                         queue.add("removeLast()");
                         assertEquals(exptected, actual, queue.toString());
                     }
-                } else if (0.26 <= number && number < 0.5) {
+                } else if (0.26 <= variate && variate < 0.5) {
                     linkedListDeque.addFirst(count);
                     linkedList.addFirst(count);
                     queue.add(String.format("addFirst(%d)", count));
                     assertEquals(linkedListDeque.size(), linkedList.size(),queue.toString());
-                } else if (0.5 <= number && number < 0.75) {
+                } else if (0.5 <= variate && variate < 0.75) {
                     if ((!linkedList.isEmpty() && !linkedListDeque.isEmpty())) {
                         actual = linkedList.removeFirst();
                         exptected = linkedListDeque.removeFirst();
@@ -258,7 +259,7 @@ class LinkedListDequeTest {
                     queue.add(String.format("addLast(%d)", count));
                     assertEquals(linkedListDeque.size(), linkedList.size(),queue.toString());
                 }
-                number = random.nextDouble();
+                variate = random.nextDouble();
                 if (!linkedList.isEmpty() && !linkedListDeque.isEmpty()) {
                     count++;
                 }
@@ -473,6 +474,25 @@ class LinkedListDequeTest {
         void removeItemFromOther() {
             other.removeFirst();
             assertEquals(other.size(), linkedListDeque.size() - 1);
+            assertNotEquals(other.toString(), linkedListDeque.toString());
+        }
+
+        @Test
+        @Order(4)
+        @DisplayName("creates a LinkedListDeque from empty LinkedListDeque")
+        void createsLinkedListDequeFromEmptyLinkedListDeque() {
+            other = new LinkedListDeque<>();
+            linkedListDeque = new LinkedListDeque<>(other);
+            assertEquals(other.size(), linkedListDeque.size());
+            assertEquals(other.toString(), linkedListDeque.toString());
+        }
+
+        @Test
+        @Order(5)
+        @DisplayName("show created empty LinkedListDeque and empty other are different by adding item to other")
+        void addItemToEmptyOther() {
+            other.addFirst("first");
+            assertNotEquals(other.size(), linkedListDeque.size());
             assertNotEquals(other.toString(), linkedListDeque.toString());
         }
     }

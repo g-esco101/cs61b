@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:skeleton" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0dce0fb3-f380-4814-b960-e8792b67ba5f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../lab5/creatures/Clorus.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/creatures/Clorus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/creatures/Creature.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/creatures/Creature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/creatures/Plip.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/creatures/Plip.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/creatures/SampleCreature.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/creatures/SampleCreature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/hllib/HugLifeAnimator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/hllib/HugLifeAnimator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/hllib/HugLifeUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/hllib/HugLifeUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/hllib/In.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/hllib/In.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/hllib/Out.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/hllib/Out.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/hllib/StdDraw.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/hllib/StdDraw.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/huglife/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/huglife/Grid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/huglife/HugLife.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/huglife/HugLife.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/huglife/sampleplip.world" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/huglife/samplesolo.world" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/huglife/strugggz.world" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/tests/TestClorus.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/tests/TestClorus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/tests/TestHugLife.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/tests/TestHugLife.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/tests/TestPlip.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/tests/TestPlip.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ArrayDeque.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ArrayDeque.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LinkedListDeque.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LinkedListDeque.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/ArrayDequeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/ArrayDequeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DequeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/DequeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/LinkedListDequeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/LinkedListDequeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj1b/tests/TestPalindrome.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1b/tests/TestPalindrome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj1gold/out/production/proj1gold/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1gold/out/production/proj1gold/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj1gold/out/production/proj1gold/src/TestArrayDequeGold.class" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1gold/out/production/proj1gold/src/TestArrayDequeGold.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj1gold/src/TestArrayDequeGold.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1gold/src/TestArrayDequeGold.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="JUnit5 Test Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1bKfYmccOjlqsEFs0lpTTtKO1vG" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="true" />
+    <property name="create.test.in.the.same.root" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="tests" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="old" />
+      <recent name="tests" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.LinkedListDequeTest">
+    <configuration name="TestDeque" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="old.TestDeque" />
+      <module name="proj1a" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="old.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestLinkedListDeque" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="old.TestLinkedListDeque" />
+      <module name="proj1a" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AllTests" type="JUnit" factoryName="JUnit">
+      <module name="proj1a" />
+      <useClassPathOnly />
+      <extension name="coverage" sample_coverage="false" track_test_folders="true">
+        <pattern>
+          <option name="PATTERN" value="src.LinkedListDeque" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+        <pattern>
+          <option name="PATTERN" value="src.ArrayDeque" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="src" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DequeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="proj1a" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="old.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.DequeTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LinkedListDequeTest$RandomizedTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="proj1a" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.LinkedListDequeTest$RandomizedTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LinkedListDequeTest" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+      <module name="proj1a" />
+      <useClassPathOnly />
+      <extension name="coverage" sample_coverage="false" track_test_folders="true">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="false" />
+        </pattern>
+        <pattern>
+          <option name="PATTERN" value="src.LinkedListDeque" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.LinkedListDequeTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.TestDeque" />
+      <item itemvalue="Application.TestLinkedListDeque" />
+      <item itemvalue="JUnit.AllTests" />
+      <item itemvalue="JUnit.LinkedListDequeTest" />
+      <item itemvalue="JUnit.LinkedListDequeTest$RandomizedTests" />
+      <item itemvalue="JUnit.DequeTest" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.LinkedListDequeTest$RandomizedTests" />
+        <item itemvalue="Application.TestDeque" />
+        <item itemvalue="JUnit.DequeTest" />
+        <item itemvalue="Application.TestLinkedListDeque" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0dce0fb3-f380-4814-b960-e8792b67ba5f" name="Default Changelist" comment="" />
+      <created>1588385758903</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1588385758903</updated>
+      <workItem from="1588385778078" duration="13538000" />
+      <workItem from="1588407396795" duration="40481000" />
+      <workItem from="1588526637593" duration="57871000" />
+      <workItem from="1588615354446" duration="15896000" />
+      <workItem from="1588644206263" duration="10858000" />
+      <workItem from="1588701552651" duration="37796000" />
+      <workItem from="1588774134954" duration="3863000" />
+      <workItem from="1588779395671" duration="642000" />
+      <workItem from="1588781027316" duration="453000" />
+      <workItem from="1588783302098" duration="1054000" />
+      <workItem from="1588788937500" duration="636000" />
+      <workItem from="1588815198504" duration="61000" />
+      <workItem from="1588881346155" duration="3167000" />
+      <workItem from="1588990291653" duration="4986000" />
+      <workItem from="1589100625292" duration="5216000" />
+      <workItem from="1589110162406" duration="21131000" />
+      <workItem from="1589139967039" duration="13573000" />
+      <workItem from="1589163938049" duration="4873000" />
+      <workItem from="1590169040376" duration="1898000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="254" y="85" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589171171104">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="254" y="85" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860@0.0.1600.860" timestamp="1589171171104" />
+    <state x="605" y="136" key="#com.intellij.ide.util.MemberChooser" timestamp="1589135595419">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="605" y="136" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1589135595419" />
+    <state x="529" y="220" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1589171104861">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="529" y="220" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1600.860@0.0.1600.860" timestamp="1589171104861" />
+    <state x="583" y="320" width="433" height="217" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1589108225452">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="583" y="320" width="433" height="217" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1600.860@0.0.1600.860" timestamp="1589108225452" />
+    <state x="580" y="185" key="FileChooserDialogImpl" timestamp="1589141420985">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="580" y="185" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1589141420985" />
+    <state width="1557" height="376" key="GridCell.Tab.0.bottom" timestamp="1589173269351">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="376" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1589173269351" />
+    <state width="1557" height="376" key="GridCell.Tab.0.center" timestamp="1589173269351">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="376" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1589173269351" />
+    <state width="1557" height="376" key="GridCell.Tab.0.left" timestamp="1589173269351">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="376" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1589173269351" />
+    <state width="1557" height="376" key="GridCell.Tab.0.right" timestamp="1589173269351">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="376" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1589173269351" />
+    <state width="1557" height="376" key="GridCell.Tab.1.bottom" timestamp="1589173269351">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="376" key="GridCell.Tab.1.bottom/0.0.1600.860@0.0.1600.860" timestamp="1589173269351" />
+    <state width="1557" height="376" key="GridCell.Tab.1.center" timestamp="1589173269351">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="376" key="GridCell.Tab.1.center/0.0.1600.860@0.0.1600.860" timestamp="1589173269351" />
+    <state width="1557" height="376" key="GridCell.Tab.1.left" timestamp="1589173269351">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="376" key="GridCell.Tab.1.left/0.0.1600.860@0.0.1600.860" timestamp="1589173269351" />
+    <state width="1557" height="376" key="GridCell.Tab.1.right" timestamp="1589173269351">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="376" key="GridCell.Tab.1.right/0.0.1600.860@0.0.1600.860" timestamp="1589173269351" />
+    <state x="280" y="4" key="SettingsEditor" timestamp="1588991386274">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="280" y="4" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1588991386274" />
+    <state x="504" y="322" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1589101189482">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="504" y="322" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1600.860@0.0.1600.860" timestamp="1589101189481" />
+    <state x="571" y="152" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1589135469361">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="571" y="152" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1600.860@0.0.1600.860" timestamp="1589135469361" />
+    <state x="354" y="159" width="891" height="644" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1588882211482">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="354" y="159" width="891" height="644" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1600.860@0.0.1600.860" timestamp="1588882211482" />
+    <state x="456" y="195" key="run.anything.popup" timestamp="1588580970295">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="456" y="195" key="run.anything.popup/0.0.1600.860@0.0.1600.860" timestamp="1588580970295" />
+    <state x="456" y="83" width="670" height="676" key="search.everywhere.popup" timestamp="1589144534613">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="456" y="83" width="670" height="676" key="search.everywhere.popup/0.0.1600.860@0.0.1600.860" timestamp="1589144534613" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/ArrayDeque.java</url>
+          <line>106</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/ArrayDeque.java</url>
+          <line>125</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/ArrayDeque.java</url>
+          <line>63</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/ArrayDeque.java</url>
+          <line>174</line>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/old/TestArrayDeque.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/old/TestDeque.java</url>
+          <line>82</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/old/TestDeque.java</url>
+          <line>141</line>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/old/TestDeque.java</url>
+          <line>242</line>
+          <option name="timeStamp" value="60" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/old/TestDeque.java</url>
+          <line>143</line>
+          <option name="timeStamp" value="70" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/old/TestDeque.java</url>
+          <line>129</line>
+          <option name="timeStamp" value="87" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/old/TestDeque.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="93" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/old/TestLinkedListDeque.java</url>
+          <line>67</line>
+          <option name="timeStamp" value="97" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/old/TestArrayDeque.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="100" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/tests/LinkedListDequeTest.java</url>
+          <line>126</line>
+          <option name="timeStamp" value="102" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/proj1a$AllTests.ic" NAME="AllTests Coverage Results" MODIFIED="1589170948854" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/proj1a$DequeTest.ic" NAME="DequeTest Coverage Results" MODIFIED="1588776679076" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/proj1a$LinkedListDequeTest.ic" NAME="LinkedListDequeTest Coverage Results" MODIFIED="1589171173552" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>src.LinkedListDeque</FILTER>
+    </SUITE>
+  </component>
+</project>

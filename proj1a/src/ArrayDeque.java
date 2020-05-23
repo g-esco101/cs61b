@@ -1,8 +1,5 @@
 package src;
 
-import org.junit.platform.engine.support.hierarchical.Node;
-
-import java.lang.reflect.Array;
 import java.util.StringJoiner;
 
 /** A circular src.ArrayDeque data structure. nextFirst points to the index in the items array
@@ -24,9 +21,6 @@ public class ArrayDeque<T> implements Deque<T> {
     /** The number of items in the deque */
     private int size;
 
-    /** The array of items. */
-    private T[] items;
-
     /** The size of the underlying array - items. */
     private int capacity;
 
@@ -37,6 +31,9 @@ public class ArrayDeque<T> implements Deque<T> {
     /** A pointer to the empty location that is after the last item in the src.ArrayDeque.
      * It is always initialized ot one.*/
     private int nextLast;
+
+    /** The array of items. */
+    private T[] items;
 
     /** Creates a circular src.ArrayDeque with a capacity of 8. */
     public ArrayDeque() {
@@ -61,9 +58,6 @@ public class ArrayDeque<T> implements Deque<T> {
         size = other.size;
         nextFirst = other.nextFirst;
         nextLast = other.nextLast;
-        if (other.isEmpty()) {
-            return;
-        }
         System.arraycopy(other.items, 0, items, 0, items.length);
     }
 
@@ -157,9 +151,13 @@ public class ArrayDeque<T> implements Deque<T> {
     }
 
     /** If the size of the items array is less than size divided by the lenth, the array is resized
-     * to a size equal to the length of the items array divided by the load factor.
+     * to a size equal to the length of the items array divided by the load factor. If the capacity
+     * is two, then it is not down sized.
      */
     private void downsize() {
+        if (capacity == 2) {
+            return;
+        }
         double usage = (double) size / capacity;
         if (usage < LOAD_FACTOR) {
             resize(capacity / FACTOR);
@@ -207,7 +205,7 @@ public class ArrayDeque<T> implements Deque<T> {
      */
     @Override
     public String toString() {
-        StringJoiner joiner = new StringJoiner(" ");
+        StringJoiner joiner = new StringJoiner(", ", "[", "]");
         if (!isEmpty()) {
             int i = increment(nextFirst);
             do {
@@ -216,48 +214,6 @@ public class ArrayDeque<T> implements Deque<T> {
             } while (i != nextLast);
         }
         return joiner.toString();
-    }
-
-    /**
-     * Determines if this LinkedListDeque is equal to the one specified.
-     *
-     * @param o is an Object that may be a LinkedListDeque.
-     */
-    @Override
-    public boolean equals(Object o) {
-        if (o == this) {
-            return true;
-        }
-        if (o == null || !(o instanceof ArrayDeque)) {
-            return false;
-        }
-        ArrayDeque<?> other = (ArrayDeque<?>) o;
-        if (size() != other.size()) {
-            return false;
-        }
-//        if (size() == 0) {
-//            return true;
-//        }
-        for (int i = increment(nextFirst), j = increment(other.nextFirst); i < size; i = increment(i), j = increment(j)) {
-            if (!items[i].equals(other.items[j])) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    /**
-     * Calculates the hash code for this list.
-     *
-     * @return the hash code value for this list
-     */
-    @Override
-    public int hashCode() {
-        int hashCode = 1;
-        for (int i = increment(nextFirst); i < size; i = increment(i)) {
-            hashCode = 31*hashCode + (items[i] == null ? 0 : items[i].hashCode());
-        }
-        return hashCode;
     }
 
     /** Adds one and if the result is greater than the length of the items array it returns 0.
@@ -279,15 +235,70 @@ public class ArrayDeque<T> implements Deque<T> {
         return (minuend - 1 + items.length) % items.length;
     }
 
+    /** Retrieves the current capacity - i.e the size of the underlying array items.
+     *
+     * @return capacity - i.e. the size of the underlying array items.
+     */
     public int getCapacity() {
         return capacity;
     }
 
+    /** Retrieves the current position of nextFirst.
+     *
+     * @return nextFirst - its current position.
+     */
     public int getNextFirst() {
         return nextFirst;
     }
 
+    /** Retrieves the current position of nextFirst.
+     *
+     * @return nextLast - its current position.
+     */
     public int getNextLast() {
         return nextLast;
     }
+
+    //
+//    /**
+//     * Determines if this LinkedListDeque is equal to the one specified.
+//     *
+//     * @param o is an Object that may be a LinkedListDeque.
+//     */
+//    @Override
+//    public boolean equals(Object o) {
+//        if (o == this) {
+//            return true;
+//        }
+//        if (o == null || !(o instanceof ArrayDeque)) {
+//            return false;
+//        }
+//        ArrayDeque<?> other = (ArrayDeque<?>) o;
+//        if (size() != other.size()) {
+//            return false;
+//        }
+////        if (size() == 0) {
+////            return true;
+////        }
+//        for (int i = increment(nextFirst), j = increment(other.nextFirst); i < size; i = increment(i), j = increment(j)) {
+//            if (!items[i].equals(other.items[j])) {
+//                return false;
+//            }
+//        }
+//        return true;
+//    }
+//
+//    /**
+//     * Calculates the hash code for this list.
+//     *
+//     * @return the hash code value for this list
+//     */
+//    @Override
+//    public int hashCode() {
+//        int hashCode = 1;
+//        for (int i = increment(nextFirst); i < size; i = increment(i)) {
+//            hashCode = 31*hashCode + (items[i] == null ? 0 : items[i].hashCode());
+//        }
+//        return hashCode;
+//    }
 }
