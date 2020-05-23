@@ -1,4 +1,5 @@
 package src;
+import java.util.Objects;
 import java.util.StringJoiner;
 
 /** A Doubly Linked List with circular sentinel topology */
@@ -41,9 +42,8 @@ public class LinkedListDeque<T> implements Deque<T> {
         }
         sentinel = new Node(null);
         size = 0;
-        if (other.isEmpty()) {
-            return;
-        }
+        sentinel.next = sentinel;
+        sentinel.prev = sentinel;
         Node<T> otherPtr = other.sentinel;
         otherPtr = otherPtr.next;
         while (otherPtr != other.sentinel) {
@@ -221,13 +221,55 @@ public class LinkedListDeque<T> implements Deque<T> {
     @Override
     public String toString() {
         Node<T> node = sentinel.next;
-        StringJoiner joiner = new StringJoiner(" ");
-        if (!isEmpty()) {
-            while (node != sentinel) {
-                joiner.add(node.item.toString());
-                node = node.next;
-            }
+        StringJoiner joiner = new StringJoiner(", ", "[", "]");
+        while (node != sentinel) {
+            joiner.add(node.item.toString());
+            node = node.next;
         }
         return joiner.toString();
     }
+
+//    /**
+//     * Determines if this LinkedListDeque is equal to the one specified.
+//     *
+//     * @param o is an Object that may be a LinkedListDeque.
+//     */
+//    @Override
+//    public boolean equals(Object o) {
+//        if (o == this) {
+//            return true;
+//        }
+//        if (o == null || !(o instanceof LinkedListDeque)) {
+//            return false;
+//        }
+//        LinkedListDeque<?> oList = (LinkedListDeque<?>) o;
+//        if (size() != oList.size()) {
+//            return false;
+//        }
+//        Node<T> node = sentinel.next;
+//        Node<?> oNode = oList.sentinel.next;
+//        while (node != sentinel && oNode != oList.sentinel); {
+//            if (!(node.item == null ? oNode.item == null : node.item.equals(oNode.item))) {
+//                return false;
+//            }
+//            node = node.next;
+//            oNode = oNode.next;
+//        }
+//        return true;
+//    }
+
+//    /**
+//     * Calculates the hash code for this list.
+//     *
+//     * @return the hash code value for this list
+//     */
+//    @Override
+//    public int hashCode() {
+//        int hashCode = 1;
+//        Node<T> node = sentinel.next;
+//        while (node != sentinel) {
+//            hashCode = 31 * hashCode + (node.item == null ? 0 : node.item.hashCode());
+//        }
+//        return hashCode;
+//    }
 }

@@ -1,9 +1,9 @@
 package creatures;
 
-import huglife.Creature;
-import huglife.Direction;
+import hllib.HugLifeUtils;
 import huglife.Action;
 import huglife.Occupant;
+import huglife.Direction;
 
 import java.awt.Color;
 import java.util.ArrayDeque;
@@ -18,27 +18,25 @@ import java.util.Map;
 public class Plip extends Creature {
 
     /**
-     * red color.
+     * red color is a constant.
      */
-    private int r;
+    private static final int RED = 99;
     /**
      * green color.
      */
     private int g;
     /**
-     * blue color.
+     * blue color is a constant.
      */
-    private int b;
+    private static final int BLUE = 76;
 
     /**
      * creates plip with energy equal to E.
      */
     public Plip(double e) {
         super("plip");
-        r = 0;
         g = 0;
-        b = 0;
-        energy = e;
+        energy = normalizeEnergy(e);
     }
 
     /**
@@ -57,8 +55,8 @@ public class Plip extends Creature {
      * that you get this exactly correct.
      */
     public Color color() {
-        g = 63;
-        return color(r, g, b);
+        g = 96 * (int) energy + 63;
+        return color(RED, g, BLUE);
     }
 
     /**
@@ -74,7 +72,7 @@ public class Plip extends Creature {
      * private static final variable. This is not required for this lab.
      */
     public void move() {
-        // TODO
+        energy = normalizeEnergy(energy - 0.15);
     }
 
 
@@ -82,7 +80,7 @@ public class Plip extends Creature {
      * Plips gain 0.2 energy when staying due to photosynthesis.
      */
     public void stay() {
-        // TODO
+        energy = normalizeEnergy(energy + 0.2);
     }
 
     /**
@@ -91,7 +89,8 @@ public class Plip extends Creature {
      * Plip.
      */
     public Plip replicate() {
-        return this;
+        energy = energy / 2;
+        return new Plip(energy);
     }
 
     /**
@@ -108,23 +107,47 @@ public class Plip extends Creature {
      * for an example to follow.
      */
     public Action chooseAction(Map<Direction, Occupant> neighbors) {
-        // Rule 1
         Deque<Direction> emptyNeighbors = new ArrayDeque<>();
         boolean anyClorus = false;
-        // TODO
-        // (Google: Enhanced for-loop over keys of NEIGHBORS?)
-        // for () {...}
-
-        if (false) { // FIXME
-            // TODO
+        for (Map.Entry<Direction, Occupant> entry : neighbors.entrySet()) {
+            if (entry.getValue().name().equals("empty")) {
+                emptyNeighbors.add(entry.getKey());
+            } else {
+                if (entry.getValue().name().equals("clorus")) {
+                    anyClorus = true;
+                }
+            }
         }
-
-        // Rule 2
-        // HINT: randomEntry(emptyNeighbors)
-
-        // Rule 3
-
-        // Rule 4
+        if (emptyNeighbors.isEmpty()) {
+            // If there are no empty spaces, the Plip should STAY.
+            return new Action(Action.ActionType.STAY);
+        } else if (energy >= 1) {
+            // Otherwise, if the Plip has energy greater than or equal to 1.0,
+            // it should replicate to an available space.
+            return new Action(Action.ActionType.REPLICATE, HugLifeUtils.randomEntry(emptyNeighbors));
+        } else if (anyClorus && Math.random() < 0.50) {
+            // Otherwise, if it sees a neighbor with name() equal to “clorus”, it will move to any
+            // available empty square with probability 50%. It should choose the empty square randomly.
+            // As an example, if it sees a Clorus to the BOTTOM, and “empty” to the TOP , LEFT, and RIGHT,
+            // there is a 50% chance it will move (due to fear of Cloruses), and if it does move, it will
+            // pick uniformly at random between TOP, LEFT, and RIGHT.
+            return new Action(Action.ActionType.MOVE, HugLifeUtils.randomEntry(emptyNeighbors));
+        }
         return new Action(Action.ActionType.STAY);
+    }
+
+    /** If the energy is less than 0, return 0. If energy is greater than 2,
+     * return 2. Otherwise, return energy.
+     * @param energy a possible energy state for the plip.
+     * @return the energy state of the plip.
+     */
+    private double normalizeEnergy(double energy) {
+        if (energy < 0) {
+            return 0;
+        } else if (energy > 2) {
+            return  2;
+        } else {
+            return energy;
+        }
     }
 }

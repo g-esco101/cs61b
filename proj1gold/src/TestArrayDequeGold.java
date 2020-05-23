@@ -1,7 +1,9 @@
 package src;
 
 import org.junit.Test;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.TestInstance;
 
 import java.util.Random;
 import java.util.StringJoiner;
@@ -19,6 +21,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * individual test methods to be executed in isolation and to avoid any unforseen behavior due to mutable test
  * instance state.
  */
+
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class TestArrayDequeGold {
 
     ArrayDequeSolution<Integer> solution = new ArrayDequeSolution<>();
@@ -30,25 +34,25 @@ public class TestArrayDequeGold {
     @Test
     @DisplayName("Items are added and removed randomly and the results are compared.")
     public void randomlyCompareStudentArrayDequeToSolution() {
-        double number = random.nextDouble();
+        double variate = random.nextDouble();
         int count = 0;
         Integer exptected = 0;
         Integer actual = 0;
         queue.add("\n"); // Ensures first invocation is on a new line.
         while (count < iterations) {
-            if (number < 0.25)  {
+            if (variate < 0.25)  {
                 if (!student.isEmpty() && !solution.isEmpty()) {
                     actual = student.removeLast();
                     exptected = solution.removeLast();
                     queue.add("removeLast()\n");
                     assertEquals(exptected, actual, queue.toString());
                 }
-            } else if (0.26 <= number && number < 0.5) {
+            } else if (0.26 <= variate && variate < 0.5) {
                 solution.addFirst(count);
                 student.addFirst(count);
                 queue.add(String.format("addFirst(%d)\n", count));
                 assertEquals(solution.size(), student.size(),queue.toString());
-            } else if (0.5 <= number && number < 0.75) {
+            } else if (0.5 <= variate && variate < 0.75) {
                 if ((!student.isEmpty() && !solution.isEmpty())) {
                     actual = student.removeFirst();
                     exptected = solution.removeFirst();
@@ -61,7 +65,7 @@ public class TestArrayDequeGold {
                 queue.add(String.format("addLast(%d)\n", count));
                 assertEquals(solution.size(), student.size(),queue.toString());
             }
-            number = random.nextDouble();
+            variate = random.nextDouble();
             if (!student.isEmpty() && !solution.isEmpty()) {
                 count++; // increments when methods are invoked.
             }

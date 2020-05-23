@@ -1,6 +1,10 @@
-package huglife;
+package tests;
 
 
+import huglife.Grid;
+import creatures.SampleCreature;
+import hllib.StdDraw;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 /**
  * Performs basic tests of huglife package.
@@ -13,20 +17,20 @@ public class TestHugLife {
      * Performs basic tests of huglife package.
      */
 
-    @Test
-    public void populateAndDraw() {
-        Grid g = new Grid(20);
-        g.placeOccupant(0, 10, new SampleCreature());
-        g.placeOccupant(5, 5, new SampleCreature());
-        g.drawWorld();
-        StdDraw.show(20);
-        g.doMove(0, 10, 0, 11);
-        g.drawWorld();
-        StdDraw.show(20);
+//    @Disabled
+//    @Test
+//    public void populateAndDraw() {
+//        Grid g = new Grid(20);
+//        g.placeOccupant(0, 10, new SampleCreature());
+//        g.placeOccupant(5, 5, new SampleCreature());
+//        g.drawWorld();
+//        StdDraw.show(20);
+//        g.doMove(0, 10, 0, 11);
+//        g.drawWorld();
+//        StdDraw.show(20);
+//    }
 
-    }
-
-    public static void main(String[] args) {
-        jh61b.junit.textui.runClasses(TestHugLife.class);
-    }
+//    public static void main(String[] args) {
+//        jh61b.junit.textui.runClasses(TestHugLife.class);
+//    }
 } 

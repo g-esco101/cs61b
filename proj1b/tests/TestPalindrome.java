@@ -1,4 +1,4 @@
-package tests; /** Tests the src.Palindrome class. */
+package tests;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import src.OffByOne;
@@ -8,6 +8,7 @@ import src.Deque;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/** Tests the src.Palindrome class. */
 public class TestPalindrome {
     // You must use this palindrome, and not instantiate
     // new Palindromes, or the autograder might be upset.

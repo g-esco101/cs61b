@@ -1,8 +1,10 @@
-package huglife;
+package creatures;
 
-import java.util.ArrayList;
+import huglife.Action;
+import huglife.Direction;
+import huglife.Occupant;
+
 import java.util.Map;
-import java.util.List;
 
 /**
  * @author Josh Hug

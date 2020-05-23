@@ -25,40 +25,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8870c89f-bdf5-402c-8ce2-217e5485d9b8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../lab5/creatures/Clorus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab5/tests/TestClorus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../proj1a/old/TestArrayDeque.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../proj1a/old/TestDeque.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../proj1a/old/TestLinkedListDeque.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestArrayDequeGold.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/creatures/Clorus.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/creatures/Clorus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/creatures/Creature.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/creatures/Creature.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../lab5/creatures/Plip.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/creatures/Plip.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab5/creatures/TestPlip.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/tests/TestPlip.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab5/huglife/Creature.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/creatures/Creature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/creatures/SampleCreature.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/creatures/SampleCreature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/hllib/HugLifeAnimator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/hllib/HugLifeAnimator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/hllib/HugLifeUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/hllib/HugLifeUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/hllib/In.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/hllib/In.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/hllib/Out.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/hllib/Out.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/hllib/StdDraw.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/hllib/StdDraw.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../lab5/huglife/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/huglife/Grid.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../lab5/huglife/HugLife.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/huglife/HugLife.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab5/huglife/HugLifeAnimator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/hllib/HugLifeAnimator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab5/huglife/HugLifeUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/hllib/HugLifeUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab5/huglife/In.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/hllib/In.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab5/huglife/Out.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/hllib/Out.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab5/huglife/SampleCreature.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/creatures/SampleCreature.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab5/huglife/StdDraw.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/hllib/StdDraw.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab5/huglife/TestHugLife.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/tests/TestHugLife.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../lab5/huglife/sampleplip.world" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../lab5/huglife/samplesolo.world" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../lab5/huglife/strugggz.world" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/tests/TestClorus.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/tests/TestClorus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/tests/TestHugLife.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/tests/TestHugLife.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/tests/TestPlip.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/tests/TestPlip.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../proj1a/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1a/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../proj1a/src/ArrayDeque.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1a/src/ArrayDeque.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../proj1a/src/LinkedListDeque.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1a/src/LinkedListDeque.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../proj1a/tests/ArrayDequeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1a/tests/ArrayDequeTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../proj1a/tests/DequeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1a/tests/DequeTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../proj1a/tests/LinkedListDequeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1a/tests/LinkedListDequeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../proj1a/tests/TestUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1a/old/TestUtility.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../proj1b/tests/TestPalindrome.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1b/tests/TestPalindrome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proj1gold/src/TestArrayDequeGold.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proj1gold/src/TestArrayDequeGold.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TestArrayDequeGold.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TestArrayDequeGold.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExportTestResults" outputFolder="$PROJECT_DIR$" openResultsInEditor="true" userTempatePath="" />
+  <component name="ExportToHTMLSettings">
+    <option name="OPEN_IN_BROWSER" value="true" />
+    <option name="OUTPUT_DIRECTORY" value="C:\dev\cs61b-spring2019\cs61b\proj1gold\reports" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -104,25 +106,57 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.StudentArrayDequeLauncher">
+  <component name="RunManager" selected="JUnit.GoldTestIDEACoverage">
     <configuration name="AssertEqualsStringDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="AssertEqualsStringDemo" />
+      <option name="MAIN_CLASS_NAME" value="src.AssertEqualsStringDemo" />
       <module name="proj1gold" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="StudentArrayDequeLauncher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="StudentArrayDequeLauncher" />
+      <option name="MAIN_CLASS_NAME" value="src.StudentArrayDequeLauncher" />
       <module name="proj1gold" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GoldTestIDEACoverage" type="JUnit" factoryName="JUnit">
+      <module name="proj1gold" />
+      <useClassPathOnly />
+      <extension name="coverage" sample_coverage="false" track_test_folders="true">
+        <pattern>
+          <option name="PATTERN" value="src.ArrayDequeSolution" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+        <pattern>
+          <option name="PATTERN" value="src.StudentArrayDeque" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+        <pattern>
+          <option name="PATTERN" value="src.AssertEqualsStringDemo" />
+          <option name="ENABLED" value="true" />
+          <option name="INCLUDE" value="false" />
+        </pattern>
+        <pattern>
+          <option name="PATTERN" value="src.StudentArrayDequeLauncher" />
+          <option name="ENABLED" value="true" />
+          <option name="INCLUDE" value="false" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="src" />
+      <option name="MAIN_CLASS_NAME" value="src.TestArrayDequeGold" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="PARAMETERS" value="" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="TestArrayDequeGold" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="proj1gold" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestArrayDequeGold" />
+      <option name="PACKAGE_NAME" value="src" />
+      <option name="MAIN_CLASS_NAME" value="src.TestArrayDequeGold" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -130,18 +164,25 @@
     </configuration>
     <configuration name="TestArrayDequeGold.comparedToJavaLinkedList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="proj1gold" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestArrayDequeGold" />
+      <option name="PACKAGE_NAME" value="src" />
+      <option name="MAIN_CLASS_NAME" value="src.TestArrayDequeGold" />
       <option name="METHOD_NAME" value="comparedToJavaLinkedList" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.AssertEqualsStringDemo" />
+      <item itemvalue="Application.StudentArrayDequeLauncher" />
+      <item itemvalue="JUnit.GoldTestIDEACoverage" />
+      <item itemvalue="JUnit.TestArrayDequeGold" />
+      <item itemvalue="JUnit.TestArrayDequeGold.comparedToJavaLinkedList" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.StudentArrayDequeLauncher" />
         <item itemvalue="JUnit.TestArrayDequeGold" />
+        <item itemvalue="Application.StudentArrayDequeLauncher" />
         <item itemvalue="JUnit.TestArrayDequeGold.comparedToJavaLinkedList" />
         <item itemvalue="Application.AssertEqualsStringDemo" />
       </list>
@@ -158,7 +199,8 @@
       <option name="presentableId" value="Default" />
       <updated>1589141423158</updated>
       <workItem from="1589141424996" duration="9837000" />
-      <workItem from="1589161748680" duration="4308000" />
+      <workItem from="1589161748680" duration="16362000" />
+      <workItem from="1589235542575" duration="61000" />
     </task>
     <servers />
   </component>
@@ -178,46 +220,58 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="92" y="92" width="1416" height="676" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1589155028423">
+    <state x="254" y="85" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589171577657">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="92" y="92" width="1416" height="676" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1600.860@0.0.1600.860" timestamp="1589155028423" />
+    <state x="254" y="85" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860@0.0.1600.860" timestamp="1589171577657" />
+    <state x="92" y="92" width="1416" height="676" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1589167384146">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="92" y="92" width="1416" height="676" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1600.860@0.0.1600.860" timestamp="1589167384146" />
+    <state x="530" y="206" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1589171412819">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="530" y="206" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1600.860@0.0.1600.860" timestamp="1589171412819" />
+    <state x="529" y="220" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1589171439499">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="529" y="220" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1600.860@0.0.1600.860" timestamp="1589171439499" />
     <state x="580" y="185" key="FileChooserDialogImpl" timestamp="1589163929634">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="580" y="185" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1589163929634" />
-    <state width="1557" height="151" key="GridCell.Tab.0.bottom" timestamp="1589165001550">
+    <state width="1557" height="87" key="GridCell.Tab.0.bottom" timestamp="1589184419667">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="151" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1589165001550" />
-    <state width="1557" height="151" key="GridCell.Tab.0.center" timestamp="1589165001550">
+    <state width="1557" height="87" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1589184419667" />
+    <state width="1557" height="87" key="GridCell.Tab.0.center" timestamp="1589184419667">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="151" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1589165001550" />
-    <state width="1557" height="151" key="GridCell.Tab.0.left" timestamp="1589165001550">
+    <state width="1557" height="87" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1589184419667" />
+    <state width="1557" height="87" key="GridCell.Tab.0.left" timestamp="1589184419667">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="151" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1589165001550" />
-    <state width="1557" height="151" key="GridCell.Tab.0.right" timestamp="1589165001550">
+    <state width="1557" height="87" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1589184419667" />
+    <state width="1557" height="87" key="GridCell.Tab.0.right" timestamp="1589184419667">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="151" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1589165001550" />
-    <state width="1557" height="269" key="GridCell.Tab.1.bottom" timestamp="1589163745855">
+    <state width="1557" height="87" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1589184419667" />
+    <state width="1557" height="269" key="GridCell.Tab.1.bottom" timestamp="1589184419657">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="269" key="GridCell.Tab.1.bottom/0.0.1600.860@0.0.1600.860" timestamp="1589163745855" />
-    <state width="1557" height="269" key="GridCell.Tab.1.center" timestamp="1589163745855">
+    <state width="1557" height="269" key="GridCell.Tab.1.bottom/0.0.1600.860@0.0.1600.860" timestamp="1589184419657" />
+    <state width="1557" height="269" key="GridCell.Tab.1.center" timestamp="1589184419657">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="269" key="GridCell.Tab.1.center/0.0.1600.860@0.0.1600.860" timestamp="1589163745855" />
-    <state width="1557" height="269" key="GridCell.Tab.1.left" timestamp="1589163745855">
+    <state width="1557" height="269" key="GridCell.Tab.1.center/0.0.1600.860@0.0.1600.860" timestamp="1589184419657" />
+    <state width="1557" height="269" key="GridCell.Tab.1.left" timestamp="1589184419657">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="269" key="GridCell.Tab.1.left/0.0.1600.860@0.0.1600.860" timestamp="1589163745855" />
-    <state width="1557" height="269" key="GridCell.Tab.1.right" timestamp="1589163745855">
+    <state width="1557" height="269" key="GridCell.Tab.1.left/0.0.1600.860@0.0.1600.860" timestamp="1589184419657" />
+    <state width="1557" height="269" key="GridCell.Tab.1.right" timestamp="1589184419657">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="269" key="GridCell.Tab.1.right/0.0.1600.860@0.0.1600.860" timestamp="1589163745855" />
+    <state width="1557" height="269" key="GridCell.Tab.1.right/0.0.1600.860@0.0.1600.860" timestamp="1589184419657" />
     <state x="280" y="4" key="SettingsEditor" timestamp="1589163717524">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -230,6 +284,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="571" y="152" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1600.860@0.0.1600.860" timestamp="1589141741561" />
+    <state x="619" y="255" key="export.test.results" timestamp="1589172296981">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="619" y="255" key="export.test.results/0.0.1600.860@0.0.1600.860" timestamp="1589172296981" />
     <state x="456" y="195" key="run.anything.popup" timestamp="1589157697479">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -239,11 +297,20 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/TestArrayDequeGold.java</url>
-          <line>67</line>
+          <url>file://$PROJECT_DIR$/src/TestArrayDequeGold.java</url>
+          <line>21</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/proj1gold$TestArrayDequeGold.ic" NAME="TestArrayDequeGold Coverage Results" MODIFIED="1589167067729" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/proj1gold$GoldTestIDEACoverage.ic" NAME="GoldTestIDEACoverage Coverage Results" MODIFIED="1589184190144" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>src.ArrayDequeSolution</FILTER>
+      <FILTER>src.StudentArrayDeque</FILTER>
+      <EXCLUDED_FILTER>src.AssertEqualsStringDemo</EXCLUDED_FILTER>
+      <EXCLUDED_FILTER>src.StudentArrayDequeLauncher</EXCLUDED_FILTER>
+    </SUITE>
   </component>
 </project>

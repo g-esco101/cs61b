@@ -1,4 +1,4 @@
-package huglife;
+package hllib;
 
 /*************************************************************************
  *  Compilation:  javac StdDraw.java

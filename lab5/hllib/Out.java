@@ -1,4 +1,4 @@
-package huglife;
+package hllib;
 /*************************************************************************
  *  Compilation:  javac Out.java
  *  Execution:    java Out

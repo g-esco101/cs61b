@@ -3,7 +3,7 @@
 Create implementations of a “Double Ended Queue” using both lists and arrays. They have no capacity restrictions and allow null values.
 
 ## Run
-Open in intellij IDEA & run the tests.DequeTest.java file.
+Open in intellij IDEA & run the old.TestDeque.java file.
 
 ## Class Diagram
 
@@ -33,4 +33,4 @@ The constructors [ArrayDeque(ArrayDeque<T> other)](src/ArrayDeque.java) and [Lin
 ## Testing
 Wrote tests such that 100% code coverage is achieved. 
 
-The skeleton code supplied by the course came with one file, i.e. tests.LinkedListDequeTest.java, which came with several methods to test the implementations and several utility methods: checkEmpty, checkSize, and printTestStatus.  Almost all methods in it were replaced, except the aforementioned utility functions, which were moved to [TestUtility.java](tests/TestUtility.java).
+The skeleton code supplied by the course came with one file, i.e. old.TestLinkedListDeque.java, which came with several methods to test the implementations and several utility methods: checkEmpty, checkSize, and printTestStatus.  Almost all methods in it were replaced, except the aforementioned utility functions, which were moved to [TestUtility.java](tests/TestUtility.java).

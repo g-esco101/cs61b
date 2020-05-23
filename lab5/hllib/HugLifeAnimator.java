@@ -1,4 +1,4 @@
-package huglife;
+package hllib;
 
 import hllib.StdDraw;
 

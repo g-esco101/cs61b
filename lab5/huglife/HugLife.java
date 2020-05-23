@@ -1,6 +1,9 @@
 package huglife;
 
 import creatures.*;
+import hllib.HugLifeAnimator;
+import hllib.In;
+import hllib.StdDraw;
 
 /**
  * World facing class for HugLife simulator.
@@ -124,17 +127,16 @@ public class HugLife {
      * @return a newly initialized HugLife
      */
     public static HugLife readWorld(String worldName) {
-        In in = new In("huglife/" + worldName + ".world");
+        In in = new In("data/" + worldName + ".world");
         HugLife h = new HugLife(WORLD_SIZE);
         while (!in.isEmpty()) {
             String creature = in.readString();
             int x = in.readInt();
             int y = in.readInt();
             switch (creature) {
-                //Uncomment this when you're ready to test out your clorus class
-                //case "clorus":
-                //    h.addCreature(x, y, new Clorus(1));
-                //    break;
+                case "clorus":
+                    h.addCreature(x, y, new Clorus(1));
+                    break;
                 case "plip":
                     h.addCreature(x, y, new Plip());
                     break;

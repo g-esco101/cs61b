@@ -3,7 +3,9 @@
  *
  * @author Josh Hug
  */
-package huglife;
+package hllib;
+
+import huglife.Direction;
 
 import java.util.Deque;
 import java.util.Random;

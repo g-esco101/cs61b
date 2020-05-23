@@ -1,5 +1,9 @@
 package huglife;
 
+import creatures.Creature;
+import hllib.Out;
+import hllib.StdDraw;
+
 import java.util.Queue;
 import java.util.ArrayDeque;
 import java.util.HashMap;
@@ -53,7 +57,6 @@ public class Grid {
         }
         moveQueue = new ArrayDeque<Position>();
         moveQueue.add(sentinel);
-
     }
 
     /**
@@ -87,11 +90,9 @@ public class Grid {
      * Returns occupant of X and Y
      */
     private Occupant getOccupant(int x, int y) {
-
         if (inBounds(x, y)) {
             return occupants[y][x];
         }
-
         return new Impassible();
     }
 
@@ -119,10 +120,8 @@ public class Grid {
                                     + " space is already occupied by a %s.", c.name,
                             x, y, oldOccupant));
         }
-
         population += 1;
         placeOccupant(x, y, c);
-
         getInLine(x, y);
     }
 
@@ -136,10 +135,9 @@ public class Grid {
     void destroyCreature(int x, int y) {
         if (!isCreature(x, y)) {
             throw new IllegalArgumentException(
-                    String.format("Tried to destroy a creature at (%d, %d), but " +
-                            "no creature at this position.", x, y));
+                    String.format("Tried to destroy a creature at (%d, %d), but "
+                            + "no creature at this position.", x, y));
         }
-
         population -= 1;
         removeOccupant(x, y);
         removeFromQueue(x, y);
@@ -158,7 +156,6 @@ public class Grid {
                                     + " space is already occupied by a %s.", o.name,
                             x, y, oldOccupant));
         }
-
         occupants[y][x] = o;
     }
 
@@ -172,7 +169,6 @@ public class Grid {
                     String.format("Tried to remove (%d, %d), but "
                             + " space is empty or out of bounds.", x, y));
         }
-
         occupants[y][x] = new Empty();
     }
 
@@ -183,12 +179,10 @@ public class Grid {
         return population > 0;
     }
 
-
     /**
      * Returns the TOP, BOTTOM, LEFT, and RGIHT neighbors
      * of position X and Y
      */
-
     public Map<Direction, Occupant> neighbors(int x, int y) {
         HashMap<Direction, Occupant> neighbors =
                 new HashMap<Direction, Occupant>();
@@ -196,15 +190,12 @@ public class Grid {
         Occupant bottom = getOccupant(x, y - 1);
         Occupant left = getOccupant(x - 1, y);
         Occupant right = getOccupant(x + 1, y);
-
         neighbors.put(Direction.TOP, top);
         neighbors.put(Direction.BOTTOM, bottom);
         neighbors.put(Direction.LEFT, left);
         neighbors.put(Direction.RIGHT, right);
-
         return neighbors;
     }
-
 
     /**
      * Redraw entire world (slow!).
@@ -218,7 +209,6 @@ public class Grid {
         StdDraw.setXscale(0, N);
         StdDraw.setYscale(0, N);
         StdDraw.filledSquare(N / 2.0, N / 2.0, N / 2.0);
-
         for (int x = 0; x < N; x += 1) {
             for (int y = 0; y < N; y += 1) {
                 Occupant o = getOccupant(x, y);
@@ -234,7 +224,7 @@ public class Grid {
      * @param worldName name fo the world that is being written
      */
     public void writeWorld(String worldName) {
-        Out out = new Out("huglife/" + worldName + ".world");
+        Out out = new Out("data/" + worldName + ".world");
         for (int j = N; j >= 0; j--) {
             for (int i = 0; i < N; i++) {
                 Occupant o = getOccupant(i, j);
@@ -248,7 +238,6 @@ public class Grid {
      * Gives the x, y coordinates if we go in direction of action A from
      * position X, Y
      */
-
     private static Position targetPosition(int x, int y, Action a) {
         if (a.dir == Direction.TOP) {
             return new Position(x, y + 1);
@@ -263,7 +252,6 @@ public class Grid {
             return new Position(x + 1, y);
         }
         return new Position(a.x, a.y);
-
     }
 
 
@@ -286,23 +274,17 @@ public class Grid {
     private void getInLine(int x, int y) {
         Position p = new Position(x, y);
         if (!isCreature(x, y)) {
-
-            String msg = String.format("Tried to add creature at (%d, %d) to " +
-                            "the move queue, but no creature exists at that spot.",
+            String msg = String.format("Tried to add creature at (%d, %d) to "
+                            + "the move queue, but no creature exists at that spot.",
                     x, y);
-
             throw new IllegalArgumentException(msg);
         }
-
         if (moveQueue.contains(p)) {
-            String msg = String.format("Tried to add creature at (%d, %d) to " +
-                            "the move queue, but creature is already in line.",
+            String msg = String.format("Tried to add creature at (%d, %d) to "
+                            + "the move queue, but creature is already in line.",
                     x, y);
-
             throw new IllegalArgumentException(msg);
-
         }
-
         moveQueue.add(p);
     }
 
@@ -312,14 +294,10 @@ public class Grid {
     void doMove(int x, int y, int tx, int ty) {
         Creature from = getCreature(x, y);
         Occupant to = getOccupant(tx, ty);
-
         collisionCheck(x, y, tx, ty, "move");
-
         placeOccupant(tx, ty, from);
         removeOccupant(x, y);
-
         from.move();
-
         getInLine(tx, ty);
     }
 
@@ -329,13 +307,10 @@ public class Grid {
     void doReplicate(int x, int y, int tx, int ty) {
         Creature from = getCreature(x, y);
         Occupant to = getOccupant(tx, ty);
-
         creatureCheck(x, y, "replicate");
         collisionCheck(x, y, tx, ty, "replicate");
-
         Creature newCreature = from.replicate();
         createCreature(tx, ty, newCreature);
-
         getInLine(x, y);
     }
 
@@ -355,12 +330,9 @@ public class Grid {
     void doAttack(int x, int y, int tx, int ty) {
         creatureCheck(x, y, "attack");
         creatureCheck(tx, ty, "attack");
-
         Creature from = getCreature(x, y);
         Creature to = getCreature(tx, ty);
-
         destroyCreature(tx, ty);
-
         removeOccupant(x, y);
         placeOccupant(tx, ty, from);
         from.attack(to);
@@ -372,7 +344,6 @@ public class Grid {
      */
     void doStay(int x, int y) {
         Creature c = getCreature(x, y);
-
         c.stay();
         getInLine(x, y);
     }
@@ -384,27 +355,21 @@ public class Grid {
         Position p = targetPosition(x, y, a);
         int tx = p.x();
         int ty = p.y();
-
         if (a.type == Action.ActionType.MOVE) {
             doMove(x, y, tx, ty);
         }
-
         if (a.type == Action.ActionType.REPLICATE) {
             doReplicate(x, y, tx, ty);
         }
-
         if (a.type == Action.ActionType.DIE) {
             doDie(x, y);
         }
-
         if (a.type == Action.ActionType.ATTACK) {
             doAttack(x, y, tx, ty);
         }
-
         if (a.type == Action.ActionType.STAY) {
             doStay(x, y);
         }
-
     }
 
 
@@ -420,7 +385,6 @@ public class Grid {
         if (c.energy() < 0) {
             return new Action(Action.ActionType.DIE);
         }
-
         Map<Direction, Occupant> nbot = neighbors(x, y);
         return c.chooseAction(nbot);
     }
@@ -439,7 +403,6 @@ public class Grid {
                 moveQueue.add(sentinel);
                 return true;
             }
-
             Action action = requestAction(p.x, p.y);
             handleAction(p.x, p.y, action);
             return false;
@@ -447,23 +410,18 @@ public class Grid {
         return true;
     }
 
-
     /**
      * Checks that a move from X, Y to TX, TY is valid, where
      * MOVESTR is the type of move, printed for debugging reasons.
      */
-
     private void collisionCheck(int x, int y, int tx, int ty,
                                 String moveStr) {
         Occupant from = getOccupant(x, y);
         Occupant to = getOccupant(tx, ty);
-
         if (!isEmpty(tx, ty)) {
-
-            String msg = String.format("%s tried to %s from " +
-                            "(%d, %d) to (%d, %d) already occupied by %s.",
+            String msg = String.format("%s tried to %s from "
+                           + "(%d, %d) to (%d, %d) already occupied by %s.",
                     from.name(), moveStr, x, y, tx, ty, to.name());
-
             throw new IllegalArgumentException(msg);
         }
     }
@@ -475,11 +433,9 @@ public class Grid {
      */
     private void creatureCheck(int x, int y, String actionStr) {
         if (!isCreature(x, y)) {
-
-            String msg = String.format("Something tried to %s at " +
-                            "(%d, %d), but no creature exists at that spot.",
+            String msg = String.format("Something tried to %s at "
+                           + "(%d, %d), but no creature exists at that spot.",
                     actionStr, x, y);
-
             throw new IllegalArgumentException(msg);
         }
     }
@@ -487,14 +443,11 @@ public class Grid {
     /**
      * Checks that a creature exists at position X, Y.
      */
-
     private void creatureCheck(int x, int y) {
         if (!isCreature(x, y)) {
-
-            String msg = String.format("Tried to get creature from " +
-                            "(%d, %d), but no creature exists at that spot.",
+            String msg = String.format("Tried to get creature from "
+                    + "(%d, %d), but no creature exists at that spot.",
                     x, y);
-
             throw new IllegalArgumentException(msg);
         }
     }
