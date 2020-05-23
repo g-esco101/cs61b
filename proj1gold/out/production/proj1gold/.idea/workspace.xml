@@ -25,31 +25,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8870c89f-bdf5-402c-8ce2-217e5485d9b8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../lab5/creatures/Clorus.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/creatures/Clorus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab5/creatures/Creature.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/creatures/Creature.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab5/creatures/Plip.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/creatures/Plip.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab5/creatures/SampleCreature.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/creatures/SampleCreature.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab5/hllib/HugLifeAnimator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/hllib/HugLifeAnimator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab5/hllib/HugLifeUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/hllib/HugLifeUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab5/hllib/In.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/hllib/In.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab5/hllib/Out.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/hllib/Out.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab5/hllib/StdDraw.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/hllib/StdDraw.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab5/huglife/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/huglife/Grid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab5/huglife/HugLife.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/huglife/HugLife.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab5/huglife/sampleplip.world" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab5/huglife/samplesolo.world" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab5/huglife/strugggz.world" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab5/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../proj1b/tests/PalindromeFinderTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../lab5/tests/TestClorus.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/tests/TestClorus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab5/tests/TestHugLife.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/tests/TestHugLife.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../lab5/tests/TestPlip.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/tests/TestPlip.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../proj1a/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1a/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../proj1a/src/ArrayDeque.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1a/src/ArrayDeque.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../proj1a/src/LinkedListDeque.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1a/src/LinkedListDeque.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../proj1a/tests/ArrayDequeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1a/tests/ArrayDequeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../proj1a/tests/DequeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1a/tests/DequeTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../proj1a/tests/LinkedListDequeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1a/tests/LinkedListDequeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj1b/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1b/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj1b/src/PalindromeFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1b/src/PalindromeFinder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj1b/tests/TestOffByN.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1b/tests/TestOffByN.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj1b/tests/TestOffByOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1b/tests/TestOffByOne.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../proj1b/tests/TestPalindrome.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1b/tests/TestPalindrome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proj1gold/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proj1gold/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/proj1gold/src/TestArrayDequeGold.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proj1gold/src/TestArrayDequeGold.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/code-coverage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/junit5-test-report.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TestArrayDequeGold.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TestArrayDequeGold.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -200,7 +192,8 @@
       <updated>1589141423158</updated>
       <workItem from="1589141424996" duration="9837000" />
       <workItem from="1589161748680" duration="16362000" />
-      <workItem from="1589235542575" duration="61000" />
+      <workItem from="1589235542575" duration="341000" />
+      <workItem from="1590168087539" duration="5661000" />
     </task>
     <servers />
   </component>
@@ -236,26 +229,26 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="529" y="220" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1600.860@0.0.1600.860" timestamp="1589171439499" />
-    <state x="580" y="185" key="FileChooserDialogImpl" timestamp="1589163929634">
+    <state x="580" y="185" key="FileChooserDialogImpl" timestamp="1590228032050">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="580" y="185" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1589163929634" />
-    <state width="1557" height="87" key="GridCell.Tab.0.bottom" timestamp="1589184419667">
+    <state x="580" y="185" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1590228032050" />
+    <state width="1557" height="122" key="GridCell.Tab.0.bottom" timestamp="1590233407263">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="87" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1589184419667" />
-    <state width="1557" height="87" key="GridCell.Tab.0.center" timestamp="1589184419667">
+    <state width="1557" height="122" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1590233407263" />
+    <state width="1557" height="122" key="GridCell.Tab.0.center" timestamp="1590233407263">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="87" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1589184419667" />
-    <state width="1557" height="87" key="GridCell.Tab.0.left" timestamp="1589184419667">
+    <state width="1557" height="122" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1590233407263" />
+    <state width="1557" height="122" key="GridCell.Tab.0.left" timestamp="1590233407263">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="87" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1589184419667" />
-    <state width="1557" height="87" key="GridCell.Tab.0.right" timestamp="1589184419667">
+    <state width="1557" height="122" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1590233407263" />
+    <state width="1557" height="122" key="GridCell.Tab.0.right" timestamp="1590233407263">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="87" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1589184419667" />
+    <state width="1557" height="122" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1590233407263" />
     <state width="1557" height="269" key="GridCell.Tab.1.bottom" timestamp="1589184419657">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -298,7 +291,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/TestArrayDequeGold.java</url>
-          <line>21</line>
+          <line>19</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>

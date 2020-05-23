@@ -25,32 +25,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0dce0fb3-f380-4814-b960-e8792b67ba5f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../lab5/creatures/Clorus.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/creatures/Clorus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab5/creatures/Creature.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/creatures/Creature.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab5/creatures/Plip.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/creatures/Plip.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab5/creatures/SampleCreature.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/creatures/SampleCreature.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab5/hllib/HugLifeAnimator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/hllib/HugLifeAnimator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab5/hllib/HugLifeUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/hllib/HugLifeUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab5/hllib/In.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/hllib/In.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab5/hllib/Out.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/hllib/Out.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab5/hllib/StdDraw.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/hllib/StdDraw.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab5/huglife/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/huglife/Grid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab5/huglife/HugLife.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/huglife/HugLife.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab5/huglife/sampleplip.world" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab5/huglife/samplesolo.world" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab5/huglife/strugggz.world" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab5/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../proj1b/tests/PalindromeFinderTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../lab5/tests/TestClorus.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/tests/TestClorus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab5/tests/TestHugLife.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/tests/TestHugLife.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../lab5/tests/TestPlip.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/tests/TestPlip.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ArrayDeque.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ArrayDeque.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LinkedListDeque.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LinkedListDeque.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/ArrayDequeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/ArrayDequeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/DequeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/DequeTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/LinkedListDequeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/LinkedListDequeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj1b/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1b/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj1b/src/PalindromeFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1b/src/PalindromeFinder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj1b/tests/TestOffByN.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1b/tests/TestOffByN.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj1b/tests/TestOffByOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1b/tests/TestOffByOne.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../proj1b/tests/TestPalindrome.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1b/tests/TestPalindrome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj1gold/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1gold/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../proj1gold/out/production/proj1gold/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1gold/out/production/proj1gold/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../proj1gold/out/production/proj1gold/src/TestArrayDequeGold.class" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1gold/out/production/proj1gold/src/TestArrayDequeGold.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj1gold/reports/code-coverage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj1gold/reports/junit5-test-report.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../proj1gold/src/TestArrayDequeGold.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1gold/src/TestArrayDequeGold.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -58,12 +50,17 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExportTestResults" outputFolder="$PROJECT_DIR$/../../test-reports/Project 1a/junit5" userTempatePath="" />
+  <component name="ExportToHTMLSettings">
+    <option name="OPEN_IN_BROWSER" value="true" />
+    <option name="OUTPUT_DIRECTORY" value="C:\dev\cs61b-spring2019\test-reports\Project 1a" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -109,7 +106,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.LinkedListDequeTest">
+  <component name="RunManager" selected="JUnit.AllTests">
     <configuration name="TestDeque" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="old.TestDeque" />
       <module name="proj1a" />
@@ -119,13 +116,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestLinkedListDeque" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="old.TestLinkedListDeque" />
-      <module name="proj1a" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -143,11 +133,42 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="src" />
+      <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
       <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ArrayDequeTest$RandomizedAddRemoveTests.compareArrayDequeToJavaUtilArrayDeque" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="proj1a" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.ArrayDequeTest$RandomizedAddRemoveTests" />
+      <option name="METHOD_NAME" value="compareArrayDequeToJavaUtilArrayDeque" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ArrayDequeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="proj1a" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.ArrayDequeTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -206,18 +227,20 @@
     </configuration>
     <list>
       <item itemvalue="Application.TestDeque" />
-      <item itemvalue="Application.TestLinkedListDeque" />
       <item itemvalue="JUnit.AllTests" />
       <item itemvalue="JUnit.LinkedListDequeTest" />
       <item itemvalue="JUnit.LinkedListDequeTest$RandomizedTests" />
       <item itemvalue="JUnit.DequeTest" />
+      <item itemvalue="JUnit.ArrayDequeTest" />
+      <item itemvalue="JUnit.ArrayDequeTest$RandomizedAddRemoveTests.compareArrayDequeToJavaUtilArrayDeque" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ArrayDequeTest" />
+        <item itemvalue="JUnit.ArrayDequeTest$RandomizedAddRemoveTests.compareArrayDequeToJavaUtilArrayDeque" />
+        <item itemvalue="JUnit.DequeTest" />
         <item itemvalue="JUnit.LinkedListDequeTest$RandomizedTests" />
         <item itemvalue="Application.TestDeque" />
-        <item itemvalue="JUnit.DequeTest" />
-        <item itemvalue="Application.TestLinkedListDeque" />
       </list>
     </recent_temporary>
   </component>
@@ -249,7 +272,10 @@
       <workItem from="1589110162406" duration="21131000" />
       <workItem from="1589139967039" duration="13573000" />
       <workItem from="1589163938049" duration="4873000" />
-      <workItem from="1590169040376" duration="1898000" />
+      <workItem from="1590169040376" duration="36373000" />
+      <workItem from="1590227536207" duration="438000" />
+      <workItem from="1590228034404" duration="2415000" />
+      <workItem from="1590234033840" duration="1466000" />
     </task>
     <servers />
   </component>
@@ -269,62 +295,74 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="254" y="85" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589171171104">
+    <state x="254" y="85" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590210104791">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="254" y="85" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860@0.0.1600.860" timestamp="1589171171104" />
+    <state x="254" y="85" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860@0.0.1600.860" timestamp="1590210104791" />
     <state x="605" y="136" key="#com.intellij.ide.util.MemberChooser" timestamp="1589135595419">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="605" y="136" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1589135595419" />
-    <state x="529" y="220" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1589171104861">
+    <state x="530" y="206" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1590207702166">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="529" y="220" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1600.860@0.0.1600.860" timestamp="1589171104861" />
+    <state x="530" y="206" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1600.860@0.0.1600.860" timestamp="1590207702166" />
+    <state x="529" y="220" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1590202676239">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="529" y="220" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1600.860@0.0.1600.860" timestamp="1590202676239" />
     <state x="583" y="320" width="433" height="217" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1589108225452">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="583" y="320" width="433" height="217" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1600.860@0.0.1600.860" timestamp="1589108225452" />
-    <state x="580" y="185" key="FileChooserDialogImpl" timestamp="1589141420985">
+    <state x="530" y="177" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1590209764099">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="580" y="185" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1589141420985" />
-    <state width="1557" height="376" key="GridCell.Tab.0.bottom" timestamp="1589173269351">
+    <state x="530" y="177" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1600.860@0.0.1600.860" timestamp="1590209764099" />
+    <state x="580" y="185" key="FileChooserDialogImpl" timestamp="1590210406858">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="376" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1589173269351" />
-    <state width="1557" height="376" key="GridCell.Tab.0.center" timestamp="1589173269351">
+    <state x="580" y="185" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1590210406858" />
+    <state width="1557" height="95" key="GridCell.Tab.0.bottom" timestamp="1590227077005">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="376" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1589173269351" />
-    <state width="1557" height="376" key="GridCell.Tab.0.left" timestamp="1589173269351">
+    <state width="1557" height="95" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1590227077005" />
+    <state width="1557" height="95" key="GridCell.Tab.0.center" timestamp="1590227077005">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="376" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1589173269351" />
-    <state width="1557" height="376" key="GridCell.Tab.0.right" timestamp="1589173269351">
+    <state width="1557" height="95" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1590227077005" />
+    <state width="1557" height="95" key="GridCell.Tab.0.left" timestamp="1590227077004">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="376" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1589173269351" />
-    <state width="1557" height="376" key="GridCell.Tab.1.bottom" timestamp="1589173269351">
+    <state width="1557" height="95" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1590227077004" />
+    <state width="1557" height="95" key="GridCell.Tab.0.right" timestamp="1590227077005">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="376" key="GridCell.Tab.1.bottom/0.0.1600.860@0.0.1600.860" timestamp="1589173269351" />
-    <state width="1557" height="376" key="GridCell.Tab.1.center" timestamp="1589173269351">
+    <state width="1557" height="95" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1590227077005" />
+    <state width="1557" height="95" key="GridCell.Tab.1.bottom" timestamp="1590227077005">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="376" key="GridCell.Tab.1.center/0.0.1600.860@0.0.1600.860" timestamp="1589173269351" />
-    <state width="1557" height="376" key="GridCell.Tab.1.left" timestamp="1589173269351">
+    <state width="1557" height="95" key="GridCell.Tab.1.bottom/0.0.1600.860@0.0.1600.860" timestamp="1590227077005" />
+    <state width="1557" height="95" key="GridCell.Tab.1.center" timestamp="1590227077005">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="376" key="GridCell.Tab.1.left/0.0.1600.860@0.0.1600.860" timestamp="1589173269351" />
-    <state width="1557" height="376" key="GridCell.Tab.1.right" timestamp="1589173269351">
+    <state width="1557" height="95" key="GridCell.Tab.1.center/0.0.1600.860@0.0.1600.860" timestamp="1590227077005" />
+    <state width="1557" height="95" key="GridCell.Tab.1.left" timestamp="1590227077005">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="376" key="GridCell.Tab.1.right/0.0.1600.860@0.0.1600.860" timestamp="1589173269351" />
+    <state width="1557" height="95" key="GridCell.Tab.1.left/0.0.1600.860@0.0.1600.860" timestamp="1590227077005" />
+    <state width="1557" height="95" key="GridCell.Tab.1.right" timestamp="1590227077005">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="95" key="GridCell.Tab.1.right/0.0.1600.860@0.0.1600.860" timestamp="1590227077005" />
     <state x="280" y="4" key="SettingsEditor" timestamp="1588991386274">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="280" y="4" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1588991386274" />
+    <state width="808" height="438" key="XDebugger.FullValuePopup" timestamp="1590204683577">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="808" height="438" key="XDebugger.FullValuePopup/0.0.1600.860@0.0.1600.860" timestamp="1590204683577" />
     <state x="504" y="322" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1589101189482">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -333,10 +371,14 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="571" y="152" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1600.860@0.0.1600.860" timestamp="1589135469361" />
-    <state x="354" y="159" width="891" height="644" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1588882211482">
+    <state x="354" y="159" width="891" height="644" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1590202678819">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="354" y="159" width="891" height="644" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1600.860@0.0.1600.860" timestamp="1588882211482" />
+    <state x="354" y="159" width="891" height="644" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1600.860@0.0.1600.860" timestamp="1590202678819" />
+    <state x="619" y="255" key="export.test.results" timestamp="1590210409720">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="619" y="255" key="export.test.results/0.0.1600.860@0.0.1600.860" timestamp="1590210409720" />
     <state x="456" y="195" key="run.anything.popup" timestamp="1588580970295">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -351,22 +393,17 @@
       <breakpoints>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/ArrayDeque.java</url>
-          <line>106</line>
+          <line>95</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/ArrayDeque.java</url>
-          <line>125</line>
+          <line>114</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/ArrayDeque.java</url>
-          <line>63</line>
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/src/ArrayDeque.java</url>
-          <line>174</line>
+          <line>166</line>
           <option name="timeStamp" value="45" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
@@ -409,24 +446,54 @@
           <line>67</line>
           <option name="timeStamp" value="97" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/old/TestArrayDeque.java</url>
           <line>27</line>
           <option name="timeStamp" value="100" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/tests/LinkedListDequeTest.java</url>
-          <line>126</line>
+          <line>146</line>
           <option name="timeStamp" value="102" />
         </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/ArrayDeque.java</url>
+          <line>218</line>
+          <option name="timeStamp" value="105" />
+        </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ArithmeticException" package="java.lang" />
+          <option name="timeStamp" value="106" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="107" />
+        </breakpoint>
       </breakpoints>
+      <default-breakpoints>
+        <breakpoint log-message="true" type="java-exception">
+          <condition disabled="true" expression="ArithmeticException" language="JAVA" />
+        </breakpoint>
+      </default-breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="JUnit">
+        <watch expression="queue" language="JAVA" />
+        <watch expression="testCapacity" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/proj1a$AllTests.ic" NAME="AllTests Coverage Results" MODIFIED="1589170948854" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" />
-    <SUITE FILE_PATH="coverage/proj1a$DequeTest.ic" NAME="DequeTest Coverage Results" MODIFIED="1588776679076" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/proj1a$LinkedListDequeTest.ic" NAME="LinkedListDequeTest Coverage Results" MODIFIED="1589171173552" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true">
+    <SUITE FILE_PATH="coverage/proj1a$AllTests.ic" NAME="AllTests Coverage Results" MODIFIED="1590210005951" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true">
       <FILTER>src.LinkedListDeque</FILTER>
+      <FILTER>src.ArrayDeque</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/proj1a$DequeTest.ic" NAME="DequeTest Coverage Results" MODIFIED="1588776679076" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/proj1a$LinkedListDequeTest.ic" NAME="LinkedListDequeTest Coverage Results" MODIFIED="1590196290420" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>src.LinkedListDeque</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/proj1a$ArrayDequeTest.ic" NAME="ArrayDequeTest Coverage Results" MODIFIED="1590207606252" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>tests.*</FILTER>
     </SUITE>
   </component>
 </project>

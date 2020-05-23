@@ -138,7 +138,7 @@ public class LinkedListDeque<T> implements Deque<T> {
      *
      *  It determines if it is more efficient to traverse the list beginning from the front or back by comparing the
      *  index to the size. If the index is in the first half of the list, it begins traversing from the front.
-     *  If the index is in the back half of the list, it begins traversal from the back.
+     *  If the index is in the back half of the list, it begins traversal from the back. Note: the runtime is still O(N).
      *
      *  @param index is the position of the item to retrieve.
      *  @return the item at the specified index.

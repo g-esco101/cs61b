@@ -1,18 +1,19 @@
-package tests; /** Tests the src.OffByOne class. */
+package tests;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import src.CharacterComparator;
 import src.OffByOne;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
+/** Tests the src.OffByOne class. */
+@DisplayName("Given an OffByOne")
 public class TestOffByOne {
     // You must use this src.CharacterComparator and not instantiate
     // new ones, or the autograder might be upset.
     static CharacterComparator offByOne = new OffByOne();
 
     @Test
+    @DisplayName("Two characters have a difference of one")
     public void testEqualChars() {
         Assertions.assertFalse(offByOne.equalChars('a', 'e'));
         Assertions.assertFalse(offByOne.equalChars('z', 'a'));

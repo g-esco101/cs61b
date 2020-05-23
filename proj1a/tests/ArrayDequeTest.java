@@ -1,12 +1,28 @@
 package tests;
 
-import org.junit.jupiter.api.*;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import java.util.Random;
-import java.util.StringJoiner;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.TestInstance.Lifecycle;
+import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
+
+
 
 import src.ArrayDeque;
+import java.util.Random;
+import java.util.StringJoiner;
 
 @DisplayName("An ArrayDeque")
 class ArrayDequeTest {
@@ -176,13 +192,13 @@ class ArrayDequeTest {
     }
 
     @Nested
-    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @TestInstance(Lifecycle.PER_CLASS)
     @DisplayName("When added and removed items compared against java.util.ArrayDeque")
     class RandomizedAddRemoveTests {
         java.util.ArrayDeque<Integer> javaArrayDeque;
         ArrayDeque<Integer> arrayDeque;
         Random random;
-        StringJoiner queue;
+        StringJoiner stackTrace;
         int iterations;
 
         @BeforeAll
@@ -190,7 +206,7 @@ class ArrayDequeTest {
             javaArrayDeque = new java.util.ArrayDeque<>();
             arrayDeque = new ArrayDeque<>();
             random = new Random();
-            queue = new StringJoiner("\n");
+            stackTrace = new StringJoiner("\n");
             iterations = 100;
         }
 
@@ -201,35 +217,31 @@ class ArrayDequeTest {
             int count = 0;
             Integer exptected = 0;
             Integer actual = 0;
-            int testCapacity = arrayDeque.getCapacity();
-            int testSize = arrayDeque.size();
             while (count < iterations) {
-                testCapacity = arrayDeque.getCapacity();
-                testSize = arrayDeque.size();
                 if (variate < 0.25)  {
                     if (!javaArrayDeque.isEmpty() && !arrayDeque.isEmpty()) {
                         actual = javaArrayDeque.removeLast();
                         exptected = arrayDeque.removeLast();
-                        queue.add("removeLast()");
-                        assertEquals(exptected, actual, queue.toString());
+                        stackTrace.add("removeLast()");
+                        assertEquals(exptected, actual, stackTrace.toString());
                     }
                 } else if (0.26 <= variate && variate < 0.5) {
                     arrayDeque.addFirst(count);
                     javaArrayDeque.addFirst(count);
-                    queue.add(String.format("addFirst(%d)", count));
-                    assertEquals(arrayDeque.size(), javaArrayDeque.size(),queue.toString());
+                    stackTrace.add(String.format("addFirst(%d)", count));
+                    assertEquals(arrayDeque.size(), javaArrayDeque.size(), stackTrace.toString());
                 } else if (0.5 <= variate && variate < 0.75) {
                     if ((!javaArrayDeque.isEmpty() && !arrayDeque.isEmpty())) {
                         actual = javaArrayDeque.removeFirst();
                         exptected = arrayDeque.removeFirst();
-                        queue.add("removeFirst()");
-                        assertEquals(exptected, actual, queue.toString());
+                        stackTrace.add("removeFirst()");
+                        assertEquals(exptected, actual, stackTrace.toString());
                     }
                 } else {
                     arrayDeque.addLast(count);
                     javaArrayDeque.addLast(count);
-                    queue.add(String.format("addLast(%d)", count));
-                    assertEquals(arrayDeque.size(), javaArrayDeque.size(),queue.toString());
+                    stackTrace.add(String.format("addLast(%d)", count));
+                    assertEquals(arrayDeque.size(), javaArrayDeque.size(), stackTrace.toString());
                 }
                 variate = random.nextDouble();
                 if (!javaArrayDeque.isEmpty() && !arrayDeque.isEmpty()) {
@@ -240,14 +252,14 @@ class ArrayDequeTest {
     }
 
     @Nested
-    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-    @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+    @TestInstance(Lifecycle.PER_CLASS)
+    @TestMethodOrder(OrderAnnotation.class)
     @DisplayName("When retrieved items are compared against java.util.LinkedList")
     class RandomizedGetTests {
         java.util.LinkedList<Integer> linkedList;
         ArrayDeque<Integer> arrayDeque;
         Random random;
-        StringJoiner queue;
+        StringJoiner stackTrace;
         int iterations;
 
         @BeforeAll
@@ -255,7 +267,7 @@ class ArrayDequeTest {
             linkedList = new java.util.LinkedList<>();
             arrayDeque = new ArrayDeque<>();
             random = new Random();
-            queue = new StringJoiner("\n");
+            stackTrace = new StringJoiner("\n");
             iterations = 100;
 
             for (int i = 0; i < iterations; i++) {
@@ -282,15 +294,15 @@ class ArrayDequeTest {
                 int variate = random.nextInt(100);
                 actual = linkedList.get(variate);
                 exptected = arrayDeque.get(variate);
-                queue.add(String.format("get(%d)", variate));
-                assertEquals(exptected, actual, queue.toString());
+                stackTrace.add(String.format("get(%d)", variate));
+                assertEquals(exptected, actual, stackTrace.toString());
             }
         }
     }
 
     @Nested
-    @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @TestMethodOrder(OrderAnnotation.class)
+    @TestInstance(Lifecycle.PER_CLASS)
     @DisplayName("When items are added and removed from ArrayDeque")
     class AddRemoveTests {
 
@@ -309,10 +321,6 @@ class ArrayDequeTest {
         @DisplayName("initially has size zero and capacity is eight")
         public void initiallySizeIsZero() {
             assertEquals(0, arrayDeque.size());
-            assertEquals(8, arrayDeque.getCapacity());
-            assertEquals(0, arrayDeque.getNextFirst());
-            assertEquals(1, arrayDeque.getNextLast());
-
         }
 
         @Test
@@ -321,17 +329,11 @@ class ArrayDequeTest {
         public void addExpectedStringItemsAndOne() {
             arrayDeque = deque2(arrayDeque);
             assertEquals(8, arrayDeque.size());
-            assertEquals(8, arrayDeque.getCapacity());
-            assertEquals(3, arrayDeque.getNextFirst());
-            assertEquals(4, arrayDeque.getNextLast());
             assertEquals(expect, arrayDeque.toString());
 
             expect = new String("[one, data, structures, is, the, new, skateboarding, true, false]");
             arrayDeque.addFirst("one");
             assertEquals(9, arrayDeque.size());
-            assertEquals(16, arrayDeque.getCapacity());
-            assertEquals(14, arrayDeque.getNextFirst());
-            assertEquals(8, arrayDeque.getNextLast());
             assertEquals(expect, arrayDeque.toString());
         }
 
@@ -342,81 +344,51 @@ class ArrayDequeTest {
             expect = new String("[data, structures, is, the, new, skateboarding, true, false]");
             assertEquals("one", arrayDeque.removeFirst()); // Capacity will be 16 here.
             assertEquals(8, arrayDeque.size());
-            assertEquals(16, arrayDeque.getCapacity());
-            assertEquals(15, arrayDeque.getNextFirst());
-            assertEquals(8, arrayDeque.getNextLast());
             assertEquals(expect, arrayDeque.toString());
 
             expect = new String("[structures, is, the, new, skateboarding, true, false]");
             assertEquals("data", arrayDeque.removeFirst()); // Capacity will be 16 here.
             assertEquals(7, arrayDeque.size());
-            assertEquals(16, arrayDeque.getCapacity());
-            assertEquals(0, arrayDeque.getNextFirst());
-            assertEquals(8, arrayDeque.getNextLast());
             assertEquals(expect, arrayDeque.toString());
 
             expect = new String("[is, the, new, skateboarding, true, false]");
             assertEquals("structures", arrayDeque.removeFirst()); // Capacity will be 16 here.
             assertEquals(6, arrayDeque.size());
-            assertEquals(16, arrayDeque.getCapacity());
-            assertEquals(1, arrayDeque.getNextFirst());
-            assertEquals(8, arrayDeque.getNextLast());
             assertEquals(expect, arrayDeque.toString());
 
             expect = new String("[is, the, new, skateboarding, true]");
             assertEquals("false", arrayDeque.removeLast());
             assertEquals(5, arrayDeque.size());
-            assertEquals(16, arrayDeque.getCapacity());
-            assertEquals(1, arrayDeque.getNextFirst());
-            assertEquals(7, arrayDeque.getNextLast());
             assertEquals(expect, arrayDeque.toString());
 
             expect = new String("[the, new, skateboarding, true]");
             assertEquals("is", arrayDeque.removeFirst());
             assertEquals(4, arrayDeque.size());
-            assertEquals(16, arrayDeque.getCapacity());
-            assertEquals(2, arrayDeque.getNextFirst());
-            assertEquals(7, arrayDeque.getNextLast());
             assertEquals(expect, arrayDeque.toString());
 
             expect = new String("[new, skateboarding, true]");
             assertEquals("the", arrayDeque.removeFirst());
             assertEquals(3, arrayDeque.size());
-            assertEquals(8, arrayDeque.getCapacity());
-            assertEquals(7, arrayDeque.getNextFirst());
-            assertEquals(3, arrayDeque.getNextLast());
             assertEquals(expect, arrayDeque.toString());
 
             expect = new String("[skateboarding, true]");
             assertEquals("new", arrayDeque.removeFirst());
             assertEquals(2, arrayDeque.size());
-            assertEquals(8, arrayDeque.getCapacity());
-            assertEquals(0, arrayDeque.getNextFirst());
-            assertEquals(3, arrayDeque.getNextLast());
             assertEquals(expect, arrayDeque.toString());
 
             expect = new String("[skateboarding]");
             assertEquals("true", arrayDeque.removeLast());
             assertEquals(1, arrayDeque.size());
-            assertEquals(4, arrayDeque.getCapacity());
-            assertEquals(3, arrayDeque.getNextFirst());
-            assertEquals(1, arrayDeque.getNextLast());
             assertEquals(expect, arrayDeque.toString());
 
             expect = new String("[]");
             assertEquals("skateboarding", arrayDeque.removeFirst());
             assertEquals(0, arrayDeque.size());
-            assertEquals(2, arrayDeque.getCapacity());
-            assertEquals(0, arrayDeque.getNextFirst());
-            assertEquals(1, arrayDeque.getNextLast());
             assertEquals(expect, arrayDeque.toString());
 
             expect = new String("[]");
             assertEquals(null, arrayDeque.removeFirst());
             assertEquals(0, arrayDeque.size());
-            assertEquals(2, arrayDeque.getCapacity());
-            assertEquals(0, arrayDeque.getNextFirst());
-            assertEquals(1, arrayDeque.getNextLast());
             assertEquals(expect, arrayDeque.toString());
         }
 
@@ -427,94 +399,33 @@ class ArrayDequeTest {
             expect = new String("[two]");
             arrayDeque.addFirst("two");
             assertEquals(1, arrayDeque.size());
-            assertEquals(2, arrayDeque.getCapacity());
-            assertEquals(1, arrayDeque.getNextFirst());
-            assertEquals(1, arrayDeque.getNextLast());
             assertEquals(expect, arrayDeque.toString());
 
             expect = new String("[two, three]");
             arrayDeque.addLast("three");
             assertEquals(2, arrayDeque.size());
-            assertEquals(2, arrayDeque.getCapacity());
-            assertEquals(1, arrayDeque.getNextFirst());
-            assertEquals(0, arrayDeque.getNextLast());
             assertEquals(expect, arrayDeque.toString());
 
             expect = new String("[two, three, four]");
             arrayDeque.addLast("four");
             assertEquals(3, arrayDeque.size());
-            assertEquals(4, arrayDeque.getCapacity());
-            assertEquals(3, arrayDeque.getNextFirst());
-            assertEquals(3, arrayDeque.getNextLast());
             assertEquals(expect, arrayDeque.toString());
 
             expect = new String("[one, two, three, four]");
             arrayDeque.addFirst("one");
             assertEquals(4, arrayDeque.size());
-            assertEquals(4, arrayDeque.getCapacity());
-            assertEquals(2, arrayDeque.getNextFirst());
-            assertEquals(3, arrayDeque.getNextLast());
             assertEquals(expect, arrayDeque.toString());
 
             expect = new String("[zero, one, two, three, four]");
             arrayDeque.addFirst("zero");
             assertEquals(5, arrayDeque.size());
-            assertEquals(8, arrayDeque.getCapacity());
-            assertEquals(6, arrayDeque.getNextFirst());
-            assertEquals(4, arrayDeque.getNextLast());
             assertEquals(expect, arrayDeque.toString());
-        }
-
-
-        @Test
-        @Order(5)
-        @DisplayName("remove all added items")
-        public void removeAllItems() {
-            ArrayDeque<String> arrayDeque = new ArrayDeque<>();
-            arrayDeque = deque2(arrayDeque);
-            assertEquals(8, arrayDeque.size());
-            assertEquals(8, arrayDeque.getCapacity());
-            assertEquals(3, arrayDeque.getNextFirst());
-            assertEquals(4, arrayDeque.getNextLast());
-
-            arrayDeque.removeLast();
-            arrayDeque.removeLast();
-            arrayDeque.removeLast();
-            arrayDeque.removeLast();
-            arrayDeque.removeLast();
-            arrayDeque.removeLast();
-
-            assertEquals(2, arrayDeque.size());
-            assertEquals(8, arrayDeque.getCapacity());
-            assertEquals(3, arrayDeque.getNextFirst());
-            assertEquals(6, arrayDeque.getNextLast());
-
-            arrayDeque.removeLast();
-
-            assertEquals(1, arrayDeque.size());
-            assertEquals(4, arrayDeque.getCapacity());
-            assertEquals(3, arrayDeque.getNextFirst());
-            assertEquals(1, arrayDeque.getNextLast());
-
-            arrayDeque.removeLast();
-
-            assertEquals(0, arrayDeque.size());
-            assertEquals(2, arrayDeque.getCapacity());
-            assertEquals(0, arrayDeque.getNextFirst());
-            assertEquals(1, arrayDeque.getNextLast());
-
-            arrayDeque.removeLast();
-
-            assertEquals(0, arrayDeque.size());
-            assertEquals(2, arrayDeque.getCapacity());
-            assertEquals(0, arrayDeque.getNextFirst());
-            assertEquals(1, arrayDeque.getNextLast());
         }
     }
 
     @Nested
-    @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @TestMethodOrder(OrderAnnotation.class)
+    @TestInstance(Lifecycle.PER_CLASS)
     @DisplayName("when created from other ArrayDeque")
     class WhenNewCreatedFromOther {
         ArrayDeque<String> other;
@@ -588,87 +499,3 @@ class ArrayDequeTest {
         return aDeque;
     }
 }
-
-//    private static void addRemoveTest(Deque<String> deque1, Deque<String> deque2, Deque<String> deque3, Deque<String> deque4) {
-//        System.out.println("***** Running addRemoveTest. *****");
-//
-//        String expect = new String("one data structures is the new skateboarding true false");
-//        boolean passed = TestUtility.checkEmpty(true, deque1.isEmpty());
-//        Deque<String> deque = TestUtility.deque2(new LinkedListDeque<>());
-//
-//        assertEquals(8, deque.size());
-//        deque.addFirst("one");              // Capacity will be 16 here.
-//        assertEquals(9, deque.size());
-//        assertEquals(expect, deque.toString());
-//
-//
-//        expect = new String("data structures is the new skateboarding true false");
-//        assertEquals("one", deque.removeFirst()); // Capacity will be 16 here.
-//        assertEquals(8, deque.size());
-//        assertEquals(expect, deque.toString());
-//
-//        expect = new String("structures is the new skateboarding true false");
-//        assertEquals("data", deque.removeFirst()); // Capacity will be 16 here.
-//        assertEquals(7, deque.size());
-//        assertEquals(expect, deque.toString());
-//
-//        expect = new String("is the new skateboarding true false");
-//        assertEquals("structures", deque.removeFirst()); // Capacity will be 16 here.
-//        assertEquals(6, deque.size());
-//        assertEquals(expect, deque.toString());
-//
-//        expect = new String("is the new skateboarding true");
-//        assertEquals("false", deque.removeLast());
-//        assertEquals(5, deque.size()); // Capacity will be 16 here.
-//        assertEquals(expect, deque.toString());
-//
-//        expect = new String("the new skateboarding true");
-//        assertEquals("is", deque.removeFirst());
-//        assertEquals(4, deque.size()); // Capacity will be 16 here.
-//        assertEquals(expect, deque.toString());
-//
-//        expect = new String("new skateboarding true");
-//        assertEquals("the", deque.removeFirst());
-//        assertEquals(3, deque.size()); // Capacity will be 8 here.
-//        assertEquals(expect, deque.toString());
-//
-//        expect = new String("skateboarding true");
-//        assertEquals("new", deque.removeFirst());
-//        assertEquals(2, deque.size()); // Capacity will be 8 here.
-//        assertEquals(expect, deque.toString());
-//
-//        expect = new String("skateboarding");
-//        assertEquals("true", deque.removeLast());
-//        assertEquals(1, deque.size()); // Capacity will be 4 here.
-//        assertEquals(expect, deque.toString());
-//
-//        expect = new String("skateboarding");
-//        assertEquals("skateboarding", deque.removeFirst());
-//        assertEquals(0, deque.size()); // Capacity will be 4 here.
-//        assertEquals(expect, deque.toString());
-//
-//        expect = new String("");
-//        assertEquals(null, deque.removeFirst());
-//        assertEquals(0, deque.size()); // Capacity will be 2 here.
-//        assertEquals(expect, deque.toString());
-//
-//        expect = new String("two");
-//        deque.addFirst("two");
-//        assertEquals(1, deque.size()); // Capacity will be 2 here.
-//        assertEquals(expect, deque.toString());
-//
-//        expect = new String("three");
-//        deque.addLast("three");
-//        assertEquals(2, deque.size()); // Capacity will be 2 here.
-//        assertEquals(expect, deque.toString());
-//
-//        expect = new String("four");
-//        deque.addLast("four");
-//        assertEquals(3, deque.size()); // Capacity will be 4 here.
-//        assertEquals(expect, deque.toString());
-//
-//        expect = new String("one");
-//        deque.addFirst("one");
-//        assertEquals(4, deque.size()); // Capacity will be 8 here.
-//        assertEquals(expect, deque.toString());
-//    }

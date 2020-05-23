@@ -50,7 +50,11 @@ public interface Deque<T> {
      * Prints the items in the deque from first to last, separated by a space.
      * Once all the items have been printed, print out a new line.
      */
-    void printDeque();
+    default void printDeque() {
+        for (int i = 0; i < size(); i++) {
+            System.out.println(get(i));
+        }
+    }
 
     /**
      *   Gets the item at the given index, where 0 is the front, 1 is the next item, and so forth.

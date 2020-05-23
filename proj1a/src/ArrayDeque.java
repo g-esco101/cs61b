@@ -21,9 +21,6 @@ public class ArrayDeque<T> implements Deque<T> {
     /** The number of items in the deque */
     private int size;
 
-    /** The size of the underlying array - items. */
-    private int capacity;
-
     /** A pointer to the empty location that is before the first item in the src.ArrayDeque.
      * It is always initialized to zero. */
     private int nextFirst;
@@ -37,8 +34,7 @@ public class ArrayDeque<T> implements Deque<T> {
 
     /** Creates a circular src.ArrayDeque with a capacity of 8. */
     public ArrayDeque() {
-        capacity = 8;
-        items = (T[]) new Object[capacity];
+        items = (T[]) new Object[8];
         size = 0;
         nextFirst = 0;
         nextLast = 1;
@@ -53,8 +49,7 @@ public class ArrayDeque<T> implements Deque<T> {
         if (other == null) {
             throw new NullPointerException("other cannot be null.");
         }
-        capacity = other.items.length;
-        items = (T[]) new Object[capacity];
+        items = (T[]) new Object[other.items.length];
         size = other.size;
         nextFirst = other.nextFirst;
         nextLast = other.nextLast;
@@ -135,7 +130,6 @@ public class ArrayDeque<T> implements Deque<T> {
      * @param capacity the size of the new items array.
      */
     private void resize(int capacity) {
-        this.capacity = capacity;
         T[] newItems = (T[]) new Object[capacity];
         for (int i = 0, first = increment(nextFirst); i < size; i++, first = increment(first)) {
             newItems[i] = items[first];
@@ -155,12 +149,12 @@ public class ArrayDeque<T> implements Deque<T> {
      * is two, then it is not down sized.
      */
     private void downsize() {
-        if (capacity == 2) {
+        if (items.length == 2) {
             return;
         }
-        double usage = (double) size / capacity;
+        double usage = (double) size / items.length;
         if (usage < LOAD_FACTOR) {
-            resize(capacity / FACTOR);
+            resize(items.length / FACTOR);
         }
     }
 
@@ -233,30 +227,6 @@ public class ArrayDeque<T> implements Deque<T> {
      */
     private int decrement(int minuend) {
         return (minuend - 1 + items.length) % items.length;
-    }
-
-    /** Retrieves the current capacity - i.e the size of the underlying array items.
-     *
-     * @return capacity - i.e. the size of the underlying array items.
-     */
-    public int getCapacity() {
-        return capacity;
-    }
-
-    /** Retrieves the current position of nextFirst.
-     *
-     * @return nextFirst - its current position.
-     */
-    public int getNextFirst() {
-        return nextFirst;
-    }
-
-    /** Retrieves the current position of nextFirst.
-     *
-     * @return nextLast - its current position.
-     */
-    public int getNextLast() {
-        return nextLast;
     }
 
     //
