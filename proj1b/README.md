@@ -53,8 +53,6 @@ All Classes:
 
 [LinkedListDeque.java](src/LinkedListDeque.java) and [Deque.java](src/Deque.java) with all members and constructors visible:
 
-![alt text](class-diagrams/LinkedListDeque.jpg "deque diagrams")
-
 All classes except for the deques with all members and constructors visible:
 
 ![alt text](class-diagrams/palindrome.png "palindrome diagrams")
@@ -62,6 +60,8 @@ All classes except for the deques with all members and constructors visible:
 ## Testing
 
 ### Junit 5
+
+@Nested test classes are used to express the relationship among several groups of tests.
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS) is used when test methods rely on state stored in instance variables - i.e. when the sequence of the tests are dependent upon each other. Otherwise, the default setting instantiates a new test instance per test method.
 
