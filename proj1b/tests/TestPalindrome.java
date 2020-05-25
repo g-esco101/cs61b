@@ -17,7 +17,7 @@ public class TestPalindrome {
     static Palindrome palindrome = new Palindrome();
 
     @Test
-    @DisplayName("it converts a word to a deque")
+    @DisplayName("converts a word to a deque")
     public void convertWordToDeque() {
         Deque d = palindrome.wordToDeque("persiflage");
         String actual = "";
@@ -28,30 +28,41 @@ public class TestPalindrome {
     }
 
     @Test
-    @DisplayName("it checks if a word is a palindrome")
+    @DisplayName("verifies that palindromes are palindromes")
     public void wordIsPalindrome() {
-        Assertions.assertTrue(palindrome.isPalindrome("RACECAR"));
-        Assertions.assertTrue(palindrome.isPalindrome("racecar"));
-        Assertions.assertFalse(palindrome.isPalindrome("Racecar"));
-        Assertions.assertFalse(palindrome.isPalindrome("RACERCAr"));
+        Assertions.assertTrue(palindrome.isPalindrome("rACeCAr"));
+        Assertions.assertTrue(palindrome.isPalindrome("racEcar"));
         Assertions.assertTrue(palindrome.isPalindrome("a"));
         Assertions.assertTrue(palindrome.isPalindrome(""));
+    }
+    @Test
+    @DisplayName("verifies that non-palindromes are not palindromes")
+    public void wordIsNotPalindrome() {
+        Assertions.assertFalse(palindrome.isPalindrome("Racecar"));
+        Assertions.assertFalse(palindrome.isPalindrome("RACERCAr"));
         Assertions.assertFalse(palindrome.isPalindrome("RANCOR"));
     }
 
     @Test
-    @DisplayName("it checks if a word is a palindrome off by one")
-    public void testIsPalindromeCharacterComparator() {
+    @DisplayName("verifies that a word is a palindromes off by one")
+    public void wordIsPalindromeOffByOne() {
         OffByOne offByOne = new OffByOne();
+
         Assertions.assertTrue(palindrome.isPalindrome("flake", offByOne));
         Assertions.assertTrue(palindrome.isPalindrome("a", offByOne));
         Assertions.assertTrue(palindrome.isPalindrome("", offByOne));
         Assertions.assertTrue(palindrome.isPalindrome("sbdecar", offByOne));
-        Assertions.assertTrue(palindrome.isPalindrome("THUGS", offByOne));
-        Assertions.assertTrue(palindrome.isPalindrome("REMINDS", offByOne));
+    }
+
+    @Test
+    @DisplayName("verifies that a word is not a palindromes off by one")
+    public void wordIsNotPalindromeOffByOne() {
+        OffByOne offByOne = new OffByOne();
 
         Assertions.assertFalse(palindrome.isPalindrome("Racecar", offByOne));
-        Assertions.assertFalse(palindrome.isPalindrome("RACERCAr", offByOne));
         Assertions.assertFalse(palindrome.isPalindrome("RANCOR", offByOne));
+        Assertions.assertFalse(palindrome.isPalindrome("aa", offByOne));
+        Assertions.assertFalse(palindrome.isPalindrome("aBa", offByOne));
+
     }
 } 

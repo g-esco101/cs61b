@@ -228,47 +228,4 @@ public class ArrayDeque<T> implements Deque<T> {
     private int decrement(int minuend) {
         return (minuend - 1 + items.length) % items.length;
     }
-
-    //
-//    /**
-//     * Determines if this LinkedListDeque is equal to the one specified.
-//     *
-//     * @param o is an Object that may be a LinkedListDeque.
-//     */
-//    @Override
-//    public boolean equals(Object o) {
-//        if (o == this) {
-//            return true;
-//        }
-//        if (o == null || !(o instanceof ArrayDeque)) {
-//            return false;
-//        }
-//        ArrayDeque<?> other = (ArrayDeque<?>) o;
-//        if (size() != other.size()) {
-//            return false;
-//        }
-////        if (size() == 0) {
-////            return true;
-////        }
-//        for (int i = increment(nextFirst), j = increment(other.nextFirst); i < size; i = increment(i), j = increment(j)) {
-//            if (!items[i].equals(other.items[j])) {
-//                return false;
-//            }
-//        }
-//        return true;
-//    }
-//
-//    /**
-//     * Calculates the hash code for this list.
-//     *
-//     * @return the hash code value for this list
-//     */
-//    @Override
-//    public int hashCode() {
-//        int hashCode = 1;
-//        for (int i = increment(nextFirst); i < size; i = increment(i)) {
-//            hashCode = 31*hashCode + (items[i] == null ? 0 : items[i].hashCode());
-//        }
-//        return hashCode;
-//    }
 }

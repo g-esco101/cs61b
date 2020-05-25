@@ -13,20 +13,20 @@ public class TestOffByOne {
     static CharacterComparator offByOne = new OffByOne();
 
     @Test
-    @DisplayName("Two characters have a difference of one")
-    public void testEqualChars() {
-        Assertions.assertFalse(offByOne.equalChars('a', 'e'));
+    @DisplayName("verifies that two characters have a difference of one")
+    public void charactersOffByOne() {
+        Assertions.assertTrue(offByOne.equalChars('&', '%'));
+        Assertions.assertTrue(offByOne.equalChars('a', 'b'));
+        Assertions.assertTrue(offByOne.equalChars('Z', 'Y'));
+        Assertions.assertTrue(offByOne.equalChars(':', ';'));
+
+    }
+    @Test
+    @DisplayName("verifies that two characters do not have a difference of one")
+    public void charactersNotOffByOne() {
         Assertions.assertFalse(offByOne.equalChars('z', 'a'));
         Assertions.assertFalse(offByOne.equalChars('a', 'a'));
         Assertions.assertFalse(offByOne.equalChars('c', 'C'));
         Assertions.assertFalse(offByOne.equalChars('+', '-'));
-        Assertions.assertFalse(offByOne.equalChars('{', '}'));
-
-        Assertions.assertTrue(offByOne.equalChars('&', '%'));
-        Assertions.assertTrue(offByOne.equalChars('a', 'b'));
-        Assertions.assertTrue(offByOne.equalChars('r', 'q'));
-        Assertions.assertTrue(offByOne.equalChars('Z', 'Y'));
-        Assertions.assertTrue(offByOne.equalChars(':', ';'));
-
     }
 }
