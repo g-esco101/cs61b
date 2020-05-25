@@ -1,7 +1,5 @@
 package src;
 
-import edu.princeton.cs.algs4.In;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;

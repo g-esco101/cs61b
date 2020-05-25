@@ -3,8 +3,9 @@
 Determine if a word is a palindrome. The [LinkedListDeque](src/LinkedListDeque.java) that I implemented in project 1a is used to represent a word. 
 
 The word.txt file is read as a stream and the words in the file are filtered using the isPalindrome 
-method and the CharacterComparator functional interface. Other aggregate functions such as max, count,
-and collect(Collectors.toList()) are used to implement the "just for fun" methods described in the 
+method and the CharacterComparator functional interface in lambda expressions. Method references and other
+ aggregate functions such as max, count,
+and collect(Collectors.toList()) are also used to implement the "just for fun" methods described in the 
 project.
 
 Test Driven Development was used to complete this assignment. 

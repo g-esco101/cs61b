@@ -17,9 +17,9 @@ public class PalindromeFinder {
         System.out.println("Palindromes with a minimum length of four:");
         Palindrome.palindromesWithMinimumLength(file, 4);
 
-        int specifiedN = 5;
-        List<String> list = Palindrome.palindromesOffByN(file, specifiedN);
-        System.out.printf("List of offByN palindromes for specified N: %d.\n", specifiedN);
+        int N = 22;
+        List<String> list = Palindrome.palindromesOffByN(file, N);
+        System.out.printf("List of offByN palindromes for specified N: %d.\n", N);
         list.forEach(System.out::println);
 
     }
