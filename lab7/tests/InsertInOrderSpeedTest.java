@@ -1,3 +1,5 @@
+package tests;
+
 import java.util.HashMap;
 import java.util.TreeMap;
 import java.io.IOException;
@@ -5,9 +7,14 @@ import java.util.Scanner;
 
 import edu.princeton.cs.algs4.Stopwatch;
 
+import src.BSTMap;
+import src.BSTMapRecursive;
+import src.Map61B;
+import src.ULLMap;
+
 /**
  * Performs a timing test on three different set implementations.
- * For BSTMap purposes assumes that <K,V> are <String, Integer> pairs.
+ * For src.BSTMap purposes assumes that <K,V> are <String, Integer> pairs.
  *
  * @author Josh Hug
  * @author Brendan Hu
@@ -20,7 +27,7 @@ public class InsertInOrderSpeedTest {
     public static void main(String[] args) throws IOException {
         Scanner input = new Scanner(System.in);
 
-        // borrow waitForPositiveInt(Scanner input) from InsertRandomSpeedTest
+        // borrow waitForPositiveInt(Scanner input) from tests.InsertRandomSpeedTest
         InsertRandomSpeedTest i = new InsertRandomSpeedTest();
 
         System.out.println("\nThis program inserts lexicographically increasing Strings "
@@ -32,6 +39,7 @@ public class InsertInOrderSpeedTest {
             int N = i.waitForPositiveInt(input);
             timeInOrderMap61B(new ULLMap<>(), N);
             timeInOrderMap61B(new BSTMap<>(), N);
+            timeInOrderMap61B(new BSTMapRecursive<>(), N);
             timeInOrderTreeMap(new TreeMap<>(), N);
             timeInOrderHashMap(new HashMap<>(), N);
 
@@ -42,15 +50,15 @@ public class InsertInOrderSpeedTest {
     }
 
     /**
-     * Returns time needed to put N strings into a Map61B in increasing order.
-     * makes use of StringUtils.nextString(String s)
+     * Returns time needed to put N strings into a src.Map61B in increasing order.
+     * makes use of tests.StringUtils.nextString(String s)
      */
     public static double insertInOrder(Map61B<String, Integer> map61B, int N) {
         Stopwatch sw = new Stopwatch();
         String s = "cat";
         for (int i = 0; i < N; i++) {
             s = StringUtils.nextString(s);
-            map61B.put(s, new Integer(i));
+            map61B.put(s, i);
         }
         return sw.elapsedTime();
     }
@@ -63,7 +71,7 @@ public class InsertInOrderSpeedTest {
         String s = "cat";
         for (int i = 0; i < N; i++) {
             s = StringUtils.nextString(s);
-            ts.put(s, new Integer(i));
+            ts.put(s, i);
         }
         return sw.elapsedTime();
     }
@@ -73,7 +81,7 @@ public class InsertInOrderSpeedTest {
         String s = "cat";
         for (int i = 0; i < N; i++) {
             s = StringUtils.nextString(s);
-            ts.put(s, new Integer(i));
+            ts.put(s, i);
         }
         return sw.elapsedTime();
     }

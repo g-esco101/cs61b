@@ -1,9 +1,18 @@
-import java.util.Set;
+package tests;
+
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import src.BSTMap;
+
 import java.util.HashSet;
-import static org.junit.Assert.*;
-import org.junit.Test;
+import java.util.Set;
 
 /** Tests of optional parts of lab 8. */
+@DisplayName("Given a BSTMap - given extra sanity checks")
 public class TestBSTMapExtra {
 
     /*
@@ -17,7 +26,7 @@ public class TestBSTMapExtra {
             b.put("hi" + i, 1);
             values.add("hi" + i);
         }
-        assertEquals(455, b.size()); //keys are there
+        Assertions.assertEquals(455, b.size()); //keys are there
         Set<String> keySet = b.keySet();
         assertTrue(values.containsAll(keySet));
         assertTrue(keySet.containsAll(values));
@@ -44,11 +53,11 @@ public class TestBSTMapExtra {
         q.put("d","a");
         q.put("e","a"); // a b c d e
         assertTrue(null != q.remove("c"));
-        assertFalse(q.containsKey("c"));
-        assertTrue(q.containsKey("a"));
-        assertTrue(q.containsKey("b"));
-        assertTrue(q.containsKey("d"));
-        assertTrue(q.containsKey("e"));
+        Assertions.assertFalse(q.containsKey("c"));
+        Assertions.assertTrue(q.containsKey("a"));
+        Assertions.assertTrue(q.containsKey("b"));
+        Assertions.assertTrue(q.containsKey("d"));
+        Assertions.assertTrue(q.containsKey("e"));
     }
 
     /* Remove Test 2
@@ -63,19 +72,19 @@ public class TestBSTMapExtra {
         q.put("d","a");
         q.put("e","a");                         // a b c d e
         assertTrue(null != q.remove("e"));      // a b c d
-        assertTrue(q.containsKey("a"));
-        assertTrue(q.containsKey("b"));
-        assertTrue(q.containsKey("c"));
-        assertTrue(q.containsKey("d"));
+        Assertions.assertTrue(q.containsKey("a"));
+        Assertions.assertTrue(q.containsKey("b"));
+        Assertions.assertTrue(q.containsKey("c"));
+        Assertions.assertTrue(q.containsKey("d"));
         assertTrue(null != q.remove("c"));      // a b d
-        assertTrue(q.containsKey("a"));
-        assertTrue(q.containsKey("b"));
-        assertTrue(q.containsKey("d"));
+        Assertions.assertTrue(q.containsKey("a"));
+        Assertions.assertTrue(q.containsKey("b"));
+        Assertions.assertTrue(q.containsKey("d"));
         q.put("f","a");                         // a b d f
         assertTrue(null != q.remove("d"));      // a b f
-        assertTrue(q.containsKey("a"));
-        assertTrue(q.containsKey("b"));
-        assertTrue(q.containsKey("f"));
+        Assertions.assertTrue(q.containsKey("a"));
+        Assertions.assertTrue(q.containsKey("b"));
+        Assertions.assertTrue(q.containsKey("f"));
     }
 
     /* Remove Test 3
@@ -101,14 +110,14 @@ public class TestBSTMapExtra {
         leftChild.put('B', 1);
         leftChild.put('A', 2);
         assertTrue(((Integer) leftChild.remove('B')).equals(1));
-        assertEquals(1, leftChild.size());
-        assertEquals(null, leftChild.get('B'));
+        Assertions.assertEquals(1, leftChild.size());
+        Assertions.assertEquals(null, leftChild.get('B'));
 
         BSTMap noChild = new BSTMap();
         noChild.put('Z', 15);
         assertTrue(((Integer) noChild.remove('Z')).equals(15));
-        assertEquals(0, noChild.size());
-        assertEquals(null, noChild.get('Z'));
+        Assertions.assertEquals(0, noChild.size());
+        Assertions.assertEquals(null, noChild.get('Z'));
     }
 
     public static void main(String[] args) {

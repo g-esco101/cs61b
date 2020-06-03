@@ -1,8 +1,17 @@
+package tests;
+
 import java.util.HashMap;
+import java.util.Map;
 import java.util.TreeMap;
 import java.io.IOException;
 import java.util.Scanner;
 import edu.princeton.cs.algs4.Stopwatch;
+
+import src.BSTMap;
+import src.BSTMapRecursive;
+import src.Map61B;
+import src.ULLMap;
+
 
 /** Performs a timing test on three different set implementations.
  *  @author Josh Hug
@@ -29,7 +38,9 @@ public class InsertRandomSpeedTest {
             int N = waitForPositiveInt(input);
             timeRandomMap61B(new ULLMap<>(), N, L);
             timeRandomMap61B(new BSTMap<>(), N, L);
+            timeRandomMap61B(new BSTMapRecursive<>(), N, L);
             timeRandomTreeMap(new TreeMap<>(), N, L);
+            timeRandomHashMap(new HashMap<>(), N, L);
 
             System.out.print("\nWould you like to try more timed-tests? (y/n)");
             repeat = input.nextLine();
@@ -38,7 +49,7 @@ public class InsertRandomSpeedTest {
     }
 
     /** Returns time needed to put N random strings of length L into the
-      * Map61B 61bMap. */
+      * src.Map61B 61bMap. */
     public static double insertRandom(Map61B<String, Integer> map61B, int N, int L) {
         Stopwatch sw = new Stopwatch();
         String s = "cat";

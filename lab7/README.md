@@ -1,0 +1,76 @@
+# [Lab 7: TreeMap](https://sp19.datastructur.es/materials/lab/lab7/lab7)
+Created a [src.BSTMap](src/BSTMap.java), a BST-based implementation of the [src.Map61B](src/Map61B.java) interface, which represents a basic tree-based map. I also implemented [src.BSTMapRecursive](src/BSTMapRecursive.java) to compare its performance with other 
+
+There are two interactive speed tests provided in [tests.InsertRandomSpeedTest.java](tests.InsertRandomSpeedTest.java) and [tests.InsertInOrderSpeedTest.java](tests/InsertInOrderSpeedTest.java). They were used to compare the performance of the implementations to a list-based Map implementation [src.ULLMap](src/ULLMap), the built-in Java [TreeMap](https://docs.oracle.com/javase/8/docs/api/java/util/TreeMap.html) class (which is a Red-Black BST), and the built-in Java [HashMap](https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html) class (which is a Hash table).
+
+A Test-Driven Development approach was taken.
+
+Implementations assume that generic keys K extend Comparable. Null keys are prohibited.
+
+
+## Run
+Open in Intellij (I used Intellij IDEA 2020.1). 
+
+To run a single test file, select the test file in the tests package, right click, and then select Run.
+
+To run all tests: 
+- Select Run | Edit Configuration from the main menu.
+- In the Run/Debug Configurations dialog, click the Add New Configuration button on the toolbar or press Alt+Insert.
+- Select JUnit from the list.
+- A new configuration page opens. Name this configuration.
+- From the Test kind list, select "All in package".
+- In the Package field type "tests".
+- Apply the changes and close the dialog.
+- Select Run.
+
+
+## Files modified or created
+- [BSTMap.java](src/BSTMap.java)
+- [BSTMapTest.java](tests/map/BSTMapTest.java)
+- [BSTMapRandomTest.java](tests/map/BSTMapRandomTest.java)
+
+- [BSTMapRecursive.java](src/BSTMapRecursive.java)
+- [BSTMapRecursiveTest.java](tests/map/BSTMapRecursiveTest.java)
+- [BSTMapRecursiveRandomTest.java](tests/map/BSTMapRecursiveRandomTest.java)
+
+
+## Class Diagram
+BSTMap
+![alt text](class-diagrams/BSTMap.png "BSTMap diagram")
+
+BSTMapRecursive
+![alt text](class-diagrams/BSTMapRecursive.png "BSTMapRecursive diagram")
+
+
+## Testing
+### Junit 5
+Randomized tests implemented: items are added and removed randomly and the results are compared java.util.TreeMap.
+
+@Nested test classes are used to express the relationship among several groups of tests.
+
+@DisplayName is used on test classes and test methods to declare custom display names.
+
+@BeforeEach is used to execute methods before each test.
+
+@BeforeAll is used to execute methods before all tests.
+
+Other annotations are also used.
+
+![alt text](test-reports/junit5.png "junit5")
+
+
+### Code Coverage
+Wrote tests such that almost all lines and branches are covered. Note: this does not mean that the implementation is bug-free. 
+
+![alt text](test-reports/coverage.png "coverage")
+
+### Speed Tests
+
+The InsertRandomSpeedTest class performs tests on element-insertion speed of your BSTMap, ULLMap (provided), Java’s built-in TreeMap (Red-Black BST), and Java’s built-in HashMap (Hash Table). It works by asking the user for a desired length of each String to insert, and also for an input size (the number of insertions to perform). It then generates that many Strings of the specified length and inserts them into the maps as <String,Integer> pairs.
+
+![alt text](test-reports/InsertRandomSpeedTest.png "InsertRandomSpeedTest")
+
+
+The InsertInOrderSpeedTest behaves similarly to InsertRandomSpeedTest, except the Strings in <String, Integer> key-value pairs are inserted in lexicographically-increasing order. Lexicographical order is a generalization of the way words are alphabetically ordered based on the alphabetical order of their component letters (e.g., 1, 10, 2 is in lexicographical order).
+
+![alt text](test-reports/InsertInOrderSpeedTest.png "InsertInOrderSpeedTest")

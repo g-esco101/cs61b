@@ -34,7 +34,7 @@ Also, added the ability to iterate through a BoundedQueue, changed ArrayRingBuff
  
 ## Class Diagram
 
-![alt text](class-diagrams/class-diagrams.png "class diagram")
+![alt text](class-diagrams/class-diagram.png "class diagram")
 
 # Not included in the instructions, but I added
 
