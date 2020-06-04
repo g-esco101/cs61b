@@ -1,5 +1,7 @@
 package tests.map;
 
+import com.sun.source.tree.Tree;
+import edu.princeton.cs.algs4.In;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -172,6 +174,19 @@ class BSTMapRecursiveTest {
             assertEquals(expected, actual);
             assertEquals(7, bstMap.size());
             assertTrue(orderMaintained(bstMap, expected));
+        }
+
+        @Test
+        @DisplayName("the key set contains all the keys")
+        public void keySetHasAllKeys() {
+            String expected = "[(1, 1), (3, 3), (4, 4), (5, 5), (7, 7), (8, 8), (9, 9)]";
+            BSTMapRecursive<Integer, Integer> bstMap = makeCompleteBSTMap();
+            TreeMap<Integer, Integer> treeMap = makeCompleteTreeMap();
+            Set<Integer> set = bstMap.keySet();
+            Set<Integer> treeMapSet = treeMap.keySet();
+
+            assertTrue(set.containsAll(treeMapSet));
+            assertTrue(treeMapSet.containsAll(set));
         }
 
         @Test
@@ -410,6 +425,141 @@ class BSTMapRecursiveTest {
         }
     }
 
+    @Test
+    @DisplayName("removes an inner node that is a child of the root and has two children")
+    public void removeRootChildTwoChildren(){
+        TreeMap<Integer, Integer> treeMap = new TreeMap<>();
+        BSTMapRecursive<Integer, Integer> q = new BSTMapRecursive<>();
+        q.put(45, 45);
+        q.put(88, 88);
+        q.put(97, 97);
+        q.put(54, 54);
+        q.put(48, 48);
+        q.put(90, 90);
+        q.put(42, 42);
+        q.put(105, 105);
+        q.put(102, 102);
+        q.put(103, 103);
+
+        treeMap.put(45, 45);
+        treeMap.put(88, 88);
+        treeMap.put(97, 97);
+        treeMap.put(54, 54);
+        treeMap.put(48, 48);
+        treeMap.put(90, 90);
+        treeMap.put(42, 42);
+        treeMap.put(105, 105);
+        treeMap.put(102, 102);
+        treeMap.put(103, 103);
+        assertTrue(containSameKeys(q, treeMap));
+        Integer actual = q.remove(88);
+        Integer expected = treeMap.remove(88);
+        assertTrue(containSameKeys(q, treeMap));
+    }
+
+    @Test
+    @DisplayName("removes an inner node that has two children")
+    public void removesInnerWithChildren(){
+        TreeMap<Integer, Integer> treeMap = new TreeMap<>();
+        BSTMapRecursive<Integer, Integer> q = new BSTMapRecursive<>();
+
+        q.put(45, 45);
+        q.remove(15);
+        q.put(88, 88);
+        q.put(97, 97);
+        q.put(54, 54);
+        q.remove(26);
+        q.put(48, 48);
+        q.put(2, 2);
+        q.put(42, 42);
+
+        treeMap.put(45, 45);
+        treeMap.remove(15);
+        treeMap.put(88, 88);
+        treeMap.put(97, 97);
+        treeMap.put(54, 54);
+        treeMap.remove(26);
+        treeMap.put(48, 48);
+        treeMap.put(2, 2);
+        treeMap.put(42, 42);
+
+        assertTrue(containSameKeys(q, treeMap));
+        Integer actual = q.remove(54);
+        Integer expected = treeMap.remove(54);
+        assertTrue(containSameKeys(q, treeMap));
+    }
+
+    @Test
+    public void puts2(){
+        TreeMap<Integer, Integer> treeMap = new TreeMap<>();
+        BSTMapRecursive<Integer, Integer> q = new BSTMapRecursive<>();
+
+        // This was made from a test case of a random test.
+        treeMap.put(5, 5);
+        treeMap.remove(9);
+        treeMap.put(57, 57);
+        treeMap.remove(37);
+        treeMap.remove(53);
+        treeMap.remove(40);
+        treeMap.put(69, 69);
+        treeMap.remove(5);
+        treeMap.put(30, 30);
+        treeMap.put(13, 13);
+        treeMap.put(58, 58);
+        treeMap.put(12, 12);
+        treeMap.remove(28);
+        treeMap.remove(54);
+        treeMap.put(16, 16);
+        treeMap.remove(43);
+        treeMap.put(52, 52);
+        treeMap.put(45, 45);
+        treeMap.remove(91);
+        treeMap.put(73, 73);
+        treeMap.remove(35);
+        treeMap.put(38, 38);
+        treeMap.remove(33);
+        treeMap.remove(11);
+        treeMap.remove(90);
+        treeMap.remove(65);
+        treeMap.put(36, 36);
+        treeMap.put(99, 99);
+
+        q.put(5, 5);
+        q.remove(9);
+        q.put(57, 57);
+        q.remove(37);
+        q.remove(53);
+        q.remove(40);
+        q.put(69, 69);
+        q.remove(5);
+        q.put(30, 30);
+        q.put(13, 13);
+        q.put(58, 58);
+        q.put(12, 12);
+        q.remove(28);
+        q.remove(54);
+        q.put(16, 16);
+        q.remove(43);
+        q.put(52, 52);
+        q.put(45, 45);
+        q.remove(91);
+        q.put(73, 73);
+        q.remove(35);
+        q.put(38, 38);
+        q.remove(33);
+        q.remove(11);
+        q.remove(90);
+        q.remove(65);
+        q.put(36, 36);
+        q.put(99, 99);
+
+        assertTrue(containSameKeys(q, treeMap));
+        Integer actual = q.remove(69);
+        Integer expected = treeMap.remove(69);
+        assertTrue(containSameKeys(q, treeMap));
+    }
+
+
     private BSTMapRecursive<Integer, Integer> makeCompleteBSTMap() {
         BSTMapRecursive<Integer, Integer> q = new BSTMapRecursive<>();
         q.put(5, 5);
@@ -440,7 +590,8 @@ class BSTMapRecursiveTest {
                 return false;
             }
         }
-        for (Integer i : bstMap) {
+        Iterator<Integer> iter = bstMap.iterator();
+        for (Integer i = iter.next(); iter.hasNext(); i = iter.next()) {
             if (!treeMap.containsKey(i)) {
                 return false;
             }

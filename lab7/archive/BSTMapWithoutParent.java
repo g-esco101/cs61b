@@ -1,6 +1,9 @@
 package src;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+import java.util.StringJoiner;
 
 /** A Binary Search Tree with key-value mappings. Most operations are implemented iteratively.
  *
@@ -18,37 +21,14 @@ public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V> {
 
         private K key;
         private V value;
-        private Entry left, right, parent;
+        private Entry left;
+        private Entry right;
 
-        public Entry(K key, V value, Entry<K, V> parent) {
+        public Entry(K key, V value) {
             this.key = key;
             this.value = value;
-            this.parent = parent;
             left = null;
             right = null;
-        }
-    }
-
-     class EntryIterator<T> implements Iterator<T> {
-         Entry<K,V> nextEntry;
-         T next;
-         int count;
-
-        EntryIterator() {
-            nextEntry = minimum(root);
-            next = (T) nextEntry.key;
-            count = 0;
-        }
-
-        public boolean hasNext() {
-            return count != size;
-       }
-
-        public T next() {
-            Entry<K,V> entry = nextEntry;
-            nextEntry = successor(entry);
-            count++;
-            return (T) entry.key;
         }
     }
 
@@ -77,7 +57,7 @@ public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V> {
      */
     public BSTMap(K key, V value) {
         if (key != null) {
-            this.root = new Entry<>(key, value, null);
+            this.root = new Entry<>(key, value );
             size = 1;
         } else {
             size = 0;
@@ -181,7 +161,7 @@ public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V> {
                 node = node.right;
             }
         }
-        Entry entry = new Entry(key, value, parent);
+        Entry entry = new Entry(key, value);
         if (parent == null) {
             root = entry; // tree was empty
         } else if (parent.key.compareTo(key) > 0) {
@@ -205,7 +185,7 @@ public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V> {
             return null;
         }
         Entry entry = getEntry(key);
-        if (entry != null && entry.value.equals(value)) {
+        if (entry != null && entry.value == value) {
             return remove(key);
         }
         return null;
@@ -222,24 +202,45 @@ public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V> {
         if (key == null || root == null) {
             return null;
         }
-        Entry removed = getEntry(key);
+        Entry removed = root;
+        Entry removedPar = null;
+
+        // Get entry to remove.
+        while (removed != null) {
+            int compare = removed.key.compareTo(key);
+            if (compare == 0) {
+                if (removed == root) {
+                    removedPar = null;
+                }
+                break;
+            } else if (compare > 0) {
+                removedPar = removed;
+                removed = removed.left;
+            } else {
+                removedPar = removed;
+                removed = removed.right;
+            }
+        }
         if (removed == null) {
             return null;
         }
         if (removed.left == null) {
-            transplant(removed, removed.right);
+            transplant(removed, removedPar, removed.right, removed);
         } else if (removed.right == null) {
-            transplant(removed, removed.left);
+            transplant(removed, removedPar, removed.left, removed);
         } else {
-            Entry<K, V> successor = minimum(removed.right);
-            if (successor.parent != removed) {
-                transplant(successor, successor.right);
-                successor.right = removed.right;
-                successor.right.parent = successor;
+            Entry successor = removed.right;
+            Entry successorPar = removed;
+            while (successor.left != null) {
+                successorPar = successor;
+                successor = successor.left;
             }
-            transplant(removed, successor);
+            if (successorPar != removed) {
+                transplant(successor, successorPar, successor.right, successor);
+                successor.right = removed.right;
+            }
+            transplant(removed, removedPar, successor, successorPar);
             successor.left = removed.left;
-            successor.left.parent = successor;
         }
         size--;
         return (V) removed.value;
@@ -249,18 +250,20 @@ public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V> {
      * parent becomes entry v's parent and entry v's parent, and u's parent gets v as a child.
      *
      * @param u subtree root that is to be swapped.
+     * @param uParent subtree root parent that is to be swapped.
      * @param v subtree root that is to be swapped.
+     * @param vParent subtree root parent that is to be swapped.
      */
-    private void transplant(Entry u, Entry v) {
-        if (u.parent == null) {
+    private void transplant(Entry u, Entry uParent, Entry v, Entry vParent) {
+        if (uParent == null) {
             root = v;
-        } else if (u == u.parent.left) {
-            u.parent.left = v;
+        } else if (uParent.left == u) {
+            uParent.left = v;
         } else {
-            u.parent.right = v;
+            uParent.right = v;
         }
         if (v != null) {
-            v.parent = u.parent;
+            vParent = uParent;
         }
     }
 
@@ -344,36 +347,7 @@ public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V> {
      */
     @Override
     public Iterator<K> iterator() {
-        Iterator<K> iter = new EntryIterator<K>();
+        Iterator<K> iter = keySet().iterator();
         return  iter;
-    }
-
-    /** Returns the successor of the root of the subtree entry.
-     *
-     * @param entry the root of the subtree to find its successor.
-     * @return the entry successor.
-     */
-    private Entry<K, V> successor(Entry<K, V> entry) {
-        if (entry.right != null) {
-            return minimum((entry.right));
-        }
-        Entry<K, V> parent = entry.parent;
-        while (parent != null && entry.equals(parent.right)) {
-            entry = parent;
-            parent = parent.parent;
-        }
-        return parent;
-    }
-
-    /** Finds the entry containing the minimum key in the subtree.
-     *
-     * @param entry the subtree to search for the entry with the minimum key.
-     * @return the entry in the subtree with the minimum key.
-     */
-    private Entry<K, V> minimum(Entry<K, V> entry) {
-        while (entry.left != null) {
-            entry = entry.left;
-        }
-        return entry;
     }
 }

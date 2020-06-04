@@ -1,10 +1,12 @@
 package tests.map;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Nested;
 
 import src.BSTMap;
+import src.BSTMapRecursive;
 
 import java.util.Iterator;
 import java.util.Map;
@@ -170,6 +172,19 @@ class BSTMapTest {
             assertEquals(expected, actual);
             assertEquals(7, bstMap.size());
             assertTrue(orderMaintained(bstMap, expected));
+        }
+
+        @Test
+        @DisplayName("the key set contains all the keys")
+        public void keySetHasAllKeys() {
+            String expected = "[(1, 1), (3, 3), (4, 4), (5, 5), (7, 7), (8, 8), (9, 9)]";
+            BSTMap<Integer, Integer> bstMap = makeCompleteBSTMap();
+            TreeMap<Integer, Integer> treeMap = makeCompleteTreeMap();
+            Set<Integer> set = bstMap.keySet();
+            Set<Integer> treeMapSet = treeMap.keySet();
+
+            assertTrue(set.containsAll(treeMapSet));
+            assertTrue(treeMapSet.containsAll(set));
         }
 
         @Test
@@ -438,7 +453,8 @@ class BSTMapTest {
                 return false;
             }
         }
-        for (Integer i : bstMap) {
+        Iterator<Integer> iter = bstMap.iterator();
+        for (Integer i = iter.next(); iter.hasNext(); i = iter.next()) {
             if (!treeMap.containsKey(i)) {
                 return false;
             }

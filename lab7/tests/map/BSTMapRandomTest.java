@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import src.BSTMap;
 
-import java.util.Map;
-import java.util.Random;
-import java.util.StringJoiner;
-import java.util.TreeMap;
+import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -30,11 +27,11 @@ class BSTMapRandomTest {
         randomDbl = new Random();
         randomInt = new Random();
         stackTrace = new StringJoiner("\n");
-        iterations = 100;
+        iterations = 1000;
     }
 
     @Test
-    @DisplayName("Items are added and removed randomly and the results are compared java.util.TreeMap.")
+    @DisplayName("1000 adds and removes are performed randomly and the results are compared java.util.TreeMap.")
     public void compareBSTMapToJavaUtilTreeMap() {
         double variateDbl = randomDbl.nextDouble();
         int variateInt = randomInt.nextInt(100);
@@ -69,7 +66,8 @@ class BSTMapRandomTest {
                 return false;
             }
         }
-        for (Integer i : bstMap) {
+        Iterator<Integer> iter = bstMap.iterator();
+        for (Integer i = iter.next(); iter.hasNext(); i = iter.next()) {
             if (!treeMap.containsKey(i)) {
                 return false;
             }

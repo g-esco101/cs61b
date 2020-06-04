@@ -21,37 +21,14 @@ public class BSTMapRecursive<K extends Comparable<K>, V> implements Map61B<K, V>
 
         private K key;
         private V value;
-        private Entry left, right, parent;
+        private Entry left;
+        private Entry right;
 
-        public Entry(K key, V value, Entry<K, V> parent) {
+        public Entry(K key, V value) {
             this.key = key;
             this.value = value;
             left = null;
             right = null;
-            this.parent = parent;
-        }
-    }
-
-    class EntryIterator<T> implements Iterator<T> {
-        Entry<K,V> nextEntry;
-        T next;
-        int count;
-
-        EntryIterator() {
-            nextEntry = minimum(root);
-            next = (T) nextEntry.key;
-            count = 0;
-        }
-
-        public boolean hasNext() {
-            return count != size;
-        }
-
-        public T next() {
-            Entry<K,V> entry = nextEntry;
-            nextEntry = successor(entry);
-            count++;
-            return (T) entry.key;
         }
     }
 
@@ -80,7 +57,7 @@ public class BSTMapRecursive<K extends Comparable<K>, V> implements Map61B<K, V>
      */
     public BSTMapRecursive(K key, V value) {
         if (key != null) {
-            this.root = new Entry<>(key, value, null);
+            this.root = new Entry<>(key, value );
             size = 1;
         } else {
             size = 0;
@@ -175,7 +152,7 @@ public class BSTMapRecursive<K extends Comparable<K>, V> implements Map61B<K, V>
         if (key == null) {
             return;
         }
-        root = put(key, value, root, null);
+        root = put(key, value, root);
     }
 
     /** Associates the specified value with the specified key in this map. Null keys
@@ -186,16 +163,17 @@ public class BSTMapRecursive<K extends Comparable<K>, V> implements Map61B<K, V>
      * @param entry subtree to put the key-value mapping.
      * @param value the associated value of the key.
      */
-    public Entry put(K key, V value, Entry entry, Entry parent) {
+    public Entry put(K key, V value, Entry entry) {
         if (entry == null) {
             size++;
-            return new Entry<>(key, value, parent);
+            return new Entry<>(key, value);
         } if (entry.key.compareTo(key) == 0) {
             entry.value = value;
+            return entry;
         } else if (entry.key.compareTo(key) > 0) {
-            entry.left = put(key, value, entry.left, entry);
+            entry.left = put(key, value, entry.left);
         } else {
-            entry.right = put(key, value, entry.right, entry);
+            entry.right = put(key, value, entry.right);
         }
         return entry; // returns if key is in BST.
     }
@@ -241,7 +219,7 @@ public class BSTMapRecursive<K extends Comparable<K>, V> implements Map61B<K, V>
             return null;
         }
         Entry entry = getEntry(key, root);
-        if (entry != null && entry.value.equals(value)) {
+        if (entry != null && entry.value == value) {
             return remove(key);
         }
         return null;
@@ -279,35 +257,39 @@ public class BSTMapRecursive<K extends Comparable<K>, V> implements Map61B<K, V>
         if (cmp < 0) entry.left  = remove(key, entry.left);
         else if (cmp > 0) entry.right = remove(key, entry.right);
         else {
-            if (entry.left  == null) {
-                if (entry.right != null) {
-                    entry.right.parent = entry.parent;
-                }
-                return entry.right;
-            }
-            if (entry.right == null) {
-                entry.left.parent = entry.parent;
-                return entry.left;
-            }
-            Entry<K, V> successor = successor(entry);
-            if (successor.key.compareTo((K) entry.right.key) == 0) {
-                successor.parent = entry.parent;
-                entry.left.parent = successor;
-                successor.left = entry.left;
-                return successor;
-            } else {
-                if (successor.right != null) {
-                    successor.right.parent = successor.parent;
-                }
-                successor.parent.left = successor.right;
-                successor.parent = entry.parent;
-                successor.right = entry.right;
-                successor.left = entry.left;
-                entry.right.parent = successor;
-                entry.left.parent = successor;
-                return successor;
-            }
+            if (entry.right == null) return entry.left;
+            if (entry.left  == null) return entry.right;
+            Entry t = entry;
+            entry = min(t.right);
+            entry.right = removeMin(t.right);
+            entry.left = t.left;
         }
+        return entry;
+    }
+
+    /** Gets the entry in a subtree with the minimum key.
+     *
+     * @param entry root of subtree to get minimum key.
+     * @return the entry in the subtree with the minimum key.
+     */
+    private Entry min(Entry entry) {
+        if (entry.left == null) {
+            return entry;
+        } else {
+            return min(entry.left);
+        }
+    }
+
+    /** Removes the entry in a subtree with the minimum key.
+     *
+     * @param entry root of subtree to remove the minimum key.
+     * @return the entry that is removed in the subtree.
+     */
+    private Entry removeMin(Entry entry) {
+        if (entry.left == null) {
+            return entry.right;
+        }
+        entry.left = removeMin(entry.left);
         return entry;
     }
 
@@ -354,36 +336,7 @@ public class BSTMapRecursive<K extends Comparable<K>, V> implements Map61B<K, V>
      */
     @Override
     public Iterator<K> iterator() {
-        Iterator<K> iter = new EntryIterator();
+        Iterator<K> iter = keySet().iterator();
         return  iter;
-    }
-
-    /** Returns the successor of the root of the subtree entry.
-     *
-     * @param entry the root of the subtree to find its successor.
-     * @return the entry successor.
-     */
-    private Entry<K, V> successor(BSTMapRecursive.Entry<K, V> entry) {
-        if (entry.right != null) {
-            return minimum((entry.right));
-        }
-        BSTMapRecursive.Entry<K, V> parent = entry.parent;
-        while (parent != null && entry.equals(parent.right)) {
-            entry = parent;
-            parent = parent.parent;
-        }
-        return parent;
-    }
-
-    /** Finds the entry containing the minimum key in the subtree.
-     *
-     * @param entry the subtree to search for the entry with the minimum key.
-     * @return the entry in the subtree with the minimum key.
-     */
-    private Entry<K, V> minimum(Entry<K, V> entry) {
-        while (entry.left != null) {
-            entry = entry.left;
-        }
-        return entry;
     }
 }

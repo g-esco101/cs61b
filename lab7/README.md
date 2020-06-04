@@ -60,7 +60,7 @@ Other annotations are also used.
 
 
 ### Code Coverage
-Wrote tests such that almost all lines and branches are covered. Note: this does not mean that the implementation is bug-free. 
+Wrote tests such that all lines and branches are covered, except for the lines in the method printInOrder, which calls the toString method that is covered. Note: this does not mean that the implementation is bug-free. 
 
 ![alt text](test-reports/coverage.png "coverage")
 
@@ -69,8 +69,17 @@ Wrote tests such that almost all lines and branches are covered. Note: this does
 The InsertRandomSpeedTest class performs tests on element-insertion speed of your BSTMap, ULLMap (provided), Java’s built-in TreeMap (Red-Black BST), and Java’s built-in HashMap (Hash Table). It works by asking the user for a desired length of each String to insert, and also for an input size (the number of insertions to perform). It then generates that many Strings of the specified length and inserts them into the maps as <String,Integer> pairs.
 
 ![alt text](test-reports/InsertRandomSpeedTest.png "InsertRandomSpeedTest")
-
+The values are in seconds and the top row is the number of items added. 
 
 The InsertInOrderSpeedTest behaves similarly to InsertRandomSpeedTest, except the Strings in <String, Integer> key-value pairs are inserted in lexicographically-increasing order. Lexicographical order is a generalization of the way words are alphabetically ordered based on the alphabetical order of their component letters (e.g., 1, 10, 2 is in lexicographical order).
 
 ![alt text](test-reports/InsertInOrderSpeedTest.png "InsertInOrderSpeedTest")
+The values are in seconds and the top row is the number of items added. 
+
+The ULL takes relatively longer and results in stack overflow due to storing all the mappings linearly (O(N)). Thus, the memory of the nodes exceeds the stack bound. Note, that its put method is implemented iteratively. 
+
+The BSTMapRecursive takes relatively longer and results in stack overflow due to the put method being recursive (O(log(N)). Thus, the memory exceeds the stack bound, because of the stack frames from each call and the cost of keeping track of the intermediate/temporary values in memory. 
+
+The BSTMap put is implemented iteratively (O(log(N)), but is unbalanced. This is why it is slower than the TreeMap, which is balanced. As the BSTMap, becomes more unbalanced, it can take longer to traverse the tree to find the positiion to insert a node. 
+
+The HashMap is the faster (O(1)), because it is a HashMap. Thus, it can find the position to insert a node in constant time by looking up the hash value of the key in the hash table. 

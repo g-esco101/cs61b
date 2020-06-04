@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import src.BSTMapRecursive;
 
-import java.util.Map;
-import java.util.Random;
-import java.util.StringJoiner;
-import java.util.TreeMap;
+import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -31,11 +28,11 @@ public class BSTMapRecursiveRandomTest {
         randomDbl = new Random();
         randomInt = new Random();
         stackTrace = new StringJoiner("\n");
-        iterations = 100;
+        iterations = 1000;
     }
 
     @Test
-    @DisplayName("Items are added and removed randomly and the results are compared java.util.TreeMap.")
+    @DisplayName("1000 adds and removes are performed randomly and the results are compared java.util.TreeMap.")
     public void compareBSTMapToJavaUtilTreeMap() {
         double variateDbl = randomDbl.nextDouble();
         int variateInt = randomInt.nextInt(100);
@@ -49,14 +46,14 @@ public class BSTMapRecursiveRandomTest {
                 exptected = treeMap.remove(variateInt);
                 stackTrace.add(String.format("remove(%d)", variateInt));
                 assertEquals(exptected, actual, stackTrace.toString());
-                assertTrue(containSameKeys());
+                assertTrue(containSameKeys(bstMap, treeMap), stackTrace.toString());
                 count++;
             } else {
                 treeMap.put(variateInt, variateInt);
                 bstMap.put(variateInt, variateInt);
                 stackTrace.add(String.format("put(%d, %d)", variateInt, variateInt));
                 assertEquals(treeMap.size(), bstMap.size(), stackTrace.toString());
-                assertTrue(containSameKeys());
+                assertTrue(containSameKeys(bstMap, treeMap), stackTrace.toString());
                 count++;
             }
             variateDbl = randomDbl.nextDouble();
@@ -64,13 +61,14 @@ public class BSTMapRecursiveRandomTest {
         }
     }
 
-    private boolean containSameKeys() {
+    private boolean containSameKeys(BSTMapRecursive<Integer, Integer> bstMap, TreeMap<Integer, Integer> treeMap) {
         for (Map.Entry<Integer, Integer> entry : treeMap.entrySet()) {
             if (!bstMap.containsKey(entry.getKey())) {
                 return false;
             }
         }
-        for (Integer i : bstMap) {
+        Iterator<Integer> iter = bstMap.iterator();
+        for (Integer i = iter.next(); iter.hasNext(); i = iter.next()) {
             if (!treeMap.containsKey(i)) {
                 return false;
             }
