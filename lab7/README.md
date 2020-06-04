@@ -1,7 +1,7 @@
 # [Lab 7: TreeMap](https://sp19.datastructur.es/materials/lab/lab7/lab7)
 Created a [src.BSTMap](src/BSTMap.java), a BST-based implementation of the [src.Map61B](src/Map61B.java) interface, which represents a basic tree-based map. I also implemented [src.BSTMapRecursive](src/BSTMapRecursive.java) to compare its performance with other 
 
-There are two interactive speed tests provided in [tests.InsertInOrderSpeedTest.java](tests.InsertInOrderSpeedTest.java) and [tests.InsertInOrderSpeedTest.java](tests/InsertInOrderSpeedTest.java). They were used to compare the performance of the implementations to a list-based Map implementation [src.ULLMap.java](src/ULLMap.java), the built-in Java [TreeMap](https://docs.oracle.com/javase/8/docs/api/java/util/TreeMap.html) class (which is a Red-Black BST), and the built-in Java [HashMap](https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html) class (which is a Hash table).
+There are two interactive speed tests provided in [tests.InsertInOrderSpeedTest.java](tests/InsertInOrderSpeedTest.java) and [tests.InsertInOrderSpeedTest.java](tests/InsertInOrderSpeedTest.java). They were used to compare the performance of the implementations to a list-based Map implementation [src.ULLMap.java](src/ULLMap.java), the built-in Java [TreeMap](https://docs.oracle.com/javase/8/docs/api/java/util/TreeMap.html) class (which is a Red-Black BST), and the built-in Java [HashMap](https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html) class (which is a Hash table).
 
 A Test-Driven Development approach was taken.
 
@@ -36,9 +36,11 @@ To run all tests:
 
 ## Class Diagram
 BSTMap
+
 ![alt text](class-diagrams/BSTMap.png "BSTMap diagram")
 
 BSTMapRecursive
+
 ![alt text](class-diagrams/BSTMapRecursive.png "BSTMapRecursive diagram")
 
 
@@ -66,15 +68,20 @@ Wrote tests such that all lines and branches are covered, except for the lines i
 
 ### Speed Tests
 
-The InsertRandomSpeedTest class performs tests on element-insertion speed of your BSTMap, ULLMap (provided), Java’s built-in TreeMap (Red-Black BST), and Java’s built-in HashMap (Hash Table). It works by asking the user for a desired length of each String to insert, and also for an input size (the number of insertions to perform). It then generates that many Strings of the specified length and inserts them into the maps as <String,Integer> pairs.
+The InsertRandomSpeedTest class performs tests on element-insertion speed of the BSTMap, BSTMapRecursive, 
+ULLMap (provided), Java’s built-in TreeMap (Red-Black BST), and Java’s built-in HashMap (Hash Table). It 
+then generates N Strings of the specified length and inserts them into the maps as <String,Integer> pairs. The 
+specified size of each inserted string is five, because that is approximately the average size of an English word.
+Below are the results for the InsertRandomSpeedTest:
 
 ![alt text](test-reports/InsertRandomSpeedTest.png "InsertRandomSpeedTest")
-The values are in seconds and the top row is the number of items added. 
 
-The InsertInOrderSpeedTest behaves similarly to InsertRandomSpeedTest, except the Strings in <String, Integer> key-value pairs are inserted in lexicographically-increasing order. Lexicographical order is a generalization of the way words are alphabetically ordered based on the alphabetical order of their component letters (e.g., 1, 10, 2 is in lexicographical order).
+The InsertInOrderSpeedTest behaves similarly to InsertRandomSpeedTest, except the Strings in 
+<String, Integer> key-value pairs are inserted in lexicographically-increasing order. Lexicographical order is 
+a generalization of the way words are alphabetically ordered based on the alphabetical order of their component 
+letters (e.g., 1, 10, 2 is in lexicographical order).
 
 ![alt text](test-reports/InsertInOrderSpeedTest.png "InsertInOrderSpeedTest")
-The values are in seconds and the top row is the number of items added. 
 
 The ULL takes relatively longer and results in stack overflow due to storing all the mappings linearly (O(N)). Thus, the memory of the nodes exceeds the stack bound. Note, that its put method is implemented iteratively. 
 
