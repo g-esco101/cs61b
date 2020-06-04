@@ -1,4 +1,6 @@
-package src;
+package archive;
+
+import src.Map61B;
 
 import java.util.HashSet;
 import java.util.Iterator;
