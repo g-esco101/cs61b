@@ -87,6 +87,6 @@ The ULL takes relatively longer and results in stack overflow due to storing all
 
 The BSTMapRecursive takes relatively longer and results in stack overflow due to the put method being recursive (O(log(N)). Thus, the memory exceeds the stack bound, because of the stack frames from each call and the cost of keeping track of the intermediate/temporary values in memory. 
 
-The BSTMap put is implemented iteratively (O(log(N)), but is unbalanced. This is why it is slower than the TreeMap, which is balanced. As the BSTMap, becomes more unbalanced, it can take longer to traverse the tree to find the positiion to insert a node. 
+The BSTMap put is implemented iteratively (O(log(N)), but is unbalanced. This accounts for it being slower than the TreeMap, which is balanced. As the BSTMap, becomes more unbalanced, it can take longer to traverse the tree to find the positiion to insert a node. 
 
-The HashMap is the faster (O(1)), because it is a HashMap. Thus, it can find the position to insert a node in constant time by looking up the hash value of the key in the hash table. 
+The HashMap is the fastest (O(1)), because it is a HashMap. Thus, it can find the position to insert a node in constant time by looking up the hash value of the key in the hash table. 
