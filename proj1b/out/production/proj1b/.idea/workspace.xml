@@ -24,9 +24,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27300d86-e5a9-4995-ab66-171ce95731da" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/class-diagrams/LinkedListDeque.jpg" beforeDir="false" />
-    </list>
+    <list default="true" id="27300d86-e5a9-4995-ab66-171ce95731da" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -86,7 +84,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.RunAllTests">
+  <component name="RunManager" selected="Application.PalindromeFinder">
     <configuration name="PalindromeFinder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="src.PalindromeFinder" />
       <module name="proj1b" />
@@ -125,7 +123,7 @@
         </pattern>
         <pattern>
           <option name="PATTERN" value="src.PalindromeFinder" />
-          <option name="ENABLED" value="true" />
+          <option name="ENABLED" value="false" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
@@ -181,8 +179,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.PalindromeFinder" />
-        <item itemvalue="Application.PalindromeFinderLauncher" />
         <item itemvalue="JUnit.TestPalindrome" />
+        <item itemvalue="Application.PalindromeFinderLauncher" />
         <item itemvalue="JUnit.TestOffByOne" />
         <item itemvalue="JUnit.TestOffByN" />
       </list>
@@ -208,7 +206,10 @@
       <workItem from="1590228046544" duration="4673000" />
       <workItem from="1590233968349" duration="2872000" />
       <workItem from="1590248578106" duration="14498000" />
-      <workItem from="1590378694272" duration="735000" />
+      <workItem from="1590378694272" duration="4287000" />
+      <workItem from="1590857563172" duration="1513000" />
+      <workItem from="1591157110951" duration="674000" />
+      <workItem from="1603496196850" duration="1649000" />
     </task>
     <servers />
   </component>
@@ -228,89 +229,17 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="254" y="78" width="1092" height="782" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590232097079">
+    <state x="507" y="165" width="585" height="530" key="find.popup" timestamp="1603496335794">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="254" y="78" width="1092" height="782" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860@0.0.1600.860" timestamp="1590232097079" />
-    <state x="530" y="206" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1588876278937">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="530" y="206" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1600.860@0.0.1600.860" timestamp="1588876278937" />
-    <state x="529" y="220" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1590230677197">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="529" y="220" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1600.860@0.0.1600.860" timestamp="1590230677197" />
-    <state x="583" y="320" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1588859042923">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="583" y="320" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1600.860@0.0.1600.860" timestamp="1588859042923" />
-    <state x="530" y="177" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1590379352651">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="530" y="177" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1600.860@0.0.1600.860" timestamp="1590379352651" />
-    <state x="601" y="189" key="FileChooserDialogImpl" timestamp="1590379668870">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="601" y="189" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1590379668870" />
-    <state width="1557" height="222" key="GridCell.Tab.0.bottom" timestamp="1590275721624">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state width="1557" height="222" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1590275721624" />
-    <state width="1557" height="222" key="GridCell.Tab.0.center" timestamp="1590275721623">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state width="1557" height="222" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1590275721623" />
-    <state width="1557" height="222" key="GridCell.Tab.0.left" timestamp="1590275721623">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state width="1557" height="222" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1590275721623" />
-    <state width="1557" height="222" key="GridCell.Tab.0.right" timestamp="1590275721624">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state width="1557" height="222" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1590275721624" />
-    <state width="1557" height="276" key="GridCell.Tab.1.bottom" timestamp="1588839166738">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state width="1557" height="276" key="GridCell.Tab.1.bottom/0.0.1600.860@0.0.1600.860" timestamp="1588839166738" />
-    <state width="1557" height="276" key="GridCell.Tab.1.center" timestamp="1588839166738">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state width="1557" height="276" key="GridCell.Tab.1.center/0.0.1600.860@0.0.1600.860" timestamp="1588839166738" />
-    <state width="1557" height="276" key="GridCell.Tab.1.left" timestamp="1588839166738">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state width="1557" height="276" key="GridCell.Tab.1.left/0.0.1600.860@0.0.1600.860" timestamp="1588839166738" />
-    <state width="1557" height="276" key="GridCell.Tab.1.right" timestamp="1588839166738">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state width="1557" height="276" key="GridCell.Tab.1.right/0.0.1600.860@0.0.1600.860" timestamp="1588839166738" />
-    <state x="301" y="9" key="SettingsEditor" timestamp="1590229840681">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="301" y="9" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1590229840681" />
-    <state x="505" y="321" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1588817128651">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="505" y="321" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1600.860@0.0.1600.860" timestamp="1588817128651" />
-    <state x="956" y="153" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1590231116111">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="956" y="153" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1600.860@0.0.1600.860" timestamp="1590231116111" />
-    <state x="619" y="255" key="export.test.results" timestamp="1590243025636">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="619" y="255" key="export.test.results/0.0.1600.860@0.0.1600.860" timestamp="1590243025636" />
-    <state x="463" y="180" key="search.everywhere.popup" timestamp="1588838323614">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="463" y="180" key="search.everywhere.popup/0.0.1600.860@0.0.1600.860" timestamp="1588838323614" />
+    <state x="507" y="165" width="585" height="530" key="find.popup/0.0.1600.860@0.0.1600.860" timestamp="1603496335794" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Palindrome.java</url>
-          <line>59</line>
+          <line>57</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
@@ -318,11 +247,10 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/proj1b$TestPalindrome.ic" NAME="TestPalindrome Coverage Results" MODIFIED="1588830416157" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/proj1b$RunAllTests.ic" NAME="RunAllTests Coverage Results" MODIFIED="1590255330927" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true">
+    <SUITE FILE_PATH="coverage/proj1b$RunAllTests.ic" NAME="RunAllTests Coverage Results" MODIFIED="1590381537688" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true">
       <FILTER>src.OffByN</FILTER>
       <FILTER>src.OffByOne</FILTER>
       <FILTER>src.Palindrome</FILTER>
-      <FILTER>src.PalindromeFinder</FILTER>
     </SUITE>
   </component>
 </project>

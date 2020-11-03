@@ -2,8 +2,8 @@
 
 Determine if a word is a palindrome. The [LinkedListDeque](src/LinkedListDeque.java) that I implemented in project 1a is used to represent a word. 
 
-The word.txt file is read as a stream and the words in the file are filtered using the isPalindrome 
-method and the CharacterComparator functional interface in lambda expressions. Method references and other
+The word.txt file containing the words is read as a stream, and the words in the file are filtered using the isPalindrome 
+method and the CharacterComparator functional interface in lambda expressions. Method references and
  aggregate functions such as max, count,
 and collect(Collectors.toList()) are also used to implement the "just for fun" methods described in the 
 project.
@@ -49,11 +49,9 @@ To run all tests:
 
 All Classes:
 
-![alt text](class-diagrams/src.png "class diagrams")
+![alt text](class-diagrams/data-structures.png "class diagrams")
 
 [LinkedListDeque.java](src/LinkedListDeque.java) and [Deque.java](src/Deque.java) with all members and constructors visible:
-
-![alt text](class-diagrams/LinkedListDeque.jpg "deque diagrams")
 
 All classes except for the deques with all members and constructors visible:
 
@@ -62,6 +60,8 @@ All classes except for the deques with all members and constructors visible:
 ## Testing
 
 ### Junit 5
+
+@Nested test classes are used to express the relationship among several groups of tests.
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS) is used when test methods rely on state stored in instance variables - i.e. when the sequence of the tests are dependent upon each other. Otherwise, the default setting instantiates a new test instance per test method.
 

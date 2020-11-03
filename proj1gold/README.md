@@ -27,10 +27,10 @@ The skeleton code came with all classes in a single package that I reorganized i
 
 Open in Intellij (I use Intellij IDEA 2020.1). 
 
-Run [TestArrayDequeGold.java](proj1gold/TestArrayDequeGold.java ) by selecting it in the src package, right click, and then select Run
+Run [TestArrayDequeGold.java](src/TestArrayDequeGold.java ) by selecting it in the src package, right click, and then select Run
 
 ## Files created or modified
-- [TestArrayDequeGold.java](proj1gold/TestArrayDequeGold.java )
+- [TestArrayDequeGold.java](src/TestArrayDequeGold.java )
 
 ## Test Reports
 

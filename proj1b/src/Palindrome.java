@@ -17,6 +17,9 @@ public class Palindrome {
      * in the same order as in the String. For example, if the word is “persiflage”,
      * then the returned src.Deque should have ‘p’ at the front, followed by ‘e’, and
      * so forth.
+     *
+     * @param word string to be converted to a deque.
+     * @return the word represented as a deque.
      */
     public static Deque<Character> wordToDeque(String word) {
         Deque<Character> deque = new LinkedListDeque<>();
@@ -36,7 +39,7 @@ public class Palindrome {
         return isPalindrome(wordToDeque(word));
     }
 
-    /** Checks if a Character src.Deque is a palindrome.
+    /** Checks if a Deque<Character> is a palindrome.
      *
      * @param deque to determine if it is a palindrome.
      * @return true if the Character src.Deque contains a palindrome, and false otherwise.
@@ -48,7 +51,7 @@ public class Palindrome {
         return deque.removeLast() == deque.removeFirst() && isPalindrome(deque);
     }
 
-    /** Checks if a word is a palindrome by the rules of the src.CharacterComparator.
+    /** Checks if a word is a palindrome by the rules of the CharacterComparator.
      *
      * @param word to determine if it is a palindrome.
      * @param cc src.CharacterComparator used to determine if word is a palindrome.
@@ -61,8 +64,8 @@ public class Palindrome {
     /** Checks if a deque is a palindrome by the rules of the src.CharacterComparator.
      *
      * @param deque to determine if it is a palindrome.
-     * @param cc src.CharacterComparator used to determine if word is a palindrome.
-     * @return true if deque is a palindrome by the rules of the src.CharacterComparator, and false otherwise.
+     * @param cc CharacterComparator used to determine if word is a palindrome.
+     * @return true if deque is a palindrome by the rules of the CharacterComparator, and false otherwise.
      */
     private static boolean isPalindrome(Deque<Character> deque, CharacterComparator cc) {
         if (deque.isEmpty() || deque.size() == 1) {
@@ -71,11 +74,11 @@ public class Palindrome {
         return cc.equalChars(deque.removeLast(), deque.removeFirst()) && isPalindrome(deque, cc);
     }
 
-    /** List of offByN palindromes for specified N: 5.
+    /** Lists offByN palindromes for specified N.
      *
      * @param file the file containing the words.
-     * @param N the off by value of the palindromes.
-     * @return a list of off by N palindromes.
+     * @param N the offByN value of the palindromes.
+     * @return a list of offByN palindromes.
      */
     public static List<String> palindromesOffByN(String file, int N) {
         try (Stream<String> stream = Files.lines(Paths.get(file))) {
@@ -86,11 +89,11 @@ public class Palindrome {
         return new ArrayList<>();
     }
 
-    /** Determines what off by value (N) has the most palindromes.
+    /** Determines what offByN value has the most palindromes.
      *
      * @param file the file contains the words.
-     * @return an array that contains the off by value (N) that has the most palindromes (result[0])
-     * and the number of palindromes for that N (result[1]).
+     * @return an array that contains the offByN value that has the most palindromes (result[0])
+     * and the number of palindromes for that offByN value (result[1]).
      */
     public static int[] mostPalindromes(String file) {
         int count;
@@ -105,11 +108,11 @@ public class Palindrome {
         return result;
     }
 
-    /** Counts the number of palindromes in a file that are a off by the specified off by value (N).
+    /** Counts the number of palindromes in a file that are determined by the specified offByN value.
      *
      * @param file the file that contains the words.
-     * @param N the off by value of the palindromes.
-     * @return the number of palindromes in the file for with an off by value of N.
+     * @param N the offByN value of the palindromes.
+     * @return the number of palindromes in the file with an offByN value specified by N.
      */
     private static int palindromeCount(String file, int N) {
         try (Stream<String> stream = Files.lines(Paths.get(file))) {
@@ -121,11 +124,11 @@ public class Palindrome {
         return 0;
     }
 
-    /** Finds the longest palindrome in a file for any off by value (N).
+    /** Finds the longest palindrome in a file for any offByN value.
      *
      * @param file that contains the words.
-     * @return an array that contains the value N that has the longest palindrome (result[0])
-     * and the longest palindrome for that N (result[1]).
+     * @return an array that contains the offByN value that has the longest palindrome (result[0])
+     * and the longest palindrome for that offByN value (result[1]).
      */
     public static Object[] longestPalindrome(String file) {
         Optional<String> optionalWord;
@@ -149,9 +152,9 @@ public class Palindrome {
     /** Finds the longest palindrome in a file for the specified off by value (N).
      *
      * @param file that contains the words.
-     * @param N the off by value.
-     * @return an array that contains the value N that has the longest palindrome (result[0])
-     * and the longest palindrome for that N (result[1]).
+     * @param N the offByN value.
+     * @return an array that contains the offByN value that has the longest palindrome (result[0])
+     * and the longest palindrome for that offByN value (result[1]).
      */
     private static Optional<String> longestOffByNPalindrome(String file, int N) {
         try (Stream<String> stream = Files.lines(Paths.get(file))) {

@@ -3,10 +3,10 @@ package src;
 /** A class used to determine if the difference between two chars is N */
 public class OffByN implements  CharacterComparator{
 
-    /** An int that is equal to the difference between two chars for them to be considered equal */
+    /** The difference between two chars for them to be considered equal */
     private final int N;
 
-    /** Creats an src.OffByN object.
+    /** Creates an OffByN object.
      *
      * @param N is the difference between two chars that determines if they are equal.
      */
@@ -15,10 +15,10 @@ public class OffByN implements  CharacterComparator{
     }
 
     /**
-     * Returns true if the difference in the chars is equal to one. Otherwise returns false.
+     * Returns true if the difference in the chars is equal to N. Otherwise, returns false.
      *
-     * @param x the first char object to be compared.
-     * @param y the second object to be compared.
+     * @param x the first char to be compared.
+     * @param y the second char to be compared.
      * @return true if the difference in the chars is equal to one. Otherwise returns false.
      */
     @Override

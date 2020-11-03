@@ -10,7 +10,7 @@ public class PalindromeFinder {
         String file = "../library-sp19/data/words.txt";
         int[] mostPals = Palindrome.mostPalindromes(file);
         Object[] longestPal = Palindrome.longestPalindrome(file);
-        System.out.printf("OffBy%d has the most palindromes: %d.\n", mostPals[0], mostPals[1]);
+        System.out.printf("OffBy%d has the most palindromes: %d palindromes.\n", mostPals[0], mostPals[1]);
         System.out.printf("OffBy%d has the longest palindrome: %s.\n", longestPal[0], longestPal[1]);
 
         System.out.println();

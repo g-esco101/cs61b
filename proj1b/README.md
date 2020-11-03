@@ -1,14 +1,28 @@
 # [Project 1B: Applying & Testing Data Structures version 1.0](https://sp19.datastructur.es/materials/proj/proj1b/proj1b)
 
-Determine if a word is a palindrome. The [LinkedListDeque](src/LinkedListDeque.java) that I implemented in project 1a is used to represent a word. 
 
-The word.txt file containing the words is read as a stream, and the words in the file are filtered using the isPalindrome 
-method and the CharacterComparator functional interface in lambda expressions. Method references and
- aggregate functions such as max, count,
-and collect(Collectors.toList()) are also used to implement the "just for fun" methods described in the 
-project.
+Determines if a word is a palindrome & performs other functions related to palindromes: lists offByN palindromes for 
+specified N; determines what offByN value has the most palindromes; finds the longest palindrome in a file for any 
+offByN value; and prints the palindromes with the specified minimum length.
 
-Test Driven Development was used to complete this assignment. 
+A palindrome is a word that is the same whether it is read forwards or backwards. An offByN palindrome is a palindrome 
+whose first and last characters have a difference of N, whose second and second to last characters have a difference of 
+N, and so on.
+
+The file, containing the words, is read as a stream. To find the palindromes, the words are filtered using the 
+CharacterComparator functional interface and lambda expressions. To implement the other methods, method references and 
+aggregate functions such as max, count, and collect(Collectors.toList()) are used.
+
+In [project1a](https://github.com/g-esco101/cs61b/tree/master/proj1a) I implemented two deques:
+a [LinkedListDeque](src/LinkedListDeque.java) and an  
+[ArrayDeque](https://github.com/g-esco101/cs61b/blob/master/proj1a/src/ArrayDeque.java). In this project, we select
+the LinkedListDeque to represent the words, because it is expected to be slightly faster since the array based 
+implementation must resize. Junit tests for these deques can be found 
+[here](https://github.com/g-esco101/cs61b/tree/master/proj1a/tests). Also, in 
+[project1gold](https://github.com/g-esco101/cs61b/tree/master/proj1gold), I implemented randomized testing for a deque
+that can be found [here](https://github.com/g-esco101/cs61b/blob/master/proj1gold/src/TestArrayDequeGold.java).
+
+Test Driven Development was used to complete this project. 
 
 
 ## Run
