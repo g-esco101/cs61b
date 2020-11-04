@@ -1,9 +1,9 @@
 # [Lab 7: TreeMap](https://sp19.datastructur.es/materials/lab/lab7/lab7)
-Created a [src.BSTMap](src/BSTMap.java), a BST-based implementation of the [src.Map61B](src/Map61B.java) interface, which represents a basic tree-based map. I also implemented [src.BSTMapRecursive](src/BSTMapRecursive.java) to compare its performance with other 
+Created a [src.BSTMap](src/BSTMap.java), a BST-based implementation of the [src.Map61B](src/Map61B.java) interface, which represents a basic tree-based map. I also implemented [src.BSTMapRecursive](src/BSTMapRecursive.java) to compare its performance with others. 
 
-There are two interactive speed tests provided in [tests.InsertInOrderSpeedTest.java](tests/InsertInOrderSpeedTest.java) and [tests.InsertInOrderSpeedTest.java](tests/InsertInOrderSpeedTest.java). They were used to compare the performance of the implementations to a list-based Map implementation [src.ULLMap.java](src/ULLMap.java), the built-in Java [TreeMap](https://docs.oracle.com/javase/8/docs/api/java/util/TreeMap.html) class (which is a Red-Black BST), and the built-in Java [HashMap](https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html) class (which is a Hash table).
+There are two interactive speed tests provided in [tests.InsertInOrderSpeedTest.java](tests/InsertInOrderSpeedTest.java) and [tests.InsertInOrderSpeedTest.java](tests/InsertInOrderSpeedTest.java). They were used to compare the performance of the implementations of the [src.ULLMap.java](src/ULLMap.java) (an unordered linked list based implementation), the built-in Java [TreeMap](https://docs.oracle.com/javase/8/docs/api/java/util/TreeMap.html) class (which is a Red-Black BST), and the built-in Java [HashMap](https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html) class (which is a Hash table).
 
-A Test-Driven Development approach was taken.
+A Test-Driven Development approach was taken. Also, I implemented randomized in which 1000 adds and removes are performed randomly and the results are compared java.util.TreeMap.
 
 Implementations assume that generic keys K extend Comparable. Null keys are prohibited.
 
