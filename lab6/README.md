@@ -12,7 +12,7 @@ Open in Intellij (I used Intellij IDEA 2020.1).
 
 Select the test file in the tests package, right click, and then select Run.
 
-## Files modified or created
+## Files implemented
 - [UnionFind.java](src/UnionFind.java)
 - [UnionFindTest.java](tests/UnionFindTest.java)
 

@@ -49,12 +49,10 @@ class UnionFindTest {
             assertEquals(2, unionFind.parent(0));
             assertEquals(2,unionFind.sizeOf(0));
 
-
             unionFind.union(2,6);
 
             assertEquals(2, unionFind.parent(6));
             assertEquals(3,unionFind.sizeOf(6));
-
 
             unionFind.union(0,3);
 
@@ -73,8 +71,6 @@ class UnionFindTest {
             assertEquals(-2, unionFind.parent(4));
             assertEquals(2,unionFind.sizeOf(4));
             assertEquals(2,unionFind.sizeOf(1));
-
-
 
             unionFind.union(4, 5);
 

@@ -1,7 +1,5 @@
 package hw2;
 
-import edu.princeton.cs.algs4.WeightedQuickUnionUF;
-
 import java.util.HashSet;
 import java.util.Set;
 
@@ -30,7 +28,7 @@ public class Percolation {
     /** Represents the grid as a disjoint set.
      *
      */
-    private UnionFind weightedQuickUnionUF;
+    private UnionFind unionFind;
 
     /** The set of roots that are connected to the top.
      *
@@ -54,7 +52,7 @@ public class Percolation {
         numberOfOpenSites = 0;
         percolates = false;
         open = new boolean[N][N];
-        weightedQuickUnionUF = new UnionFind(N * N);
+        unionFind = new UnionFind(N * N);
         virtualTop = new HashSet<>();
         virtualBottom = new HashSet<>();
     }
@@ -86,7 +84,7 @@ public class Percolation {
             connect(site, row, col + 1);
 
             // Determine if system is percolating.
-            int root = weightedQuickUnionUF.find(site);
+            int root = unionFind.find(site);
             if (virtualBottom.contains(root) && virtualTop.contains(root)) {
                 percolates = true;
             }
@@ -103,11 +101,11 @@ public class Percolation {
     private void connect(int site, int adjacentRow, int adjacentCol) {
 
         if (adjacentValid(adjacentRow, adjacentCol) && isOpen(adjacentRow, adjacentCol)) {
-            int root = weightedQuickUnionUF.find(site);
+            int root = unionFind.find(site);
             int adjacent = rowColTo1D(adjacentRow, adjacentCol);
-            int adjacentRoot = weightedQuickUnionUF.find(adjacent);
-            weightedQuickUnionUF.union(site, adjacent);
-            int newAdjacentRoot = weightedQuickUnionUF.find(adjacent);
+            int adjacentRoot = unionFind.find(adjacent);
+            unionFind.union(site, adjacent);
+            int newAdjacentRoot = unionFind.find(adjacent);
 
             if (virtualTop.contains(root)) {
                 virtualTop.remove(root);
@@ -150,7 +148,7 @@ public class Percolation {
             return false;
         }
         int site = rowColTo1D(row, col);
-        int root = weightedQuickUnionUF.find(site);
+        int root = unionFind.find(site);
         if (virtualTop.contains(root)) {
             return true;
         }

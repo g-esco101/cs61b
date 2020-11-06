@@ -72,9 +72,10 @@ public class PercolationStats {
 
     // use for unit testing (not required, but keep this here for the autograder)
     public static void main(String[] args) {
-        PercolationFactory percolationFactory = new PercolationFactory();
         int simulationCount = 100;
-        for (int gridSize = 100; gridSize <= 1600; gridSize = gridSize * 2) {
+        int gridSize = 100;
+        PercolationFactory percolationFactory = new PercolationFactory();
+        for (; gridSize <= 1600; gridSize = gridSize * 2) {
             Stopwatch timer = new Stopwatch();
             PercolationStats ps = new PercolationStats(gridSize, simulationCount, percolationFactory);
             double runtime = timer.elapsedTime();
@@ -88,21 +89,19 @@ public class PercolationStats {
                     , runtime, ps.mean(), ps.stddev(), ps.confidenceLow(), ps.confidenceHigh());
 
             experiment = experiment + conditions + results;
-            Path filePath = Paths.get("hw2", "results.txt");
-            try
-            {
-                //Write content to file
-                Files.writeString(filePath, experiment, StandardOpenOption.APPEND);
+            System.out.println(experiment);
 
-                //Verify file content
-                String content = Files.readString(filePath);
-
-                System.out.println(content);
-            }
-            catch (IOException e)
-            {
-                e.printStackTrace();
-            }
+            // Uncomment to append results of simulations to results.txt.
+//            Path filePath = Paths.get("hw2", "results.txt");
+//            try
+//            {
+//                //Write content to file
+//                Files.writeString(filePath, experiment, StandardOpenOption.APPEND);
+//            }
+//            catch (IOException e)
+//            {
+//                e.printStackTrace();
+//            }
         }
     }
 }
