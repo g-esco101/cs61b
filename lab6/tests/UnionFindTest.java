@@ -69,15 +69,23 @@ class UnionFindTest {
             unionFind.union(1,4);
 
             assertTrue(unionFind.connected(1, 4));
-            assertEquals(2,unionFind.sizeOf(4));
             assertEquals(4, unionFind.parent(1));
+            assertEquals(-2, unionFind.parent(4));
+            assertEquals(2,unionFind.sizeOf(4));
+            assertEquals(2,unionFind.sizeOf(1));
+
 
 
             unionFind.union(4, 5);
 
-            assertEquals(3,unionFind.sizeOf(5));
-            assertTrue(unionFind.connected(1, 5));
+            assertEquals(4, unionFind.parent(1));
+            assertEquals(-3, unionFind.parent(4));
             assertEquals(4, unionFind.parent(5));
+            assertEquals(3,unionFind.sizeOf(1));
+            assertEquals(3,unionFind.sizeOf(4));
+            assertEquals(3,unionFind.sizeOf(5));
+
+            assertTrue(unionFind.connected(1, 5));
 
             unionFind.union(5,6);
 
@@ -161,11 +169,130 @@ class UnionFindTest {
             UnionFind unionFind = new UnionFind(4);
             Exception exception = assertThrows(IllegalArgumentException.class, () ->
                     unionFind.sizeOf(-2));
-            assertEquals("vertex is invalid", exception.getMessage());
+            assertEquals("v1 is invalid", exception.getMessage());
 
             exception = assertThrows(IllegalArgumentException.class, () ->
                     unionFind.find(10));
-            assertEquals("vertex is invalid", exception.getMessage());
+            assertEquals("v1 is invalid", exception.getMessage());
         }
+    }
+
+    @Nested
+    @TestInstance(Lifecycle.PER_CLASS)
+    @TestMethodOrder(OrderAnnotation.class)
+    @DisplayName("When all elements are connected")
+    class AllElementsConnected {
+
+        UnionFind unionFind;
+
+        @BeforeAll
+        void initAll() {
+            unionFind = new UnionFind(16);
+        }
+
+        @Test
+        @Order(1)
+        @DisplayName("path compression occurs for union")
+        void unionElements() {
+            unionFind.union(12,5);
+            unionFind.union(15,11);
+            unionFind.union(11,5);
+            unionFind.union(13,6);
+            unionFind.union(7,1);
+            unionFind.union(6,1);
+            unionFind.union(14,8);
+            unionFind.union(9,2);
+            unionFind.union(8,2);
+            unionFind.union(10,3);
+            unionFind.union(4,0);
+            unionFind.union(3,0);
+            unionFind.union(2,0);
+            unionFind.union(5,1);
+            unionFind.union(1,0);
+
+            assertEquals(-16, unionFind.parent(0));
+            assertEquals(0,unionFind.parent(1));
+            assertEquals(0,unionFind.parent(2));
+            assertEquals(0,unionFind.parent(3));
+            assertEquals(0,unionFind.parent(4));
+
+            assertEquals(1,unionFind.parent(5));
+            assertEquals(1,unionFind.parent(6));
+            assertEquals(1,unionFind.parent(7));
+
+            assertEquals(2,unionFind.parent(8));
+            assertEquals(2,unionFind.parent(9));
+
+            assertEquals(3,unionFind.parent(10));
+
+            assertEquals(5,unionFind.parent(11));
+            assertEquals(5,unionFind.parent(12));
+
+            assertEquals(6,unionFind.parent(13));
+            assertEquals(8,unionFind.parent(14));
+
+            assertEquals(11,unionFind.parent(15));
+        }
+
+        @Test
+        @Order(2)
+        @DisplayName("path compression occurs for connecting 15 and 10")
+        void elements15And10Connected() {
+            unionFind.connected(15,10);
+
+            assertEquals(-16, unionFind.parent(0));
+            assertEquals(0,unionFind.parent(1));
+            assertEquals(0,unionFind.parent(2));
+            assertEquals(0,unionFind.parent(3));
+            assertEquals(0,unionFind.parent(4));
+
+            assertEquals(0,unionFind.parent(5));
+            assertEquals(1,unionFind.parent(6));
+            assertEquals(1,unionFind.parent(7));
+
+            assertEquals(2,unionFind.parent(8));
+            assertEquals(2,unionFind.parent(9));
+
+            assertEquals(0,unionFind.parent(10));
+
+            assertEquals(0,unionFind.parent(11));
+            assertEquals(5,unionFind.parent(12));
+
+            assertEquals(6,unionFind.parent(13));
+            assertEquals(8,unionFind.parent(14));
+
+            assertEquals(0,unionFind.parent(15));
+        }
+
+        @Test
+        @Order(3)
+        @DisplayName("path compression occurs for connecting 14 and 13")
+        void elements14And13Connected() {
+            unionFind.connected(14,13);
+
+            assertEquals(-16, unionFind.parent(0));
+            assertEquals(0,unionFind.parent(1));
+            assertEquals(0,unionFind.parent(2));
+            assertEquals(0,unionFind.parent(3));
+            assertEquals(0,unionFind.parent(4));
+
+            assertEquals(0,unionFind.parent(5));
+            assertEquals(0,unionFind.parent(6));
+            assertEquals(1,unionFind.parent(7));
+
+            assertEquals(0,unionFind.parent(8));
+            assertEquals(2,unionFind.parent(9));
+
+            assertEquals(0,unionFind.parent(10));
+
+            assertEquals(0,unionFind.parent(11));
+            assertEquals(5,unionFind.parent(12));
+
+            assertEquals(0,unionFind.parent(13));
+            assertEquals(0,unionFind.parent(14));
+
+            assertEquals(0,unionFind.parent(15));
+        }
+
     }
 }

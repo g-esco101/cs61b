@@ -25,20 +25,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9bf74610-eda0-4c95-a990-502b111f55ce" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tests/UnionFindTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UnionFind.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnionFind.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../proj1b/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1b/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../proj1b/src/Palindrome.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1b/src/Palindrome.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../proj1b/src/PalindromeFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1b/src/PalindromeFinder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../proj1b/tests/PalindromeFinderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1b/tests/PalindromeFinderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../proj1b/tests/TestOffByN.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1b/tests/TestOffByN.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../proj1b/tests/TestOffByOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1b/tests/TestOffByOne.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../proj1b/tests/TestPalindrome.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1b/tests/TestPalindrome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw2/hw2/InteractivePercolationVisualizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw2/hw2/InteractivePercolationVisualizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw2/hw2/Percolation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw2/hw2/Percolation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw2/hw2/PercolationStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw2/hw2/PercolationStats.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw2/hw2/PercolationVisualizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw2/hw2/PercolationVisualizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab6/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab6/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab6/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab6/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab6/src/UnionFind.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab6/src/UnionFind.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab6/tests/UnionFindTest$AllElementsDisjoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab6/tests/UnionFindTest$AllElementsDisjoint.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab6/tests/UnionFindTest$InvalidArugments.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab6/tests/UnionFindTest$InvalidArugments.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab6/tests/UnionFindTest$UnionedSets.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab6/tests/UnionFindTest$UnionedSets.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab6/tests/UnionFindTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab6/tests/UnionFindTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UnionFind.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnionFind.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/UnionFindTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/UnionFindTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExportTestResults" outputFolder="$PROJECT_DIR$/../../test-reports/lab6" openResultsInEditor="true" userTempatePath="" />
+  <component name="ExportToHTMLSettings">
+    <option name="OPEN_IN_BROWSER" value="true" />
+    <option name="OUTPUT_DIRECTORY" value="C:\dev\cs61b-spring2019\test-reports\lab6\coverage" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -71,7 +80,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="create.test.in.the.same.root" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../hw2" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -85,8 +94,8 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="UnionFindTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.UnionFindTest">
+    <configuration name="UnionFindTest$AllElementsConnected" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="lab6" />
       <extension name="coverage">
         <pattern>
@@ -95,8 +104,62 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.UnionFindTest" />
+      <option name="MAIN_CLASS_NAME" value="tests.UnionFindTest$AllElementsConnected" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UnionFindTest$AllElementsConnected.unionElements" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lab6" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.UnionFindTest$AllElementsConnected" />
+      <option name="METHOD_NAME" value="unionElements" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UnionFindTest$UnionedSets.unionFourElements" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lab6" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.UnionFindTest$UnionedSets" />
+      <option name="METHOD_NAME" value="unionFourElements" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UnionFindTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lab6" />
+      <useClassPathOnly />
+      <extension name="coverage" sample_coverage="false" track_test_folders="true">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="false" />
+        </pattern>
+        <pattern>
+          <option name="PATTERN" value="src.UnionFind" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.UnionFindTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="PARAMETERS" value="" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -104,6 +167,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.UnionFindTest" />
+        <item itemvalue="JUnit.UnionFindTest$AllElementsConnected" />
+        <item itemvalue="JUnit.UnionFindTest$AllElementsConnected.unionElements" />
+        <item itemvalue="JUnit.UnionFindTest$UnionedSets.unionFourElements" />
       </list>
     </recent_temporary>
   </component>
@@ -117,7 +183,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1590299525655</updated>
-      <workItem from="1590299528245" duration="8649000" />
+      <workItem from="1590299528245" duration="24505000" />
+      <workItem from="1591157157761" duration="670000" />
+      <workItem from="1604601796443" duration="19969000" />
     </task>
     <servers />
   </component>
@@ -134,27 +202,89 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="254" y="85" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590306903390">
+    <state x="254" y="85" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604620204944">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="254" y="85" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860@0.0.1600.860" timestamp="1590306903390" />
-    <state x="583" y="320" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1590300734309">
+    <state x="254" y="85" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860@0.0.1600.860" timestamp="1604620204944" />
+    <state x="580" y="185" key="FileChooserDialogImpl" timestamp="1604620348918">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="583" y="320" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1600.860@0.0.1600.860" timestamp="1590300734309" />
-    <state x="280" y="4" key="SettingsEditor" timestamp="1590300128321">
+    <state x="580" y="185" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1604620348918" />
+    <state width="1557" height="268" key="GridCell.Tab.0.bottom" timestamp="1604620071577">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="280" y="4" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1590300128321" />
-    <state x="505" y="321" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1590300014946">
+    <state width="1557" height="268" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1604620071577" />
+    <state width="1557" height="268" key="GridCell.Tab.0.center" timestamp="1604620071577">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="505" y="321" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1600.860@0.0.1600.860" timestamp="1590300014946" />
-    <state x="571" y="188" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1590300755239">
+    <state width="1557" height="268" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1604620071577" />
+    <state width="1557" height="268" key="GridCell.Tab.0.left" timestamp="1604620071576">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="571" y="188" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1600.860@0.0.1600.860" timestamp="1590300755239" />
+    <state width="1557" height="268" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1604620071576" />
+    <state width="1557" height="268" key="GridCell.Tab.0.right" timestamp="1604620071577">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="268" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1604620071577" />
+    <state width="1557" height="235" key="GridCell.Tab.1.bottom" timestamp="1604619477572">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="235" key="GridCell.Tab.1.bottom/0.0.1600.860@0.0.1600.860" timestamp="1604619477572" />
+    <state width="1557" height="235" key="GridCell.Tab.1.center" timestamp="1604619477571">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="235" key="GridCell.Tab.1.center/0.0.1600.860@0.0.1600.860" timestamp="1604619477571" />
+    <state width="1557" height="235" key="GridCell.Tab.1.left" timestamp="1604619477571">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="235" key="GridCell.Tab.1.left/0.0.1600.860@0.0.1600.860" timestamp="1604619477571" />
+    <state width="1557" height="235" key="GridCell.Tab.1.right" timestamp="1604619477571">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="235" key="GridCell.Tab.1.right/0.0.1600.860@0.0.1600.860" timestamp="1604619477571" />
+    <state width="1557" height="235" key="GridCell.Tab.2.bottom" timestamp="1604619477572">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="235" key="GridCell.Tab.2.bottom/0.0.1600.860@0.0.1600.860" timestamp="1604619477572" />
+    <state width="1557" height="235" key="GridCell.Tab.2.center" timestamp="1604619477572">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="235" key="GridCell.Tab.2.center/0.0.1600.860@0.0.1600.860" timestamp="1604619477572" />
+    <state width="1557" height="235" key="GridCell.Tab.2.left" timestamp="1604619477572">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="235" key="GridCell.Tab.2.left/0.0.1600.860@0.0.1600.860" timestamp="1604619477572" />
+    <state width="1557" height="235" key="GridCell.Tab.2.right" timestamp="1604619477572">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="235" key="GridCell.Tab.2.right/0.0.1600.860@0.0.1600.860" timestamp="1604619477572" />
+    <state x="709" y="159" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1604616166503">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="709" y="159" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1600.860@0.0.1600.860" timestamp="1604616166503" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/tests/UnionFindTest.java</url>
+          <line>89</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/tests/UnionFindTest.java</url>
+          <line>241</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/lab6$UnionFindTest.ic" NAME="UnionFindTest Coverage Results" MODIFIED="1590328626898" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>src.UnionFind</FILTER>
+    </SUITE>
   </component>
 </project>

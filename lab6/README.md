@@ -1,6 +1,8 @@
 # [Lab 6: Disjoint Sets](https://sp19.datastructur.es/materials/lab/lab6/lab6)
 
-Implemented the UnionFind class, which is a Weighted Quick Union that represents disjoint sets. 
+Implemented "Union Find" (aka "Disjoint Sets") as a Weighted Quick Union with path compression. UnionFind can be used 
+to solve the dynamic connectivity problem, as in homework2.
+
 
 A Test-Driven Development approach was taken.  
 

@@ -14,7 +14,7 @@ import edu.princeton.cs.algs4.StdDraw;
 import edu.princeton.cs.algs4.StdOut;
 
 public class InteractivePercolationVisualizer {
-    /*private static final int DELAY = 20;
+    private static final int DELAY = 20;
 
     public static void main(String[] args) {
         // N-by-N percolation system (read from command-line, default = 10)
@@ -33,7 +33,6 @@ public class InteractivePercolationVisualizer {
         PercolationVisualizer.draw(perc, N);
         StdDraw.show(DELAY);
         while (true) {
-
             // detected mouse click
             if (StdDraw.mousePressed()) {
 
@@ -58,5 +57,5 @@ public class InteractivePercolationVisualizer {
             }
             StdDraw.show(DELAY);
         }
-    }*/
+    }
 }

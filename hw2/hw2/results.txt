@@ -1,0 +1,100 @@
+*** EXPERIMENT *** 
+ Using UnionFind - a Weighted Quick Union with path compression that I implemented in lab 6
+ simulations ran: 100 
+ grid size: 100 
+ total spaces: 10000
+     runtime: 0.69 seconds
+     mean: 0.591817
+     standard deviation: 0.014884
+     confidence interval: [0.588900, 0.594734].
+
+*** EXPERIMENT ***
+ Using WeightedQuickUnionUF - a provided UnionFind
+ simulations ran: 100
+ grid size: 100
+ total spaces: 10000
+     runtime: 0.85 seconds
+     mean: 0.591025
+     standard deviation: 0.014909
+     confidence interval: [0.588103, 0.593947].
+
+*** EXPERIMENT ***
+ Using UnionFind - a Weighted Quick Union with path compression that I implemented in lab 6
+ simulations ran: 100
+ grid size: 200
+ total spaces: 40000
+     runtime: 0.89 seconds
+     mean: 0.592379
+     standard deviation: 0.009518
+     confidence interval: [0.590513, 0.594245].
+
+*** EXPERIMENT ***
+ Using WeightedQuickUnionUF - a provided UnionFind
+ simulations ran: 100
+ grid size: 200
+ total spaces: 40000
+     runtime: 1.24 seconds
+     mean: 0.592839
+     standard deviation: 0.009895
+     confidence interval: [0.590900, 0.594778].
+
+*** EXPERIMENT ***
+ Using UnionFind - a Weighted Quick Union with path compression that I implemented in lab 6
+ simulations ran: 100
+ grid size: 400
+ total spaces: 160000
+     runtime: 2.63 seconds
+     mean: 0.593127
+     standard deviation: 0.005711
+     confidence interval: [0.592008, 0.594247].
+
+*** EXPERIMENT ***
+ Using WeightedQuickUnionUF - a provided UnionFind
+ simulations ran: 100
+ grid size: 400
+ total spaces: 160000
+     runtime: 3.50 seconds
+     mean: 0.592826
+     standard deviation: 0.005417
+     confidence interval: [0.591764, 0.593888].
+
+*** EXPERIMENT ***
+ Using UnionFind - a Weighted Quick Union with path compression that I implemented in lab 6
+ simulations ran: 100
+ grid size: 800
+ total spaces: 640000
+     runtime: 17.20 seconds
+     mean: 0.592472
+     standard deviation: 0.003807
+     confidence interval: [0.591726, 0.593218].
+
+*** EXPERIMENT ***
+ Using WeightedQuickUnionUF - a provided UnionFind
+ simulations ran: 100
+ grid size: 800
+ total spaces: 640000
+     runtime: 21.40 seconds
+     mean: 0.592976
+     standard deviation: 0.003785
+     confidence interval: [0.592235, 0.593718].
+
+*** EXPERIMENT ***
+ Using UnionFind - a Weighted Quick Union with path compression that I implemented in lab 6
+ simulations ran: 100
+ grid size: 1600
+ total spaces: 2560000
+     runtime: 86.84 seconds
+     mean: 0.592895
+     standard deviation: 0.002060
+     confidence interval: [0.592491, 0.593299].
+
+*** EXPERIMENT ***
+ Using WeightedQuickUnionUF - a provided UnionFind
+ simulations ran: 100
+ grid size: 1600
+ total spaces: 2560000
+     runtime: 114.33 seconds
+     mean: 0.592654
+     standard deviation: 0.002093
+     confidence interval: [0.592244, 0.593065].
+

@@ -1,4 +1,4 @@
-package src;
+package hw2;
 /** A data structure that represents a disjoint set and employs path compression. */
 public class UnionFind {
 
