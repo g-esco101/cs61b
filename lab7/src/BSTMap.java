@@ -103,11 +103,7 @@ public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V> {
         if (key == null || root == null) {
             return false;
         }
-        Entry entry = getEntry(key);
-        if (entry == null) {
-            return false;
-        }
-        return true;
+        return getEntry(key) != null;
     }
 
     /** Returns the value to which the specified key is mapped, or null if this map contains no mapping for the key.
@@ -133,15 +129,15 @@ public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V> {
      * @return the entry of the key-value mapping.
      */
     private Entry getEntry(K key) {
-        Entry netry = root;
-        while (netry != null) {
-            int compare = netry.key.compareTo(key);
+        Entry entry = root;
+        while (entry != null) {
+            int compare = entry.key.compareTo(key);
             if (compare == 0) {
-                return netry;
+                return entry;
             } else if (compare > 0) {
-                netry = netry.left;
+                entry = entry.left;
             } else {
-                netry = netry.right;
+                entry = entry.right;
             }
         }
         return null;
@@ -206,7 +202,7 @@ public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V> {
         }
         Entry entry = getEntry(key);
         if (entry != null && entry.value.equals(value)) {
-            return remove(key);
+            return removeEntry(entry);
         }
         return null;
     }
@@ -223,26 +219,34 @@ public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V> {
             return null;
         }
         Entry removed = getEntry(key);
-        if (removed == null) {
+        return removeEntry(removed);
+    }
+
+    /** Removes the mapping for the specified entry from this map if present. Returns null if enry is null.
+     *
+     * @param entry - the mapping to be removed.
+     */
+    private V removeEntry(Entry entry) {
+        if (entry == null) {
             return null;
         }
-        if (removed.left == null) {
-            transplant(removed, removed.right);
-        } else if (removed.right == null) {
-            transplant(removed, removed.left);
+        if (entry.left == null) {
+            transplant(entry, entry.right);
+        } else if (entry.right == null) {
+            transplant(entry, entry.left);
         } else {
-            Entry<K, V> successor = minimum(removed.right);
-            if (successor.parent != removed) {
+            Entry<K, V> successor = minimum(entry.right);
+            if (successor.parent != entry) {
                 transplant(successor, successor.right);
-                successor.right = removed.right;
+                successor.right = entry.right;
                 successor.right.parent = successor;
             }
-            transplant(removed, successor);
-            successor.left = removed.left;
+            transplant(entry, successor);
+            successor.left = entry.left;
             successor.left.parent = successor;
         }
         size--;
-        return (V) removed.value;
+        return (V) entry.value;
     }
 
     /** Replaces the subtree rooted at entry u with the subtree rooted at entry v, entry u's
