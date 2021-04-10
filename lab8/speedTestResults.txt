@@ -1,0 +1,49 @@
+When would it be better to use a BSTMap/TreeMap instead of a HashMap?
+Discuss this with the people around you, and add your answer to speedTestResults.txt.
+
+    To do range searches efficiently. E.g., to get all the elements whose keys are between 0 to 5000, and there is only one
+such element and 10000 other elements whose keys are not in the range. BST can do range searches efficiently, since it
+does not search unnecessary subtrees. In a hashtable, you either need to iterate every bucket, which is O(n),
+or you have to look for whether each key between 0 to 5000 exists. It also also good for order statistics and finding
+closest lower and greater elements. These operations are not natural in hash tables, like sorting.
+
+    BSTs allow you to easily traverse the elements in order, since they are ordered. This is not a natural operation in
+HashMaps.
+
+    With Self-Balancing BSTs, all operations are guaranteed to work in O(Logn) time. With Hashing, the operations are not
+guaranteed to be constant, because some operations may be costly, eg, when the resizing the table.
+
+
+		InsertInOrderSpeedTest
+class ULLMap (100 inserts): 0.01 sec
+class MyHashMap (100 inserts): 0.01 sec
+Java's Built-in HashMap (100 inserts): 0.00 sec
+class ULLMap (1000 inserts): 0.03 sec
+class MyHashMap (1000 inserts): 0.01 sec
+Java's Built-in HashMap (1000 inserts): 0.00 sec
+class ULLMap (10000 inserts): 0.91 sec
+class MyHashMap (10000 inserts): 0.02 sec
+Java's Built-in HashMap (10000 inserts): 0.02 sec
+class MyHashMap (100000 inserts): 0.17 sec
+Java's Built-in HashMap (100000 inserts): 0.13 sec
+class MyHashMap (1000000 inserts): 1.53 sec
+Java's Built-in HashMap (1000000 inserts): 0.83 sec
+class MyHashMap (10000000 inserts): 16.19 sec
+Java's Built-in HashMap (10000000 inserts): 10.47 sec
+
+		InsertRandomSpeedTest
+class ULLMap (100 inserts of length 7): 0.00 sec
+class MyHashMap (100 inserts of length 7): 0.00 sec
+Java's Built-in HashMap (100 inserts of length 7): 0.00 sec
+class ULLMap (1000 inserts of length 7): 0.01 sec
+class MyHashMap (1000 inserts of length 7): 0.00 sec
+Java's Built-in HashMap (1000 inserts of length 7): 0.00 sec
+class ULLMap (10000 inserts of length 7): 0.43 sec
+class MyHashMap (10000 inserts of length 7): 0.03 sec
+Java's Built-in HashMap (10000 inserts of length 7): 0.01 sec
+class MyHashMap (100000 inserts of length 7): 0.22 sec
+Java's Built-in HashMap (100000 inserts of length 7): 0.09 sec
+class MyHashMap (1000000 inserts of length 7): 1.94 sec
+Java's Built-in HashMap (1000000 inserts of length 7): 0.77 sec
+class MyHashMap (10000000 inserts of length 7): 59.34 sec
+Java's Built-in HashMap (10000000 inserts of length 7): 22.32 sec

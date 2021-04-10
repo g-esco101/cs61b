@@ -25,8 +25,7 @@ public class TestMyHashMap {
         for (int i = 0; i < 455; i++) {
             b.put("hi" + i, 1);
             //make sure put is working via containsKey and get
-            assertTrue(null != b.get("hi" + i)
-                        && b.containsKey("hi" + i)); 
+            assertTrue(null != b.get("hi" + i) && b.containsKey("hi" + i));
         }
         b.clear();
         assertEquals(0, b.size());
@@ -82,14 +81,16 @@ public class TestMyHashMap {
     */
     @Test
     public void sanityKeySetTest() {
+        int size = 455;
         MyHashMap<String, Integer> b = new MyHashMap<String, Integer>();
         HashSet<String> values = new HashSet<String>();
-        for (int i = 0; i < 455; i++) {
-            b.put("hi" + i, 1);   
+        for (int i = 0; i < size; i++) {
+            b.put("hi" + i, 1);
             values.add("hi" + i);
         }
-        assertEquals(455, b.size()); //keys are there
+        assertEquals(size, b.size()); //keys are there
         Set<String> keySet = b.keySet();
+//        b.printTable();
         assertTrue(values.containsAll(keySet));
         assertTrue(keySet.containsAll(values));
     }

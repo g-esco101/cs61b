@@ -1,3 +1,8 @@
+import java.io.BufferedWriter;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.HashMap;
 import java.io.IOException;
 import java.util.Scanner;
@@ -10,38 +15,46 @@ import edu.princeton.cs.algs4.Stopwatch;
  * @author Brendan Hu
  */
 public class InsertInOrderSpeedTest {
+
+    private static StringBuilder result = new StringBuilder("\t\tInsertInOrderSpeedTest\n");
+
     /**
      * Requests user input and performs tests of three different set
      * implementations. ARGS is unused. 
      */
     public static void main(String[] args) throws IOException {
+
+
         int N;
         Scanner input = new Scanner(System.in);
 
         // borrow waitForPositiveInt(Scanner input) from InsertRandomSpeedTest
         InsertRandomSpeedTest i = new InsertRandomSpeedTest();
 
-        System.out.println("\n This program inserts lexicographically increasing Strings"
-                           + "into Maps as <String, Integer> pairs.");
+        System.out.println("\n This program inserts lexicographically increasing Strings into Maps as <String, Integer> pairs.");
 
         String repeat = "y";
         do {
             System.out.print("\nEnter # strings to insert into ULLMap: ");
-            timeInOrderMap61B(new ULLMap<String, Integer>(), 
-                              i.waitForPositiveInt(input));
-       
+            timeInOrderMap61B(new ULLMap<String, Integer>(), i.waitForPositiveInt(input));
+
             System.out.print("\nEnter # strings to insert into MyHashMap: ");
-            timeInOrderMap61B(new MyHashMap<String, Integer>(), 
-                              i.waitForPositiveInt(input));
+            timeInOrderMap61B(new MyHashMap<String, Integer>(), i.waitForPositiveInt(input));
     
             System.out.print("\nEnter # strings to insert into Java's HashMap: ");
-            timeInOrderHashMap(new HashMap<String, Integer>(), 
-                              i.waitForPositiveInt(input));                        
+            timeInOrderHashMap(new HashMap<String, Integer>(), i.waitForPositiveInt(input));
 
             System.out.print("\nWould you like to try more timed-tests? (y/n): ");
             repeat = input.nextLine();
         } while (!repeat.equalsIgnoreCase("n") && !repeat.equalsIgnoreCase("no"));
         input.close();
+
+        Path paths = Paths.get("speedTestResults.txt");
+        try (BufferedWriter writer = Files.newBufferedWriter(paths, StandardOpenOption.CREATE, StandardOpenOption.WRITE, StandardOpenOption.APPEND)) {
+            writer.write(result.toString());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     /** 
@@ -79,7 +92,9 @@ public class InsertInOrderSpeedTest {
     public static void timeInOrderMap61B(Map61B<String, Integer> map, int N) {        
         try {
             double mapTime = insertInOrder(map, N);
-            System.out.printf(map.getClass() + ": %.2f sec\n", mapTime);
+            String res = String.format(map.getClass() + " (%d inserts): %.2f sec\n", N, mapTime);
+            System.out.print(res);
+            result.append(res);
         } catch (StackOverflowError e) { 
             printInfoOnStackOverflow(N); 
         } catch (RuntimeException e) { 
@@ -95,7 +110,9 @@ public class InsertInOrderSpeedTest {
     public static void timeInOrderHashMap(HashMap<String, Integer> hashMap, int N) {        
         try {
             double javaTime = insertInOrder(hashMap, N);
-            System.out.printf("Java's Built-in HashMap: %.2f sec\n", javaTime);
+            String res = String.format("Java's Built-in HashMap (%d inserts): %.2f sec\n", N, javaTime);
+            System.out.print(res);
+            result.append(res);
         } catch (StackOverflowError e) { 
             printInfoOnStackOverflow(N); 
         } catch (RuntimeException e) { 

@@ -68,24 +68,76 @@ public class ArrayHeapMinPQTest {
         heap.add("cat", 10);
         heap.add("dog", 5);
         heap.add("bruin", 100);
-        heap.add("sundevil", 200);
+        heap.add("sundevil", 100);
         heap.add("bird", 1);
 
         assertEquals(5, heap.size());
-
         assertEquals("bird", heap.removeSmallest());
         assertEquals(4, heap.size());
-
         assertEquals("dog", heap.removeSmallest());
         assertEquals(3, heap.size());
-
         assertEquals("cat", heap.removeSmallest());
         assertEquals(2, heap.size());
-
         assertEquals("bruin", heap.removeSmallest());
         assertEquals(1, heap.size());
-
         assertEquals("sundevil", heap.removeSmallest());
         assertEquals(0, heap.size());
+    }
+
+    @Test
+    @DisplayName("can increase prioirty.")
+    void increasePriorty() {
+
+        ArrayHeapMinPQ<String> heap = new ArrayHeapMinPQ<>();
+        heap.add("cat", 50);
+        heap.add("dog", 25);
+        heap.add("bruin", 100);
+        heap.add("sundevil", 100);
+        heap.add("bird", 7);
+
+        heap.changePriority("sundevil", 4);
+        assertEquals("sundevil", heap.getSmallest());
+
+        heap.changePriority("bruin", 2);
+        assertEquals("bruin", heap.getSmallest());
+
+        heap.changePriority("bird", 1);
+        assertEquals("bird", heap.getSmallest());
+
+        assertEquals("bird", heap.removeSmallest());
+        assertEquals("bruin", heap.removeSmallest());
+        assertEquals("sundevil", heap.removeSmallest());
+        assertEquals("dog", heap.removeSmallest());
+        assertEquals("cat", heap.removeSmallest());
+    }
+
+    @Test
+    @DisplayName("can decrease prioirty.")
+    void decreasePriorty() {
+
+        ArrayHeapMinPQ<String> heap = new ArrayHeapMinPQ<>();
+        heap.add("cat", 50);
+        heap.add("dog", 25);
+        heap.add("bruin", 100);
+        heap.add("sundevil", 100);
+        heap.add("bird", 7);
+
+        heap.changePriority("bird", 35);
+        assertEquals("dog", heap.getSmallest());
+
+        heap.changePriority("dog", 75);
+        assertEquals("bird", heap.getSmallest());
+
+        heap.changePriority("bird", 100);
+        assertEquals("cat", heap.getSmallest());
+
+        heap.changePriority("dog", 200);
+        assertEquals("cat", heap.getSmallest());
+
+        assertEquals("cat", heap.removeSmallest());
+        assertEquals("sundevil", heap.removeSmallest());
+        assertEquals("bird", heap.removeSmallest());
+        assertEquals("bruin", heap.removeSmallest());
+        assertEquals("dog", heap.removeSmallest());
     }
 }
