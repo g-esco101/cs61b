@@ -7,7 +7,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import src.BSTMapRecursive;
-import tests.TestBSTMap;
 
 
 /** Tests by Brendan Hu, Spring 2015, revised for 2016 by Josh Hug */

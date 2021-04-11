@@ -1,5 +1,3 @@
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -10,8 +8,7 @@ import java.util.Queue;
  */
 class RollingString{
 
-    private Queue<Character> rolledStr;
-//    private final char[] rolledStr;
+    private Queue<Character> rollingQueue;
 
     private long hashValue;
 
@@ -33,21 +30,19 @@ class RollingString{
      */
     public RollingString(String s, int length) {
         assert(s.length() == length);
-        char[] sChars = s.toCharArray();
-        rolledStr = new LinkedList<>();
-        for (int i = 0; i < length; i++) {
-            rolledStr.add(sChars[i]);
+        rollingQueue = new LinkedList<>();
+        for (char i : s.toCharArray()) {
+            rollingQueue.offer(i);
         }
         this.hashValue = hashValue();
     }
 
     private int hashValue() {
         int hashValue = 0;
-        char ch;
-        for(int i = 0; i < length(); i++) {
-            ch = rolledStr.poll();
+        int i = 0;
+        for (char ch : rollingQueue) {
             hashValue += ch * Math.pow(UNIQUECHARS, length() - i -1);
-            rolledStr.offer(ch);
+            i++;
         }
         return hashValue;
     }
@@ -59,11 +54,8 @@ class RollingString{
      */
     public void addChar(char c) {
         /* FIX ME */
-        char front = rolledStr.poll();
-        double hashDifference = front * Math.pow(UNIQUECHARS, length() -1);
-        int hashAugmend = c * UNIQUECHARS;
-        hashValue = Math.round(hashValue + hashAugmend - hashDifference);
-        rolledStr.offer(c);
+        rollingQueue.offer(c);
+        rollingQueue.poll();
     }
 
     /**
@@ -74,7 +66,7 @@ class RollingString{
     public String toString() {
         /* FIX ME */
         StringBuilder sb = new StringBuilder();
-        rolledStr.forEach(sb::append);
+        rollingQueue.forEach(sb::append);
         return sb.toString();
     }
 
@@ -84,9 +76,8 @@ class RollingString{
      */
     public int length() {
         /* FIX ME */
-        return rolledStr.size();
+        return rollingQueue.size();
     }
-
 
     /**
      * Checks if two RollingStrings are equal.

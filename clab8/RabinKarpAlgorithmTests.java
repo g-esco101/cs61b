@@ -9,5 +9,17 @@ public class RabinKarpAlgorithmTests {
         String input = "hello";
         String pattern = "ell";
         assertEquals(1, RabinKarpAlgorithm.rabinKarp(input, pattern));
+
+        input = "hello";
+        pattern = "world";
+        assertEquals(-1, RabinKarpAlgorithm.rabinKarp(input, pattern));
+
+        input = "bonjour";
+        pattern = "onj";
+        assertEquals(1, RabinKarpAlgorithm.rabinKarp(input, pattern));
+
+        input = "physics";
+        pattern = "physics";
+        assertEquals(0, RabinKarpAlgorithm.rabinKarp(input, pattern));
     }
 }
