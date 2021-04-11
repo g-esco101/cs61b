@@ -1,9 +1,19 @@
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.Queue;
+
 /**
  * A String-like class that allows users to add and remove characters in the String
  * in constant time and have a constant-time hash function. Used for the Rabin-Karp
  * string-matching algorithm.
  */
 class RollingString{
+
+    private Queue<Character> rolledStr;
+//    private final char[] rolledStr;
+
+    private long hashValue;
 
     /**
      * Number of total possible int values a character can take on.
@@ -23,7 +33,23 @@ class RollingString{
      */
     public RollingString(String s, int length) {
         assert(s.length() == length);
-        /* FIX ME */
+        char[] sChars = s.toCharArray();
+        rolledStr = new LinkedList<>();
+        for (int i = 0; i < length; i++) {
+            rolledStr.add(sChars[i]);
+        }
+        this.hashValue = hashValue();
+    }
+
+    private int hashValue() {
+        int hashValue = 0;
+        char ch;
+        for(int i = 0; i < length(); i++) {
+            ch = rolledStr.poll();
+            hashValue += ch * Math.pow(UNIQUECHARS, length() - i -1);
+            rolledStr.offer(ch);
+        }
+        return hashValue;
     }
 
     /**
@@ -33,8 +59,12 @@ class RollingString{
      */
     public void addChar(char c) {
         /* FIX ME */
+        char front = rolledStr.poll();
+        double hashDifference = front * Math.pow(UNIQUECHARS, length() -1);
+        int hashAugmend = c * UNIQUECHARS;
+        hashValue = Math.round(hashValue + hashAugmend - hashDifference);
+        rolledStr.offer(c);
     }
-
 
     /**
      * Returns the "string" stored in this RollingString, i.e. materializes
@@ -42,9 +72,10 @@ class RollingString{
      * the string.
      */
     public String toString() {
-        StringBuilder strb = new StringBuilder();
         /* FIX ME */
-        return "";
+        StringBuilder sb = new StringBuilder();
+        rolledStr.forEach(sb::append);
+        return sb.toString();
     }
 
     /**
@@ -53,7 +84,7 @@ class RollingString{
      */
     public int length() {
         /* FIX ME */
-        return -1;
+        return rolledStr.size();
     }
 
 
@@ -65,7 +96,11 @@ class RollingString{
     @Override
     public boolean equals(Object o) {
         /* FIX ME */
-        return false;
+        if (o == null || o.getClass() != this.getClass()) {
+            return false;
+        }
+        RollingString obj = (RollingString) o;
+        return length() == ((RollingString) o).length() && toString().equals(o.toString());
     }
 
     /**
@@ -75,6 +110,6 @@ class RollingString{
     @Override
     public int hashCode() {
         /* FIX ME */
-        return -1;
+        return Math.floorMod(hashValue, PRIMEBASE);
     }
 }
