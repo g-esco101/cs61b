@@ -5,8 +5,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 
+import java.util.Map;
 import java.util.Random;
 import java.util.StringJoiner;
+import java.util.TreeMap;
 
 /** An autograder that compares a student's implementation of an ArrayDeque to the solution.
  *
@@ -27,45 +29,41 @@ public class TestArrayDequeGold {
     StudentArrayDeque<Integer> student = new StudentArrayDeque<>();
     Random random = new Random();
     StringJoiner stackTrace = new StringJoiner("");
-    private final int iterations = 100;
+    private final int iterations = 100000;
 
     @Test
     @DisplayName("Items are added and removed randomly and the results are compared.")
     public void randomlyCompareStudentArrayDequeToSolution() {
-        double variate = random.nextDouble();
+        double variate;
+        int key;
         int count = 0;
         Integer exptected = 0;
         Integer actual = 0;
         stackTrace.add("\n"); // Ensures first invocation is on a new line.
         while (count < iterations) {
+            variate = random.nextDouble();
+            key = random.nextInt(100);
+            count++;
             if (variate < 0.25)  {
-                if (!student.isEmpty() && !solution.isEmpty()) {
-                    actual = student.removeLast();
-                    exptected = solution.removeLast();
-                    stackTrace.add("removeLast()\n");
-                    assertEquals(exptected, actual, stackTrace.toString());
-                }
+                actual = student.removeLast();
+                exptected = solution.removeLast();
+                stackTrace.add("removeLast()\n");
+                assertEquals(exptected, actual, stackTrace.toString());
             } else if (0.26 <= variate && variate < 0.5) {
-                solution.addFirst(count);
-                student.addFirst(count);
-                stackTrace.add(String.format("addFirst(%d)\n", count));
+                solution.addFirst(key);
+                student.addFirst(key);
+                stackTrace.add(String.format("addFirst(%d)\n", key));
                 assertEquals(solution.size(), student.size(), stackTrace.toString());
             } else if (0.5 <= variate && variate < 0.75) {
-                if ((!student.isEmpty() && !solution.isEmpty())) {
-                    actual = student.removeFirst();
-                    exptected = solution.removeFirst();
-                    stackTrace.add("removeFirst()\n");
-                    assertEquals(exptected, actual, stackTrace.toString());
-                }
+                actual = student.removeFirst();
+                exptected = solution.removeFirst();
+                stackTrace.add("removeFirst()\n");
+                assertEquals(exptected, actual, stackTrace.toString());
             } else {
-                solution.addLast(count);
-                student.addLast(count);
-                stackTrace.add(String.format("addLast(%d)\n", count));
+                solution.addLast(key);
+                student.addLast(key);
+                stackTrace.add(String.format("addLast(%d)\n", key));
                 assertEquals(solution.size(), student.size(), stackTrace.toString());
-            }
-            variate = random.nextDouble();
-            if (!student.isEmpty() && !solution.isEmpty()) {
-                count++; // increments when methods are invoked.
             }
         }
     }

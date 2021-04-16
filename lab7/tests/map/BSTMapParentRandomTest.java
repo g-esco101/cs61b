@@ -4,7 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import src.BSTMap;
+import src.BSTMapParent;
 
 import java.util.*;
 
@@ -12,8 +12,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @DisplayName("Given a BSTMap")
-class BSTMapRandomTest {
-    BSTMap<Integer, Integer> bstMap;
+class BSTMapParentRandomTest {
+    BSTMapParent<Integer, Integer> bstMap;
     TreeMap<Integer, Integer> treeMap;
     Random randomDbl;
     Random randomInt;
@@ -22,7 +22,7 @@ class BSTMapRandomTest {
 
     @BeforeEach
     public void init() {
-        bstMap = new BSTMap<>();
+        bstMap = new BSTMapParent<>();
         treeMap = new TreeMap<>();
         randomDbl = new Random();
         randomInt = new Random();

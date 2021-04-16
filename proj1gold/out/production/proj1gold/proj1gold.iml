@@ -49,5 +49,6 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="javalib" level="project" />
   </component>
 </module>

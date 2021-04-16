@@ -6,21 +6,20 @@ import static org.junit.jupiter.api.Assertions.fail;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import src.BSTMapRecursive;
-
+import src.BSTMap;
 
 /** Tests by Brendan Hu, Spring 2015, revised for 2016 by Josh Hug */
-@DisplayName("Given a BSTMapRecursive - sanity checks")
-public class TestBSTMapRecursive {
+@DisplayName("Given a BSTBare - given sanity checks")
+public class TestBSTMap {
 
     @Test
     @DisplayName("it can handle generics")
     public void sanityGenericsTest() {
         try {
-            BSTMapRecursive<String, String> a = new BSTMapRecursive<String, String>();
-            BSTMapRecursive<String, Integer> b = new BSTMapRecursive<String, Integer>();
-            BSTMapRecursive<Integer, String> c = new BSTMapRecursive<Integer, String>();
-            BSTMapRecursive<Boolean, Integer> e = new BSTMapRecursive<Boolean, Integer>();
+            BSTMap<String, String> a = new BSTMap<String, String>();
+            BSTMap<String, Integer> b = new BSTMap<String, Integer>();
+            BSTMap<Integer, String> c = new BSTMap<Integer, String>();
+            BSTMap<Boolean, Integer> e = new BSTMap<Boolean, Integer>();
         } catch (Exception e) {
             fail();
         }
@@ -30,7 +29,7 @@ public class TestBSTMapRecursive {
     @Test
     @DisplayName("it can clear")
     public void sanityClearTest() {
-        BSTMapRecursive<String, Integer> b = new BSTMapRecursive<String, Integer>();
+        BSTMap<String, Integer> b = new BSTMap<String, Integer>();
         for (int i = 0; i < 455; i++) {
             b.put("hi" + i, 1+i);
             //make sure put is working via containsKey and get
@@ -49,7 +48,7 @@ public class TestBSTMapRecursive {
     @Test
     @DisplayName("it can check if it contains a mapping")
     public void sanityContainsKeyTest() {
-        BSTMapRecursive<String, Integer> b = new BSTMapRecursive<String, Integer>();
+        BSTMap<String, Integer> b = new BSTMap<String, Integer>();
         Assertions.assertFalse(b.containsKey("waterYouDoingHere"));
         b.put("waterYouDoingHere", 0);
         Assertions.assertTrue(b.containsKey("waterYouDoingHere"));
@@ -59,7 +58,7 @@ public class TestBSTMapRecursive {
     @Test
     @DisplayName("it can get values")
     public void sanityGetTest() {
-        BSTMapRecursive<String, Integer> b = new BSTMapRecursive<String, Integer>();
+        BSTMap<String, Integer> b = new BSTMap<String, Integer>();
         Assertions.assertEquals(null,b.get("starChild"));
         Assertions.assertEquals(0, b.size());
         b.put("starChild", 5);
@@ -74,7 +73,7 @@ public class TestBSTMapRecursive {
     @Test
     @DisplayName("it can get its size")
     public void sanitySizeTest() {
-        BSTMapRecursive<String, Integer> b = new BSTMapRecursive<String, Integer>();
+        BSTMap<String, Integer> b = new BSTMap<String, Integer>();
         Assertions.assertEquals(0, b.size());
         b.put("hi", 1);
         Assertions.assertEquals(1, b.size());
@@ -87,7 +86,7 @@ public class TestBSTMapRecursive {
     @Test
     @DisplayName("it can put key-value mappings")
     public void sanityPutTest() {
-        BSTMapRecursive<String, Integer> b = new BSTMapRecursive<String, Integer>();
+        BSTMap<String, Integer> b = new BSTMap<String, Integer>();
         b.put("hi", 1);
         assertTrue(b.containsKey("hi") && b.get("hi") != null);
     }

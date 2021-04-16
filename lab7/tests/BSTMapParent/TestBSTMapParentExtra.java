@@ -1,25 +1,26 @@
-package tests;
+package tests.BSTMapParent;
+
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import src.BSTBare;
+import src.BSTMapParent;
 
 import java.util.HashSet;
 import java.util.Set;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 /** Tests of optional parts of lab 8. */
-@DisplayName("Given a BSTBare - given extra sanity checks")
-public class TestBSTBareExtra {
+@DisplayName("Given a BSTMap - given extra sanity checks")
+public class TestBSTMapParentExtra {
 
     /*
-     * Sanity test for keySet, only here because it's optional
-     */
+    * Sanity test for keySet, only here because it's optional
+    */
     @Test
     public void sanityKeySetTest() {
-        BSTBare<String, Integer> b = new BSTBare<String, Integer>();
+    	BSTMapParent<String, Integer> b = new BSTMapParent<String, Integer>();
         HashSet<String> values = new HashSet<String>();
         for (int i = 0; i < 455; i++) {
             b.put("hi" + i, 1);
@@ -45,7 +46,7 @@ public class TestBSTBareExtra {
      */
     @Test
     public void testRemoveRoot() {
-        BSTBare<String,String> q = new BSTBare<String,String>();
+        BSTMapParent<String,String> q = new BSTMapParent<String,String>();
         q.put("c","a");
         q.put("b","a");
         q.put("a","a");
@@ -64,7 +65,7 @@ public class TestBSTBareExtra {
      */
     @Test
     public void testRemoveThreeCases() {
-        BSTBare<String,String> q = new BSTBare<String,String>();
+        BSTMapParent<String,String> q = new BSTMapParent<String,String>();
         q.put("c","a");
         q.put("b","a");
         q.put("a","a");
@@ -87,34 +88,32 @@ public class TestBSTBareExtra {
     }
 
     /* Remove Test 3
-     *  Checks that remove works correctly on root nodes
-     *  when the node has only 1 or 0 children on either side. */
+    *  Checks that remove works correctly on root nodes
+    *  when the node has only 1 or 0 children on either side. */
     @Test
     public void testRemoveRootEdge() {
-        BSTBare rightChild = new BSTBare();
+        BSTMapParent rightChild = new BSTMapParent();
         rightChild.put('A', 1);
         rightChild.put('B', 2);
-        int result = (int) rightChild.remove('A');
-        assertTrue(result == 1);
+        Integer result = (Integer) rightChild.remove('A');
+        assertTrue(result.equals(new Integer(1)));
         for (int i = 0; i < 10; i++) {
             rightChild.put((char) ('C'+i), 3+i);
         }
         rightChild.put('A', 100);
-        assertTrue((int) rightChild.remove('D') == 4);
-        assertTrue((int) rightChild.remove('G') == 7);
-        assertTrue((int) rightChild.remove('A') == 100);
-
-
+        assertTrue(((Integer) rightChild.remove('D')).equals(new Integer(4)));
+        assertTrue(((Integer) rightChild.remove('G')).equals(new Integer(7)));
+        assertTrue(((Integer) rightChild.remove('A')).equals(new Integer(100)));
         assertTrue(rightChild.size()==9);
 
-        BSTBare leftChild = new BSTBare();
+        BSTMapParent leftChild = new BSTMapParent();
         leftChild.put('B', 1);
         leftChild.put('A', 2);
         assertTrue(((Integer) leftChild.remove('B')).equals(1));
         Assertions.assertEquals(1, leftChild.size());
         Assertions.assertEquals(null, leftChild.get('B'));
 
-        BSTBare noChild = new BSTBare();
+        BSTMapParent noChild = new BSTMapParent();
         noChild.put('Z', 15);
         assertTrue(((Integer) noChild.remove('Z')).equals(15));
         Assertions.assertEquals(0, noChild.size());
@@ -122,6 +121,6 @@ public class TestBSTBareExtra {
     }
 
     public static void main(String[] args) {
-        jh61b.junit.TestRunner.runTests(TestBSTBareExtra.class);
+        jh61b.junit.TestRunner.runTests(TestBSTMapParentExtra.class);
     }
 }

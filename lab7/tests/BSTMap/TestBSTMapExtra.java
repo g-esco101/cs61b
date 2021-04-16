@@ -1,7 +1,4 @@
-package tests;
-
-
-import static org.junit.jupiter.api.Assertions.assertTrue;
+package tests.BSTMap;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -11,16 +8,19 @@ import src.BSTMap;
 import java.util.HashSet;
 import java.util.Set;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 /** Tests of optional parts of lab 8. */
 @DisplayName("Given a BSTMap - given extra sanity checks")
 public class TestBSTMapExtra {
 
     /*
-    * Sanity test for keySet, only here because it's optional
-    */
+     * Sanity test for keySet, only here because it's optional
+     */
     @Test
     public void sanityKeySetTest() {
-    	BSTMap<String, Integer> b = new BSTMap<String, Integer>();
+        BSTMap<String, Integer> b = new BSTMap<String, Integer>();
         HashSet<String> values = new HashSet<String>();
         for (int i = 0; i < 455; i++) {
             b.put("hi" + i, 1);
@@ -47,12 +47,16 @@ public class TestBSTMapExtra {
     @Test
     public void testRemoveRoot() {
         BSTMap<String,String> q = new BSTMap<String,String>();
+        String expected;
         q.put("c","a");
         q.put("b","a");
         q.put("a","a");
         q.put("d","a");
         q.put("e","a"); // a b c d e
-        assertTrue(null != q.remove("c"));
+        expected = q.remove("c");
+        assertTrue(null != expected);
+        assertEquals("a", expected);
+        assertEquals(4, q.size());
         Assertions.assertFalse(q.containsKey("c"));
         Assertions.assertTrue(q.containsKey("a"));
         Assertions.assertTrue(q.containsKey("b"));
@@ -88,22 +92,28 @@ public class TestBSTMapExtra {
     }
 
     /* Remove Test 3
-    *  Checks that remove works correctly on root nodes
-    *  when the node has only 1 or 0 children on either side. */
+     *  Checks that remove works correctly on root nodes
+     *  when the node has only 1 or 0 children on either side. */
     @Test
     public void testRemoveRootEdge() {
+        int expected;
+        int actual;
         BSTMap rightChild = new BSTMap();
         rightChild.put('A', 1);
         rightChild.put('B', 2);
-        Integer result = (Integer) rightChild.remove('A');
-        assertTrue(result.equals(new Integer(1)));
+        expected = (int) rightChild.remove('A');
+        actual = 1;
+        assertEquals(expected, actual);
+        assertEquals(1, rightChild.size());
         for (int i = 0; i < 10; i++) {
             rightChild.put((char) ('C'+i), 3+i);
         }
         rightChild.put('A', 100);
-        assertTrue(((Integer) rightChild.remove('D')).equals(new Integer(4)));
-        assertTrue(((Integer) rightChild.remove('G')).equals(new Integer(7)));
-        assertTrue(((Integer) rightChild.remove('A')).equals(new Integer(100)));
+        assertTrue((int) rightChild.remove('D') == 4);
+        assertTrue((int) rightChild.remove('G') == 7);
+        assertTrue((int) rightChild.remove('A') == 100);
+
+
         assertTrue(rightChild.size()==9);
 
         BSTMap leftChild = new BSTMap();
@@ -120,6 +130,82 @@ public class TestBSTMapExtra {
         Assertions.assertEquals(null, noChild.get('Z'));
     }
 
+    @Test
+    public void removeNonExistentKey1() {
+        Integer expected = 64;
+        Integer actual;
+        BSTMap<Integer, Integer> node = new BSTMap();
+        node.put(93, 93);
+        node.put(8, 8);
+        node.remove(82);
+        node.remove(75);
+        node.remove(5);
+        node.put(64, 64);
+        node.remove(36);
+        node.put(75, 75);
+        node.put(48, 48);
+        node.remove(36);
+        node.remove(4);
+        node.put(21, 21);
+        actual = node.remove(64);
+        assertEquals(expected, actual);
+        assertEquals(5, node.size());
+    }
+
+    @Test
+    public void removeRoot() {
+        Integer expected = 22;
+        Integer actual;
+        BSTMap<Integer, Integer> node = new BSTMap();
+        node.put(22, 22);
+        actual = node.remove(22);
+        assertEquals(expected, actual);
+        assertEquals(0, node.size());
+    }
+
+    @Test
+    public void removeNodes() {
+        Integer expected = 28;
+        Integer actual;
+        BSTMap<Integer, Integer> node = new BSTMap();
+        node.put(86, 86);
+        node.remove(70);
+        node.put(0, 0);
+        node.put(11, 11);
+        node.put(28, 28);
+        node.remove(22);
+        node.put(48, 48);
+        node.remove(18);
+        node.put(70, 70);
+        node.remove(92);
+        actual = node.remove(28);
+        assertEquals(expected, actual);
+        assertEquals(5, node.size());
+
+    }
+
+    @Test
+    public void removeNodes1() {
+        Integer expected = 66;
+        Integer actual;
+        BSTMap<Integer, Integer> node = new BSTMap();
+        node.put(13, 13);
+        node.put(32, 32);
+        node.put(18, 18);
+        node.put(65, 65);
+        node.put(66, 66);
+        node.put(47, 47);
+        node.put(21, 21);
+        node.put(49, 49);
+        actual = node.remove(13);
+        assertEquals(13, actual);
+        assertEquals(7, node.size());
+        node.put(73, 73);
+        actual = node.remove(66);
+        assertEquals(expected, actual);
+        assertEquals(7, node.size());
+
+    }
     public static void main(String[] args) {
         jh61b.junit.TestRunner.runTests(TestBSTMapExtra.class);
     }

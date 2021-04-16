@@ -1,16 +1,17 @@
 package tests;
 
+import java.io.BufferedWriter;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.TreeMap;
 import java.io.IOException;
 import java.util.Scanner;
 import edu.princeton.cs.algs4.Stopwatch;
 
-import src.BSTMap;
-import src.BSTMapRecursive;
-import src.Map61B;
-import src.ULLMap;
+import src.*;
 
 
 /** Performs a timing test on three different set implementations.
@@ -22,22 +23,25 @@ public class InsertRandomSpeedTest {
         Requests user input and performs tests of three different set
         implementations. ARGS is unused.
     */
+
+    private static StringBuilder result = new StringBuilder("\n\t\tInsertRandomSpeedTest ");
+
     public static void main(String[] args) throws IOException {
         Scanner input = new Scanner(System.in);
 
-        System.out.println("\nThis program inserts random "
-                           + "Strings of length L\n"
-                           + "into different types of maps "
-                           + "as <String, Integer> pairs.\n");
+        System.out.println("\nThis program inserts random Strings of length L into different types of maps as <String, Integer> pairs.\n");
         System.out.print("Please enter desired length of each string: ");
         int L = waitForPositiveInt(input);
+        result.append(String.format("(string length %d)\n", L));
 
         String repeat = "y";
         do {
             System.out.print("\nEnter # strings to insert into the maps: ");
             int N = waitForPositiveInt(input);
+            result.append(String.format("\t%d strings inserted\n", N));
             timeRandomMap61B(new ULLMap<>(), N, L);
             timeRandomMap61B(new BSTMap<>(), N, L);
+            timeRandomMap61B(new BSTMapParent<>(), N, L);
             timeRandomMap61B(new BSTMapRecursive<>(), N, L);
             timeRandomTreeMap(new TreeMap<>(), N, L);
             timeRandomHashMap(new HashMap<>(), N, L);
@@ -46,6 +50,13 @@ public class InsertRandomSpeedTest {
             repeat = input.nextLine();
         } while (!repeat.equalsIgnoreCase("n") && !repeat.equalsIgnoreCase("no"));
         input.close();
+
+        Path paths = Paths.get("speedTestResults.txt");
+        try (BufferedWriter writer = Files.newBufferedWriter(paths, StandardOpenOption.CREATE, StandardOpenOption.WRITE, StandardOpenOption.APPEND)) {
+            writer.append(result.toString());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     /** Returns time needed to put N random strings of length L into the
@@ -92,9 +103,11 @@ public class InsertRandomSpeedTest {
     public static void timeRandomMap61B(Map61B<String, Integer> map, int N, int L) {
         try {
             double mapTime = insertRandom(map, N, L);
-            System.out.printf(map.getClass() + ": %.2f sec\n", mapTime);
+            String str = String.format("%s: %.2f sec\n", map.getClass().toString(), mapTime);
+            result.append(str);
+            System.out.printf(str);
         } catch (StackOverflowError e) {
-            printInfoOnStackOverflow(N, L);
+            printInfoOnStackOverflow(map.getClass().toString(), N, L);
         } catch (RuntimeException e) {
             e.printStackTrace();
         }
@@ -108,9 +121,11 @@ public class InsertRandomSpeedTest {
     public static void timeRandomTreeMap(TreeMap<String, Integer> treeMap, int N, int L) {
         try {
             double javaTime = insertRandom(treeMap, N, L);
-            System.out.printf("Java's Built-in TreeMap: %.2f sec\n", javaTime);
+            String str = String.format("Java's Built-in TreeMap: %.2f sec\n", javaTime);
+            result.append(str);
+            System.out.printf(str);
         } catch (StackOverflowError e) {
-            printInfoOnStackOverflow(N, L);
+            printInfoOnStackOverflow(treeMap.getClass().toString(), N, L);
         } catch (RuntimeException e) {
             e.printStackTrace();
         }
@@ -124,9 +139,11 @@ public class InsertRandomSpeedTest {
     public static void timeRandomHashMap(HashMap<String, Integer> hashMap, int N, int L) {
         try {
             double javaTime = insertRandom(hashMap, N, L);
-            System.out.printf("Java's Built-in HashMap: %.2f sec\n", javaTime);
+            String str = String.format("Java's Built-in HashMap: %.2f sec\n", javaTime);
+            result.append(str);
+            System.out.printf(str);
         } catch (StackOverflowError e) {
-            printInfoOnStackOverflow(N, L);
+            printInfoOnStackOverflow(hashMap.getClass().toString(), N, L);
         } catch (RuntimeException e) {
             e.printStackTrace();
         }
@@ -154,9 +171,10 @@ public class InsertRandomSpeedTest {
         To be called after catching a StackOverflowError
         Prints the error with corresponding N and L
     */
-    private static void printInfoOnStackOverflow(int N, int L) {
-        System.out.println("--Stack Overflow -- couldn't add " + N
-                            + " strings of length " + L + ".");
+    private static void printInfoOnStackOverflow(String type, int N, int L) {
+        String str = String.format("%s - Stack Overflow - could not add %d strings of length %d.", type, N, L);
+        result.append(str);
+        System.out.println(str);
     }
 
     /** Prints a nice message for the user on bad input */

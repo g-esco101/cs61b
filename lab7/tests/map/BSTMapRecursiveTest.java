@@ -164,7 +164,7 @@ class BSTMapRecursiveTest {
 
     @Nested
     @DisplayName("that is complete")
-    class CompleteBSTMapTest {
+    class CompleteBSTMapParentTest {
         @Test
         @DisplayName("string representation - in order")
         public void stringRepresentationFull() {

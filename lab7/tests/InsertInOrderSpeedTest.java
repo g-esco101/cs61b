@@ -1,5 +1,10 @@
 package tests;
 
+import java.io.BufferedWriter;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.HashMap;
 import java.util.TreeMap;
 import java.io.IOException;
@@ -7,10 +12,7 @@ import java.util.Scanner;
 
 import edu.princeton.cs.algs4.Stopwatch;
 
-import src.BSTMap;
-import src.BSTMapRecursive;
-import src.Map61B;
-import src.ULLMap;
+import src.*;
 
 /**
  * Performs a timing test on three different set implementations.
@@ -20,6 +22,9 @@ import src.ULLMap;
  * @author Brendan Hu
  */
 public class InsertInOrderSpeedTest {
+
+    private static StringBuilder result = new StringBuilder("\n\t\tInsertInOrderSpeedTest\n");
+
     /**
      * Requests user input and performs tests of three different set
      * implementations. ARGS is unused.
@@ -30,15 +35,16 @@ public class InsertInOrderSpeedTest {
         // borrow waitForPositiveInt(Scanner input) from tests.InsertRandomSpeedTest
         InsertRandomSpeedTest i = new InsertRandomSpeedTest();
 
-        System.out.println("\nThis program inserts lexicographically increasing Strings "
-                + "into Maps as <String, Integer> pairs.");
+        System.out.println("\nThis program inserts lexicographically increasing Strings into Maps as <String, Integer> pairs.");
 
         String repeat = "y";
         do {
             System.out.print("\nEnter # strings to insert into the maps: ");
             int N = i.waitForPositiveInt(input);
+            result.append(String.format("\t%d strings inserted\n", N));
             timeInOrderMap61B(new ULLMap<>(), N);
             timeInOrderMap61B(new BSTMap<>(), N);
+            timeInOrderMap61B(new BSTMapParent<>(), N);
             timeInOrderMap61B(new BSTMapRecursive<>(), N);
             timeInOrderTreeMap(new TreeMap<>(), N);
             timeInOrderHashMap(new HashMap<>(), N);
@@ -47,6 +53,13 @@ public class InsertInOrderSpeedTest {
             repeat = input.nextLine();
         } while (!repeat.equalsIgnoreCase("n") && !repeat.equalsIgnoreCase("no"));
         input.close();
+
+        Path paths = Paths.get("speedTestResults.txt");
+        try (BufferedWriter writer = Files.newBufferedWriter(paths, StandardOpenOption.CREATE, StandardOpenOption.WRITE, StandardOpenOption.APPEND)) {
+            writer.append(result.toString());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -94,9 +107,11 @@ public class InsertInOrderSpeedTest {
     public static void timeInOrderMap61B(Map61B<String, Integer> map, int N) {
         try {
             double mapTime = insertInOrder(map, N);
-            System.out.printf(map.getClass() + ": %.2f sec\n", mapTime);
+            String str = String.format("%s: %.2f sec\n", map.getClass().toString(), mapTime);
+            result.append(str);
+            System.out.println(str);
         } catch (StackOverflowError e) {
-            printInfoOnStackOverflow(N);
+            printInfoOnStackOverflow(map.getClass().toString(), N);
         } catch (RuntimeException e) {
             e.printStackTrace();
         }
@@ -110,9 +125,11 @@ public class InsertInOrderSpeedTest {
     public static void timeInOrderTreeMap(TreeMap<String, Integer> treeMap, int N) {
         try {
             double javaTime = insertInOrder(treeMap, N);
-            System.out.printf("Java's Built-in TreeMap: %.2f sec\n", javaTime);
+            String str = String.format("Java's Built-in TreeMap: %.2f sec\n", javaTime);
+            result.append(str);
+            System.out.println(str);
         } catch (StackOverflowError e) {
-            printInfoOnStackOverflow(N);
+            printInfoOnStackOverflow(treeMap.getClass().toString(), N);
         } catch (RuntimeException e) {
             e.printStackTrace();
         }
@@ -126,9 +143,11 @@ public class InsertInOrderSpeedTest {
     public static void timeInOrderHashMap(HashMap<String, Integer> hashMap, int N) {
         try {
             double javaTime = insertInOrder(hashMap, N);
-            System.out.printf("Java's Built-in HashMap: %.2f sec\n", javaTime);
+            String str = String.format("Java's Built-in HashMap: %.2f sec\n", javaTime);
+            result.append(str);
+            System.out.println(str);
         } catch (StackOverflowError e) {
-            printInfoOnStackOverflow(N);
+            printInfoOnStackOverflow(hashMap.getClass().toString(), N);
         } catch (RuntimeException e) {
             e.printStackTrace();
         }
@@ -140,7 +159,9 @@ public class InsertInOrderSpeedTest {
      * To be called after catching a StackOverflowError
      * Prints the error with corresponding N and L
      */
-    private static void printInfoOnStackOverflow(int N) {
-        System.out.println("--Stack Overflow -- couldn't add " + N + " strings.");
+    private static void printInfoOnStackOverflow(String type, int N) {
+        String str = String.format("%s - Stack Overflow - could not add %d strings", type, N);
+        result.append(str);
+        System.out.println(str);
     }
 }

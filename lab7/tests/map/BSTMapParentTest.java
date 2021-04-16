@@ -1,12 +1,10 @@
 package tests.map;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Nested;
 
-import src.BSTMap;
-import src.BSTMapRecursive;
+import src.BSTMapParent;
 
 import java.util.Iterator;
 import java.util.Map;
@@ -16,17 +14,17 @@ import java.util.TreeMap;
 import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("Given a BSTMap")
-class BSTMapTest {
+class BSTMapParentTest {
 
     @Nested
     @DisplayName("that is empty")
-    class EmptyBSTMapTest {
+    class EmptyBSTMapParentTest {
 
         @Test
         @DisplayName("string representation of empty string")
         public void stringRepresentationEmpty() {
             String expected = "[]";
-            BSTMap<Integer, Integer> bstMap = new BSTMap<>();
+            BSTMapParent<Integer, Integer> bstMap = new BSTMapParent<>();
             String actual = bstMap.toString();
             assertEquals(expected, actual);
         }
@@ -34,7 +32,7 @@ class BSTMapTest {
         @Test
         @DisplayName("is empty and has empty key set")
         public void isEmpty() {
-            BSTMap<Integer, Integer> bstMap = new BSTMap<>();
+            BSTMapParent<Integer, Integer> bstMap = new BSTMapParent<>();
             assertTrue(bstMap.isEmpty());
             assertEquals(0, bstMap.size());
             Set<Integer> set = bstMap.keySet();
@@ -44,7 +42,7 @@ class BSTMapTest {
         @Test
         @DisplayName("contains no keys")
         public void containsNoKeys() {
-            BSTMap<Integer, Integer> bstMap = new BSTMap<>();
+            BSTMapParent<Integer, Integer> bstMap = new BSTMapParent<>();
             assertFalse(bstMap.containsKey(5));
             assertFalse(bstMap.containsKey(null));
         }
@@ -52,7 +50,7 @@ class BSTMapTest {
         @Test
         @DisplayName("gets null")
         public void getEmpty() {
-            BSTMap<Integer, Integer> bstMap = new BSTMap<>();
+            BSTMapParent<Integer, Integer> bstMap = new BSTMapParent<>();
             assertEquals(null, bstMap.get(1));
             assertEquals(null, bstMap.get(null));
             assertEquals(0, bstMap.size());
@@ -62,7 +60,7 @@ class BSTMapTest {
         @DisplayName("has an empty iterator")
         public void emptyIterator() {
             String expected = "[]";
-            BSTMap<Integer, Integer> bstMap = new BSTMap<>();
+            BSTMapParent<Integer, Integer> bstMap = new BSTMapParent<>();
             assertTrue(orderMaintained(bstMap, expected));
             assertEquals(0, bstMap.size());
         }
@@ -71,7 +69,7 @@ class BSTMapTest {
         @DisplayName("is instantiated with a key-value")
         public void instantated() {
             String expected = "[(5, 5)]";
-            BSTMap<Integer, Integer> bstMap = new BSTMap<>(5, 5);
+            BSTMapParent<Integer, Integer> bstMap = new BSTMapParent<>(5, 5);
             assertTrue(orderMaintained(bstMap, expected));
             assertEquals(1, bstMap.size());
             assertFalse(bstMap.isEmpty());
@@ -81,7 +79,7 @@ class BSTMapTest {
         @DisplayName("does not remove any keys")
         public void nonRemoval() {
             String expected = "[]";
-            BSTMap<Integer, Integer> bstMap = new BSTMap<>();
+            BSTMapParent<Integer, Integer> bstMap = new BSTMapParent<>();
             assertEquals(null, bstMap.remove(1, 1));
             assertEquals(0, bstMap.size());
             assertTrue(orderMaintained(bstMap, expected));
@@ -110,20 +108,20 @@ class BSTMapTest {
         @DisplayName("null key is not")
         public void nullKeyAdded() {
             String expected = "[]";
-            BSTMap<Integer, Integer> bstMap = new BSTMap<>(null, null);
+            BSTMapParent<Integer, Integer> bstMap = new BSTMapParent<>(null, null);
             assertEquals(0, bstMap.size());
             assertTrue(orderMaintained(bstMap, expected));
 
-            bstMap = new BSTMap<>(null, 1);
+            bstMap = new BSTMapParent<>(null, 1);
             assertEquals(0, bstMap.size());
             assertTrue(orderMaintained(bstMap, expected));
 
-            bstMap = new BSTMap<>();
+            bstMap = new BSTMapParent<>();
             bstMap.put(null, null);
             assertEquals(0, bstMap.size());
             assertTrue(orderMaintained(bstMap, expected));
 
-            bstMap = new BSTMap<>();
+            bstMap = new BSTMapParent<>();
             bstMap.put(null, 1);
             assertEquals(0, bstMap.size());
             assertTrue(orderMaintained(bstMap, expected));
@@ -133,11 +131,11 @@ class BSTMapTest {
         @DisplayName("null value is added and then removed")
         public void nullValueAddedThenRemoved() {
             String expected = "[(6, null)]";
-            BSTMap<Integer, Integer> bstMap = new BSTMap<>(6, null);
+            BSTMapParent<Integer, Integer> bstMap = new BSTMapParent<>(6, null);
             assertEquals(1, bstMap.size());
             assertTrue(orderMaintained(bstMap, expected));
 
-            bstMap = new BSTMap<>();
+            bstMap = new BSTMapParent<>();
             bstMap.put(6, null);
             assertEquals(1, bstMap.size());
             assertTrue(orderMaintained(bstMap, expected));
@@ -147,7 +145,7 @@ class BSTMapTest {
         @DisplayName("is instantiated with a key-value and then key-values are added")
         public void instantatedThenPuts() {
             String expected = "[(1, 1), (3, 3), (4, 4), (5, 5), (6, 6), (7, 7), (8, 8), (9, 9)]";
-            BSTMap<Integer, Integer> bstMap = new BSTMap<>(6, 6);
+            BSTMapParent<Integer, Integer> bstMap = new BSTMapParent<>(6, 6);
             bstMap.put(5, 5);
             bstMap.put(3, 3);
             bstMap.put(1, 1);
@@ -162,12 +160,12 @@ class BSTMapTest {
 
     @Nested
     @DisplayName("that is complete")
-    class CompleteBSTMapTest {
+    class CompleteBSTMapParentTest {
         @Test
         @DisplayName("string representation - in order")
         public void stringRepresentationFull() {
             String expected = "[(1, 1), (3, 3), (4, 4), (5, 5), (7, 7), (8, 8), (9, 9)]";
-            BSTMap<Integer, Integer> bstMap = makeCompleteBSTMap();
+            BSTMapParent<Integer, Integer> bstMap = makeCompleteBSTMap();
             String actual = bstMap.toString();
             assertEquals(expected, actual);
             assertEquals(7, bstMap.size());
@@ -178,7 +176,7 @@ class BSTMapTest {
         @DisplayName("the key set contains all the keys")
         public void keySetHasAllKeys() {
             String expected = "[(1, 1), (3, 3), (4, 4), (5, 5), (7, 7), (8, 8), (9, 9)]";
-            BSTMap<Integer, Integer> bstMap = makeCompleteBSTMap();
+            BSTMapParent<Integer, Integer> bstMap = makeCompleteBSTMap();
             TreeMap<Integer, Integer> treeMap = makeCompleteTreeMap();
             Set<Integer> set = bstMap.keySet();
             Set<Integer> treeMapSet = treeMap.keySet();
@@ -191,7 +189,7 @@ class BSTMapTest {
         @DisplayName("does not remove a value it does not contain")
         public void nonRemovalOfNonKey() {
             String expected = "[(1, 1), (3, 3), (4, 4), (5, 5), (7, 7), (8, 8), (9, 9)]";
-            BSTMap<Integer, Integer> bstMap = makeCompleteBSTMap();
+            BSTMapParent<Integer, Integer> bstMap = makeCompleteBSTMap();
             assertEquals(null, bstMap.remove(10));
             assertEquals(null, bstMap.remove(null));
             assertEquals(null, bstMap.remove(1, 3));
@@ -207,7 +205,7 @@ class BSTMapTest {
         @DisplayName("updates a key-value pair with a null value")
         public void updateExistingKeyWithNull() {
             String expected = "[(1, 1), (3, null), (4, 4), (5, 5), (7, 7), (8, 8), (9, 9)]";
-            BSTMap<Integer, Integer> bstMap = makeCompleteBSTMap();
+            BSTMapParent<Integer, Integer> bstMap = makeCompleteBSTMap();
             bstMap.put(3, null);
             assertEquals(7, bstMap.size());
             assertTrue(orderMaintained(bstMap, expected));
@@ -217,7 +215,7 @@ class BSTMapTest {
         @DisplayName("updates value of existing key")
         public void updateExistingKey() {
             String expected = "[(1, 1), (3, 3), (4, 4), (5, 5), (7, 7), (8, 8), (9, 9)]";
-            BSTMap<Integer, Integer> bstMap = makeCompleteBSTMap();
+            BSTMapParent<Integer, Integer> bstMap = makeCompleteBSTMap();
             assertEquals(7, bstMap.size());
             assertTrue(orderMaintained(bstMap, expected));
 
@@ -231,7 +229,7 @@ class BSTMapTest {
         @DisplayName("iterator - in order")
         public void iterator() {
             String expected = "[(1, 1), (3, 3), (4, 4), (5, 5), (7, 7), (8, 8), (9, 9)]";
-            BSTMap<Integer, Integer> bstMap = makeCompleteBSTMap();
+            BSTMapParent<Integer, Integer> bstMap = makeCompleteBSTMap();
             Iterator<Integer> iter = bstMap.iterator();
             assertTrue(iter.hasNext());
             assertEquals(1, iter.next());
@@ -260,7 +258,7 @@ class BSTMapTest {
         @DisplayName("remove a leaf")
         public void removeLeaf() {
             String expectedOrder = "[(1, 1), (3, 3), (4, 4), (5, 5), (8, 8), (9, 9)]";
-            BSTMap<Integer, Integer> bstMap = makeCompleteBSTMap();
+            BSTMapParent<Integer, Integer> bstMap = makeCompleteBSTMap();
             TreeMap<Integer, Integer> treeMap = makeCompleteTreeMap();
             int actual = bstMap.remove(7);
             int expected = treeMap.remove(7);
@@ -275,7 +273,7 @@ class BSTMapTest {
         @Test
         @DisplayName("remove the root and then get children of former root")
         public void removeRoot() {
-            BSTMap<Integer, Integer> bstMap = makeCompleteBSTMap();
+            BSTMapParent<Integer, Integer> bstMap = makeCompleteBSTMap();
             TreeMap<Integer, Integer> treeMap = makeCompleteTreeMap();
             int actual = bstMap.remove(5);
             int expected = treeMap.remove(5);
@@ -305,7 +303,7 @@ class BSTMapTest {
         @Test
         @DisplayName("remove an inner node and then get the children of the former inner node")
         public void removeInner() {
-            BSTMap<Integer, Integer> bstMap = makeCompleteBSTMap();
+            BSTMapParent<Integer, Integer> bstMap = makeCompleteBSTMap();
             TreeMap<Integer, Integer> treeMap = makeCompleteTreeMap();
             int actual = bstMap.remove(8, 8);
             int expected = treeMap.remove(8);
@@ -334,7 +332,7 @@ class BSTMapTest {
         @Test
         @DisplayName("remove left child of inner node, remove inner node, and then get right child of former inner")
         public void removeInnerLeftInner() {
-            BSTMap<Integer, Integer> bstMap = makeCompleteBSTMap();
+            BSTMapParent<Integer, Integer> bstMap = makeCompleteBSTMap();
             TreeMap<Integer, Integer> treeMap = makeCompleteTreeMap();
             int actual = bstMap.remove(1);
             int expected = treeMap.remove(1);
@@ -367,7 +365,7 @@ class BSTMapTest {
         @Test
         @DisplayName("remove right child of inner node, remove inner node, and then get left child of former inner")
         public void removeInnerRightInner() {
-            BSTMap<Integer, Integer> bstMap = makeCompleteBSTMap();
+            BSTMapParent<Integer, Integer> bstMap = makeCompleteBSTMap();
             TreeMap<Integer, Integer> treeMap = makeCompleteTreeMap();
             int actual = bstMap.remove(9);
             int expected = treeMap.remove(9);
@@ -399,7 +397,7 @@ class BSTMapTest {
         @Test
         @DisplayName("gets null it does not have a key")
         public void getNonExistentKey() {
-            BSTMap<Integer, Integer> bstMap = makeCompleteBSTMap();
+            BSTMapParent<Integer, Integer> bstMap = makeCompleteBSTMap();
             TreeMap<Integer, Integer> treeMap = makeCompleteTreeMap();
             Integer actual = bstMap.get(20);
             Integer expected = treeMap.get(20);
@@ -415,7 +413,7 @@ class BSTMapTest {
         @Test
         @DisplayName("clears it")
         public void clears() {
-            BSTMap<Integer, Integer> bstMap = makeCompleteBSTMap();
+            BSTMapParent<Integer, Integer> bstMap = makeCompleteBSTMap();
             bstMap.clear();
             assertEquals(0, bstMap.size());
             String expectedOrder = "[]";
@@ -423,8 +421,8 @@ class BSTMapTest {
         }
     }
 
-    private BSTMap<Integer, Integer> makeCompleteBSTMap() {
-        BSTMap<Integer, Integer> q = new BSTMap<>();
+    private BSTMapParent<Integer, Integer> makeCompleteBSTMap() {
+        BSTMapParent<Integer, Integer> q = new BSTMapParent<>();
         q.put(5, 5);
         q.put(3, 3);
         q.put(1, 1);
@@ -447,7 +445,7 @@ class BSTMapTest {
         return q;
     }
 
-    private boolean containSameKeys(BSTMap<Integer, Integer> bstMap, TreeMap<Integer, Integer> treeMap) {
+    private boolean containSameKeys(BSTMapParent<Integer, Integer> bstMap, TreeMap<Integer, Integer> treeMap) {
         for (Map.Entry<Integer, Integer> entry : treeMap.entrySet()) {
             if (!bstMap.containsKey(entry.getKey())) {
                 return false;
@@ -462,11 +460,11 @@ class BSTMapTest {
         return true;
     }
 
-    private boolean sameSize(BSTMap<Integer, Integer> bstMap, TreeMap<Integer, Integer> treeMap) {
+    private boolean sameSize(BSTMapParent<Integer, Integer> bstMap, TreeMap<Integer, Integer> treeMap) {
         return bstMap.size() == treeMap.size();
     }
 
-    private boolean orderMaintained(BSTMap<Integer, Integer> bstMap, String inOrder) {
+    private boolean orderMaintained(BSTMapParent<Integer, Integer> bstMap, String inOrder) {
         return inOrder.equals(bstMap.toString());
     }
 }
