@@ -1,8 +1,6 @@
 package src;
 
-/** The src.Deque interface. Its purpose is to make testing easier. By using this interface to write
- * the tests and using dependency injection to inject the implementations into the test class, we
- * can write the same tests for both src.LinkedListDeque and ArrayDeque.
+/** The src.Deque interface.
  *
  * @param <T>
  */
@@ -29,8 +27,8 @@ public interface Deque<T> {
     T removeFirst();
 
     /**
-     * Gets the item at the given index, where 0 is the front, 1 is the next item, and so forth.
-     * If no such item exists, returns null. Must not alter the deque!
+     * Removes and returns the item at the end of the deque.
+     * If no such item exists, returns null.
      */
     T removeLast();
 

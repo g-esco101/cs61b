@@ -1,6 +1,8 @@
-package src; /** A Doubly Linked List with circular sentinel topology */
+package src;
+
 import java.util.StringJoiner;
 
+/** A Doubly Linked List with circular sentinel topology */
 public class LinkedListDeque<T> implements Deque<T> {
 
     /** an inner class used to store items */
@@ -19,7 +21,8 @@ public class LinkedListDeque<T> implements Deque<T> {
     /** The number of items in the list */
     private int size;
 
-    private Node<T> sentinel;
+    /** The sentinel node */
+    private final Node<T> sentinel;
 
     /** Creates a Doubly Linked List with circular sentinel topology. */
     public LinkedListDeque() {
@@ -31,7 +34,7 @@ public class LinkedListDeque<T> implements Deque<T> {
 
     /** Creates a deep copy of other, i.e a Doubly Linked List with circular sentinel topology.
      *
-     * @Param other the src.LinkedListDeque to deep copy.
+     * @param other the src.LinkedListDeque to deep copy.
      * @exception NullPointerException when other is null.
      */
     public LinkedListDeque(LinkedListDeque<T> other) {
@@ -135,9 +138,11 @@ public class LinkedListDeque<T> implements Deque<T> {
      *   Gets the item at the given index, where 0 is the front, 1 is the next item, and so forth.
      *   If no such item exists, returns null. Must not alter the deque!
      *
-     *  It determines if it is more efficient to traverse the list beginning from the front or back by comparing the
-     *  index to the size. If the index is in the first half of the list, it begins traversing from the front.
-     *  If the index is in the back half of the list, it begins traversal from the back.
+     *  (This does not change the value of Big O - and probably should have not been implemented, since it creates more
+     *  code to maintain) It determines if it is more efficient to traverse the list beginning
+     *  from the front or back by comparing the index to the size. If the index is in the first half of the list,
+     *  it begins traversing from the front. If the index is in the back half of the list, it begins traversal
+     *  from the back.
      *
      *  @param index is the position of the item to retrieve.
      *  @return the item at the specified index.

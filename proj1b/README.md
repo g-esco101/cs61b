@@ -1,13 +1,12 @@
 # [Project 1B: Applying & Testing Data Structures version 1.0](https://sp19.datastructur.es/materials/proj/proj1b/proj1b)
 
+A palindrome is a word that is the same whether it is read forwards or backwards. An offByN palindrome is a palindrome
+whose first and last characters have a difference of N, whose second and second to last characters have a difference of
+N, and so on.
 
-Determines if a word is a palindrome & performs other functions related to palindromes: lists offByN palindromes for 
+This app determines if a word is a palindrome & performs other functions related to palindromes: lists offByN palindromes for 
 specified N; determines what offByN value has the most palindromes; finds the longest palindrome in a file for any 
 offByN value; and prints the palindromes with the specified minimum length.
-
-A palindrome is a word that is the same whether it is read forwards or backwards. An offByN palindrome is a palindrome 
-whose first and last characters have a difference of N, whose second and second to last characters have a difference of 
-N, and so on.
 
 The file, containing the words, is read as a stream. To find the palindromes, the words are filtered using the 
 CharacterComparator functional interface and lambda expressions. To implement the other methods, method references and 
@@ -17,10 +16,9 @@ In [project1a](https://github.com/g-esco101/cs61b/tree/master/proj1a) I implemen
 a [LinkedListDeque](src/LinkedListDeque.java) and an  
 [ArrayDeque](https://github.com/g-esco101/cs61b/blob/master/proj1a/src/ArrayDeque.java). In this project, we select
 the LinkedListDeque to represent the words, because it is expected to be slightly faster since the array based 
-implementation must resize. Junit tests for these deques can be found 
-[here](https://github.com/g-esco101/cs61b/tree/master/proj1a/tests). Also, in 
-[project1gold](https://github.com/g-esco101/cs61b/tree/master/proj1gold), I implemented randomized testing for a deque
-that can be found [here](https://github.com/g-esco101/cs61b/blob/master/proj1gold/src/TestArrayDequeGold.java).
+implementation must resize. Junit tests and randomized tests for these deques can be found 
+[here](https://github.com/g-esco101/cs61b/tree/master/proj1a/tests). In the randomized tests, the ArrayDeque is
+compared to java.util.ArrayDeque and LinkedListDequeue is comparted to java.util.LinkedList for correctness. 
 
 Test Driven Development was used to complete this project. 
 
