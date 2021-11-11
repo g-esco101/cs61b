@@ -10,6 +10,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 
+/** Used to perform the simulation */
 public class PercolationStats {
     /** The percentage of open sites when percolation occurs.
      *
@@ -70,7 +71,6 @@ public class PercolationStats {
         return mean() + 1.96 * stddev() / Math.sqrt(thresholds.length);
     }
 
-    // use for unit testing (not required, but keep this here for the autograder)
     public static void main(String[] args) {
         int simulationCount = 100;
         int gridSize = 100;

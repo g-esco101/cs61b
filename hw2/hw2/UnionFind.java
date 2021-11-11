@@ -6,7 +6,7 @@ public class UnionFind {
      *  unless it is a negative. A negative value indicates that the element is a root and the value
      *  is the negative of the size of that set.
      */
-    private int[] sets;
+    private final int[] sets;
 
     /** Creates a src.UnionFind data structure holding n vertices. Initially, all vertices are in disjoint sets.
      *

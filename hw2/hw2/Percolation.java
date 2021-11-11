@@ -3,6 +3,7 @@ package hw2;
 import java.util.HashSet;
 import java.util.Set;
 
+/** the data structure used to model the percolation system. */
 public class Percolation {
 
     /** Size of the N-by-N grid.
@@ -23,22 +24,22 @@ public class Percolation {
     /** Indicates if a site on the grid is open.
      *
      */
-    private boolean[][] open;
+    private final boolean[][] open;
 
     /** Represents the grid as a disjoint set.
      *
      */
-    private UnionFind unionFind;
+    private final UnionFind unionFind;
 
     /** The set of roots that are connected to the top.
      *
      */
-    private Set<Integer> virtualTop;
+    private final Set<Integer> virtualTop;
 
     /** The set of roots that are connected to the bottom.
      *
      */
-    private Set<Integer> virtualBottom;
+    private final Set<Integer> virtualBottom;
 
     /** create N-by-N grid, with all sites initially blocked
      *
