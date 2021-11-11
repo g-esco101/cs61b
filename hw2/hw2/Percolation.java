@@ -188,7 +188,4 @@ public class Percolation {
         }
         return true;
     }
-        // use for unit testing (not required, but keep this here for the autograder)
-//    public static void main(String[] args) { }
-
 }
